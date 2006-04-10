@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2006/04/10 06:02:39 rustikus Exp $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://ProVerVisual" 
+       class = "ProVerVisual.ProVerVisualPackage"
+       genModel = "src/model/ProVerVisual.genmodel" /> 
+  </extension>
+
+</plugin>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="ProVerVisual">
+  <figures name="default">
+    <figures xsi:type="gmfgraph:Rectangle" name="InitialStateFigure">
+      <children xsi:type="gmfgraph:Label" name="StateNameFigure" text="initial"/>
+    </figures>
+    <figures xsi:type="gmfgraph:Rectangle" name="ActionStateFigure">
+      <children xsi:type="gmfgraph:Label" name="StateNameFigure" text="&lt;...>"/>
+    </figures>
+    <figures xsi:type="gmfgraph:Rectangle" name="FinalStateFigure">
+      <children xsi:type="gmfgraph:Label" name="StateNameFigure" text="final"/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolylineConnection" name="TransitionFigure" lineWidth="2">
+      <children xsi:type="gmfgraph:Label" name="TransitionConstraintFigure" text="&lt;...>"/>
+    </figures>
+    <figures xsi:type="gmfgraph:RoundedRectangle" name="BranchFigure">
+      <children xsi:type="gmfgraph:Label" name="StateNameFigure" text="Branch"/>
+    </figures>
+  </figures>
+  <nodes name="InitialStateNode" figure="InitialStateFigure"/>
+  <nodes name="ActionStateNode" figure="ActionStateFigure"/>
+  <nodes name="FinalStateNode" figure="FinalStateFigure"/>
+  <nodes name="BranchNode" figure="BranchFigure"/>
+  <connections name="TransitionLink" figure="TransitionFigure"/>
+  <labels name="TransitionConstraintLabel" figure="TransitionConstraintFigure"/>
+  <labels name="StateNameLabel" figure="StateNameFigure"/>
+</gmfgraph:Canvas>
