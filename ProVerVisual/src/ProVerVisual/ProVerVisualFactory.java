@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProVerVisualFactory.java,v 1.1 2006/04/10 06:02:39 rustikus Exp $
+ * $Id: ProVerVisualFactory.java,v 1.2 2006/04/12 15:03:46 rustikus Exp $
  */
 package ProVerVisual;
 
@@ -35,31 +35,13 @@ public interface ProVerVisualFactory extends EFactory {
 	Protocol createProtocol();
 
 	/**
-	 * Returns a new object of class '<em>Initial State</em>'.
+	 * Returns a new object of class '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Initial State</em>'.
+	 * @return a new object of class '<em>State</em>'.
 	 * @generated
 	 */
-	InitialState createInitialState();
-
-	/**
-	 * Returns a new object of class '<em>Action State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action State</em>'.
-	 * @generated
-	 */
-	ActionState createActionState();
-
-	/**
-	 * Returns a new object of class '<em>Final State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Final State</em>'.
-	 * @generated
-	 */
-	FinalState createFinalState();
+	State createState();
 
 	/**
 	 * Returns a new object of class '<em>Transition</em>'.

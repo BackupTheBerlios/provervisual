@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProVerVisualPackage.java,v 1.1 2006/04/10 06:02:39 rustikus Exp $
+ * $Id: ProVerVisualPackage.java,v 1.2 2006/04/12 15:03:46 rustikus Exp $
  */
 package ProVerVisual;
 
@@ -68,7 +68,81 @@ public interface ProVerVisualPackage extends EPackage {
 	 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getProtocol()
 	 * @generated
 	 */
-	int PROTOCOL = 0;
+	int PROTOCOL = 1;
+
+	/**
+	 * The meta object id for the '{@link ProVerVisual.impl.StateImpl <em>State</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ProVerVisual.impl.StateImpl
+	 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getState()
+	 * @generated
+	 */
+	int STATE = 2;
+
+	/**
+	 * The meta object id for the '{@link ProVerVisual.impl.TransitionImpl <em>Transition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ProVerVisual.impl.TransitionImpl
+	 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getTransition()
+	 * @generated
+	 */
+	int TRANSITION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__DESCRIPTION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__CONSTRAINT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Source State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__SOURCE_STATE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Destination State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__DESTINATION_STATE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Branch</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__BRANCH = 4;
+
+	/**
+	 * The number of structural features of the '<em>Transition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_FEATURE_COUNT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -80,22 +154,49 @@ public interface ProVerVisualPackage extends EPackage {
 	int PROTOCOL__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Protocol State</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL__PROTOCOL_STATE = 1;
+	int PROTOCOL__TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Protocol Transition</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL__PROTOCOL_TRANSITION = 2;
+	int PROTOCOL__DESCRIPTION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTOCOL__TRANSITIONS = 3;
+
+	/**
+	 * The feature id for the '<em><b>States</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTOCOL__STATES = 4;
+
+	/**
+	 * The feature id for the '<em><b>Branches</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTOCOL__BRANCHES = 5;
 
 	/**
 	 * The number of structural features of the '<em>Protocol</em>' class.
@@ -104,26 +205,43 @@ public interface ProVerVisualPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_FEATURE_COUNT = 3;
+	int PROTOCOL_FEATURE_COUNT = 6;
 
 	/**
-	 * The meta object id for the '{@link ProVerVisual.impl.StateImpl <em>State</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ProVerVisual.impl.StateImpl
-	 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getState()
-	 * @generated
-	 */
-	int STATE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__NAME = 0;
+	int STATE__TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__DESCRIPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Operation Abbrev</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__OPERATION_ABBREV = 2;
+
+	/**
+	 * The feature id for the '<em><b>Operation Full Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__OPERATION_FULL_NAME = 3;
 
 	/**
 	 * The number of structural features of the '<em>State</em>' class.
@@ -132,137 +250,7 @@ public interface ProVerVisualPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link ProVerVisual.impl.InitialStateImpl <em>Initial State</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ProVerVisual.impl.InitialStateImpl
-	 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getInitialState()
-	 * @generated
-	 */
-	int INITIAL_STATE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INITIAL_STATE__NAME = STATE__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Initial State</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INITIAL_STATE_FEATURE_COUNT = STATE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ProVerVisual.impl.ActionStateImpl <em>Action State</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ProVerVisual.impl.ActionStateImpl
-	 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getActionState()
-	 * @generated
-	 */
-	int ACTION_STATE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_STATE__NAME = STATE__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Action State</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_STATE_FEATURE_COUNT = STATE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ProVerVisual.impl.FinalStateImpl <em>Final State</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ProVerVisual.impl.FinalStateImpl
-	 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getFinalState()
-	 * @generated
-	 */
-	int FINAL_STATE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FINAL_STATE__NAME = STATE__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Final State</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FINAL_STATE_FEATURE_COUNT = STATE_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ProVerVisual.impl.TransitionImpl <em>Transition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ProVerVisual.impl.TransitionImpl
-	 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getTransition()
-	 * @generated
-	 */
-	int TRANSITION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__CONSTRAINT = 0;
-
-	/**
-	 * The feature id for the '<em><b>State Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__STATE_SOURCE = 1;
-
-	/**
-	 * The feature id for the '<em><b>State Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__STATE_TARGET = 2;
-
-	/**
-	 * The number of structural features of the '<em>Transition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION_FEATURE_COUNT = 3;
+	int STATE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link ProVerVisual.impl.BranchImpl <em>Branch</em>}' class.
@@ -272,16 +260,16 @@ public interface ProVerVisualPackage extends EPackage {
 	 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getBranch()
 	 * @generated
 	 */
-	int BRANCH = 6;
+	int BRANCH = 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BRANCH__NAME = STATE__NAME;
+	int BRANCH__DESCRIPTION = 0;
 
 	/**
 	 * The number of structural features of the '<em>Branch</em>' class.
@@ -290,7 +278,7 @@ public interface ProVerVisualPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRANCH_FEATURE_COUNT = STATE_FEATURE_COUNT + 0;
+	int BRANCH_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link ProVerVisual.ProtocolType <em>Protocol Type</em>}' enum.
@@ -300,7 +288,18 @@ public interface ProVerVisualPackage extends EPackage {
 	 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getProtocolType()
 	 * @generated
 	 */
-	int PROTOCOL_TYPE = 7;
+	int PROTOCOL_TYPE = 4;
+
+
+	/**
+	 * The meta object id for the '{@link ProVerVisual.StateType <em>State Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ProVerVisual.StateType
+	 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getStateType()
+	 * @generated
+	 */
+	int STATE_TYPE = 5;
 
 
 	/**
@@ -325,26 +324,59 @@ public interface ProVerVisualPackage extends EPackage {
 	EAttribute getProtocol_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ProVerVisual.Protocol#getProtocolState <em>Protocol State</em>}'.
+	 * Returns the meta object for the attribute '{@link ProVerVisual.Protocol#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Protocol State</em>'.
-	 * @see ProVerVisual.Protocol#getProtocolState()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see ProVerVisual.Protocol#getType()
 	 * @see #getProtocol()
 	 * @generated
 	 */
-	EReference getProtocol_ProtocolState();
+	EAttribute getProtocol_Type();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ProVerVisual.Protocol#getProtocolTransition <em>Protocol Transition</em>}'.
+	 * Returns the meta object for the attribute '{@link ProVerVisual.Protocol#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Protocol Transition</em>'.
-	 * @see ProVerVisual.Protocol#getProtocolTransition()
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see ProVerVisual.Protocol#getDescription()
 	 * @see #getProtocol()
 	 * @generated
 	 */
-	EReference getProtocol_ProtocolTransition();
+	EAttribute getProtocol_Description();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ProVerVisual.Protocol#getTransitions <em>Transitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Transitions</em>'.
+	 * @see ProVerVisual.Protocol#getTransitions()
+	 * @see #getProtocol()
+	 * @generated
+	 */
+	EReference getProtocol_Transitions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ProVerVisual.Protocol#getStates <em>States</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>States</em>'.
+	 * @see ProVerVisual.Protocol#getStates()
+	 * @see #getProtocol()
+	 * @generated
+	 */
+	EReference getProtocol_States();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ProVerVisual.Protocol#getBranches <em>Branches</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Branches</em>'.
+	 * @see ProVerVisual.Protocol#getBranches()
+	 * @see #getProtocol()
+	 * @generated
+	 */
+	EReference getProtocol_Branches();
 
 	/**
 	 * Returns the meta object for class '{@link ProVerVisual.State <em>State</em>}'.
@@ -357,45 +389,48 @@ public interface ProVerVisualPackage extends EPackage {
 	EClass getState();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ProVerVisual.State#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link ProVerVisual.State#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see ProVerVisual.State#getName()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see ProVerVisual.State#getType()
 	 * @see #getState()
 	 * @generated
 	 */
-	EAttribute getState_Name();
+	EAttribute getState_Type();
 
 	/**
-	 * Returns the meta object for class '{@link ProVerVisual.InitialState <em>Initial State</em>}'.
+	 * Returns the meta object for the attribute '{@link ProVerVisual.State#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Initial State</em>'.
-	 * @see ProVerVisual.InitialState
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see ProVerVisual.State#getDescription()
+	 * @see #getState()
 	 * @generated
 	 */
-	EClass getInitialState();
+	EAttribute getState_Description();
 
 	/**
-	 * Returns the meta object for class '{@link ProVerVisual.ActionState <em>Action State</em>}'.
+	 * Returns the meta object for the attribute '{@link ProVerVisual.State#getOperationAbbrev <em>Operation Abbrev</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Action State</em>'.
-	 * @see ProVerVisual.ActionState
+	 * @return the meta object for the attribute '<em>Operation Abbrev</em>'.
+	 * @see ProVerVisual.State#getOperationAbbrev()
+	 * @see #getState()
 	 * @generated
 	 */
-	EClass getActionState();
+	EAttribute getState_OperationAbbrev();
 
 	/**
-	 * Returns the meta object for class '{@link ProVerVisual.FinalState <em>Final State</em>}'.
+	 * Returns the meta object for the attribute '{@link ProVerVisual.State#getOperationFullName <em>Operation Full Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Final State</em>'.
-	 * @see ProVerVisual.FinalState
+	 * @return the meta object for the attribute '<em>Operation Full Name</em>'.
+	 * @see ProVerVisual.State#getOperationFullName()
+	 * @see #getState()
 	 * @generated
 	 */
-	EClass getFinalState();
+	EAttribute getState_OperationFullName();
 
 	/**
 	 * Returns the meta object for class '{@link ProVerVisual.Transition <em>Transition</em>}'.
@@ -406,6 +441,17 @@ public interface ProVerVisualPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTransition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ProVerVisual.Transition#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see ProVerVisual.Transition#getDescription()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EAttribute getTransition_Description();
 
 	/**
 	 * Returns the meta object for the attribute '{@link ProVerVisual.Transition#getConstraint <em>Constraint</em>}'.
@@ -419,26 +465,37 @@ public interface ProVerVisualPackage extends EPackage {
 	EAttribute getTransition_Constraint();
 
 	/**
-	 * Returns the meta object for the reference '{@link ProVerVisual.Transition#getStateSource <em>State Source</em>}'.
+	 * Returns the meta object for the reference '{@link ProVerVisual.Transition#getSourceState <em>Source State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>State Source</em>'.
-	 * @see ProVerVisual.Transition#getStateSource()
+	 * @return the meta object for the reference '<em>Source State</em>'.
+	 * @see ProVerVisual.Transition#getSourceState()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_StateSource();
+	EReference getTransition_SourceState();
 
 	/**
-	 * Returns the meta object for the reference '{@link ProVerVisual.Transition#getStateTarget <em>State Target</em>}'.
+	 * Returns the meta object for the reference '{@link ProVerVisual.Transition#getDestinationState <em>Destination State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>State Target</em>'.
-	 * @see ProVerVisual.Transition#getStateTarget()
+	 * @return the meta object for the reference '<em>Destination State</em>'.
+	 * @see ProVerVisual.Transition#getDestinationState()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_StateTarget();
+	EReference getTransition_DestinationState();
+
+	/**
+	 * Returns the meta object for the reference '{@link ProVerVisual.Transition#getBranch <em>Branch</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Branch</em>'.
+	 * @see ProVerVisual.Transition#getBranch()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EReference getTransition_Branch();
 
 	/**
 	 * Returns the meta object for class '{@link ProVerVisual.Branch <em>Branch</em>}'.
@@ -451,6 +508,17 @@ public interface ProVerVisualPackage extends EPackage {
 	EClass getBranch();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ProVerVisual.Branch#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see ProVerVisual.Branch#getDescription()
+	 * @see #getBranch()
+	 * @generated
+	 */
+	EAttribute getBranch_Description();
+
+	/**
 	 * Returns the meta object for enum '{@link ProVerVisual.ProtocolType <em>Protocol Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -459,6 +527,16 @@ public interface ProVerVisualPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getProtocolType();
+
+	/**
+	 * Returns the meta object for enum '{@link ProVerVisual.StateType <em>State Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>State Type</em>'.
+	 * @see ProVerVisual.StateType
+	 * @generated
+	 */
+	EEnum getStateType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -481,7 +559,7 @@ public interface ProVerVisualPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	interface Literals {
+	interface Literals  {
 		/**
 		 * The meta object literal for the '{@link ProVerVisual.impl.ProtocolImpl <em>Protocol</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -501,20 +579,44 @@ public interface ProVerVisualPackage extends EPackage {
 		EAttribute PROTOCOL__NAME = eINSTANCE.getProtocol_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Protocol State</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROTOCOL__PROTOCOL_STATE = eINSTANCE.getProtocol_ProtocolState();
+		EAttribute PROTOCOL__TYPE = eINSTANCE.getProtocol_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Protocol Transition</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROTOCOL__PROTOCOL_TRANSITION = eINSTANCE.getProtocol_ProtocolTransition();
+		EAttribute PROTOCOL__DESCRIPTION = eINSTANCE.getProtocol_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROTOCOL__TRANSITIONS = eINSTANCE.getProtocol_Transitions();
+
+		/**
+		 * The meta object literal for the '<em><b>States</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROTOCOL__STATES = eINSTANCE.getProtocol_States();
+
+		/**
+		 * The meta object literal for the '<em><b>Branches</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROTOCOL__BRANCHES = eINSTANCE.getProtocol_Branches();
 
 		/**
 		 * The meta object literal for the '{@link ProVerVisual.impl.StateImpl <em>State</em>}' class.
@@ -527,42 +629,36 @@ public interface ProVerVisualPackage extends EPackage {
 		EClass STATE = eINSTANCE.getState();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STATE__NAME = eINSTANCE.getState_Name();
+		EAttribute STATE__TYPE = eINSTANCE.getState_Type();
 
 		/**
-		 * The meta object literal for the '{@link ProVerVisual.impl.InitialStateImpl <em>Initial State</em>}' class.
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ProVerVisual.impl.InitialStateImpl
-		 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getInitialState()
 		 * @generated
 		 */
-		EClass INITIAL_STATE = eINSTANCE.getInitialState();
+		EAttribute STATE__DESCRIPTION = eINSTANCE.getState_Description();
 
 		/**
-		 * The meta object literal for the '{@link ProVerVisual.impl.ActionStateImpl <em>Action State</em>}' class.
+		 * The meta object literal for the '<em><b>Operation Abbrev</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ProVerVisual.impl.ActionStateImpl
-		 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getActionState()
 		 * @generated
 		 */
-		EClass ACTION_STATE = eINSTANCE.getActionState();
+		EAttribute STATE__OPERATION_ABBREV = eINSTANCE.getState_OperationAbbrev();
 
 		/**
-		 * The meta object literal for the '{@link ProVerVisual.impl.FinalStateImpl <em>Final State</em>}' class.
+		 * The meta object literal for the '<em><b>Operation Full Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ProVerVisual.impl.FinalStateImpl
-		 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getFinalState()
 		 * @generated
 		 */
-		EClass FINAL_STATE = eINSTANCE.getFinalState();
+		EAttribute STATE__OPERATION_FULL_NAME = eINSTANCE.getState_OperationFullName();
 
 		/**
 		 * The meta object literal for the '{@link ProVerVisual.impl.TransitionImpl <em>Transition</em>}' class.
@@ -575,6 +671,14 @@ public interface ProVerVisualPackage extends EPackage {
 		EClass TRANSITION = eINSTANCE.getTransition();
 
 		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSITION__DESCRIPTION = eINSTANCE.getTransition_Description();
+
+		/**
 		 * The meta object literal for the '<em><b>Constraint</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -583,20 +687,28 @@ public interface ProVerVisualPackage extends EPackage {
 		EAttribute TRANSITION__CONSTRAINT = eINSTANCE.getTransition_Constraint();
 
 		/**
-		 * The meta object literal for the '<em><b>State Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source State</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__STATE_SOURCE = eINSTANCE.getTransition_StateSource();
+		EReference TRANSITION__SOURCE_STATE = eINSTANCE.getTransition_SourceState();
 
 		/**
-		 * The meta object literal for the '<em><b>State Target</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Destination State</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__STATE_TARGET = eINSTANCE.getTransition_StateTarget();
+		EReference TRANSITION__DESTINATION_STATE = eINSTANCE.getTransition_DestinationState();
+
+		/**
+		 * The meta object literal for the '<em><b>Branch</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__BRANCH = eINSTANCE.getTransition_Branch();
 
 		/**
 		 * The meta object literal for the '{@link ProVerVisual.impl.BranchImpl <em>Branch</em>}' class.
@@ -609,6 +721,14 @@ public interface ProVerVisualPackage extends EPackage {
 		EClass BRANCH = eINSTANCE.getBranch();
 
 		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BRANCH__DESCRIPTION = eINSTANCE.getBranch_Description();
+
+		/**
 		 * The meta object literal for the '{@link ProVerVisual.ProtocolType <em>Protocol Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -617,6 +737,16 @@ public interface ProVerVisualPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum PROTOCOL_TYPE = eINSTANCE.getProtocolType();
+
+		/**
+		 * The meta object literal for the '{@link ProVerVisual.StateType <em>State Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ProVerVisual.StateType
+		 * @see ProVerVisual.impl.ProVerVisualPackageImpl#getStateType()
+		 * @generated
+		 */
+		EEnum STATE_TYPE = eINSTANCE.getStateType();
 
 	}
 

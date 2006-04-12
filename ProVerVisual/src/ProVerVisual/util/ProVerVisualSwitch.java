@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProVerVisualSwitch.java,v 1.1 2006/04/10 06:02:39 rustikus Exp $
+ * $Id: ProVerVisualSwitch.java,v 1.2 2006/04/12 15:03:45 rustikus Exp $
  */
 package ProVerVisual.util;
 
@@ -87,6 +87,12 @@ public class ProVerVisualSwitch {
 	 */
 	protected Object doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case ProVerVisualPackage.TRANSITION: {
+				Transition transition = (Transition)theEObject;
+				Object result = caseTransition(transition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ProVerVisualPackage.PROTOCOL: {
 				Protocol protocol = (Protocol)theEObject;
 				Object result = caseProtocol(protocol);
@@ -99,37 +105,9 @@ public class ProVerVisualSwitch {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProVerVisualPackage.INITIAL_STATE: {
-				InitialState initialState = (InitialState)theEObject;
-				Object result = caseInitialState(initialState);
-				if (result == null) result = caseState(initialState);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ProVerVisualPackage.ACTION_STATE: {
-				ActionState actionState = (ActionState)theEObject;
-				Object result = caseActionState(actionState);
-				if (result == null) result = caseState(actionState);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ProVerVisualPackage.FINAL_STATE: {
-				FinalState finalState = (FinalState)theEObject;
-				Object result = caseFinalState(finalState);
-				if (result == null) result = caseState(finalState);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ProVerVisualPackage.TRANSITION: {
-				Transition transition = (Transition)theEObject;
-				Object result = caseTransition(transition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ProVerVisualPackage.BRANCH: {
 				Branch branch = (Branch)theEObject;
 				Object result = caseBranch(branch);
-				if (result == null) result = caseState(branch);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -164,51 +142,6 @@ public class ProVerVisualSwitch {
 	 * @generated
 	 */
 	public Object caseState(State object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Initial State</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Initial State</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public Object caseInitialState(InitialState object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Action State</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Action State</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public Object caseActionState(ActionState object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Final State</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Final State</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public Object caseFinalState(FinalState object) {
 		return null;
 	}
 

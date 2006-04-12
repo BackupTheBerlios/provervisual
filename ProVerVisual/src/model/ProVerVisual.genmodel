@@ -9,22 +9,34 @@
       <genEnumLiterals ecoreEnumLiteral="ProVerVisual.ecore#//ProtocolType/Component"/>
       <genEnumLiterals ecoreEnumLiteral="ProVerVisual.ecore#//ProtocolType/Interaction"/>
     </genEnums>
-    <genClasses ecoreClass="ProVerVisual.ecore#//Protocol">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Protocol/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Protocol/protocolState"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Protocol/protocolTransition"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="ProVerVisual.ecore#//State">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//State/name"/>
-    </genClasses>
-    <genClasses ecoreClass="ProVerVisual.ecore#//InitialState"/>
-    <genClasses ecoreClass="ProVerVisual.ecore#//ActionState"/>
-    <genClasses ecoreClass="ProVerVisual.ecore#//FinalState"/>
+    <genEnums ecoreEnum="ProVerVisual.ecore#//StateType">
+      <genEnumLiterals ecoreEnumLiteral="ProVerVisual.ecore#//StateType/Initial"/>
+      <genEnumLiterals ecoreEnumLiteral="ProVerVisual.ecore#//StateType/Action"/>
+      <genEnumLiterals ecoreEnumLiteral="ProVerVisual.ecore#//StateType/Final"/>
+    </genEnums>
     <genClasses ecoreClass="ProVerVisual.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Transition/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Transition/constraint"/>
-      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Transition/stateSource"/>
-      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Transition/stateTarget"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Transition/sourceState"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Transition/destinationState"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Transition/branch"/>
     </genClasses>
-    <genClasses ecoreClass="ProVerVisual.ecore#//Branch"/>
+    <genClasses ecoreClass="ProVerVisual.ecore#//Protocol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Protocol/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Protocol/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Protocol/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Protocol/transitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Protocol/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Protocol/branches"/>
+    </genClasses>
+    <genClasses ecoreClass="ProVerVisual.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//State/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//State/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//State/operationAbbrev"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//State/operationFullName"/>
+    </genClasses>
+    <genClasses ecoreClass="ProVerVisual.ecore#//Branch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Branch/description"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

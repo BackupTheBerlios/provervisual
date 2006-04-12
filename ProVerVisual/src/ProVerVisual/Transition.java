@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: Transition.java,v 1.1 2006/04/10 06:02:39 rustikus Exp $
+ * $Id: Transition.java,v 1.2 2006/04/12 15:03:45 rustikus Exp $
  */
 package ProVerVisual;
 
@@ -16,9 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link ProVerVisual.Transition#getDescription <em>Description</em>}</li>
  *   <li>{@link ProVerVisual.Transition#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link ProVerVisual.Transition#getStateSource <em>State Source</em>}</li>
- *   <li>{@link ProVerVisual.Transition#getStateTarget <em>State Target</em>}</li>
+ *   <li>{@link ProVerVisual.Transition#getSourceState <em>Source State</em>}</li>
+ *   <li>{@link ProVerVisual.Transition#getDestinationState <em>Destination State</em>}</li>
+ *   <li>{@link ProVerVisual.Transition#getBranch <em>Branch</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,6 +29,32 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Transition extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see ProVerVisual.ProVerVisualPackage#getTransition_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link ProVerVisual.Transition#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Constraint</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,55 +82,81 @@ public interface Transition extends EObject {
 	void setConstraint(String value);
 
 	/**
-	 * Returns the value of the '<em><b>State Source</b></em>' reference.
+	 * Returns the value of the '<em><b>Source State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>State Source</em>' reference isn't clear,
+	 * If the meaning of the '<em>Source State</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>State Source</em>' reference.
-	 * @see #setStateSource(State)
-	 * @see ProVerVisual.ProVerVisualPackage#getTransition_StateSource()
+	 * @return the value of the '<em>Source State</em>' reference.
+	 * @see #setSourceState(State)
+	 * @see ProVerVisual.ProVerVisualPackage#getTransition_SourceState()
 	 * @model required="true"
 	 * @generated
 	 */
-	State getStateSource();
+	State getSourceState();
 
 	/**
-	 * Sets the value of the '{@link ProVerVisual.Transition#getStateSource <em>State Source</em>}' reference.
+	 * Sets the value of the '{@link ProVerVisual.Transition#getSourceState <em>Source State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>State Source</em>' reference.
-	 * @see #getStateSource()
+	 * @param value the new value of the '<em>Source State</em>' reference.
+	 * @see #getSourceState()
 	 * @generated
 	 */
-	void setStateSource(State value);
+	void setSourceState(State value);
 
 	/**
-	 * Returns the value of the '<em><b>State Target</b></em>' reference.
+	 * Returns the value of the '<em><b>Destination State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>State Target</em>' reference isn't clear,
+	 * If the meaning of the '<em>Destination State</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>State Target</em>' reference.
-	 * @see #setStateTarget(State)
-	 * @see ProVerVisual.ProVerVisualPackage#getTransition_StateTarget()
+	 * @return the value of the '<em>Destination State</em>' reference.
+	 * @see #setDestinationState(State)
+	 * @see ProVerVisual.ProVerVisualPackage#getTransition_DestinationState()
 	 * @model required="true"
 	 * @generated
 	 */
-	State getStateTarget();
+	State getDestinationState();
 
 	/**
-	 * Sets the value of the '{@link ProVerVisual.Transition#getStateTarget <em>State Target</em>}' reference.
+	 * Sets the value of the '{@link ProVerVisual.Transition#getDestinationState <em>Destination State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>State Target</em>' reference.
-	 * @see #getStateTarget()
+	 * @param value the new value of the '<em>Destination State</em>' reference.
+	 * @see #getDestinationState()
 	 * @generated
 	 */
-	void setStateTarget(State value);
+	void setDestinationState(State value);
+
+	/**
+	 * Returns the value of the '<em><b>Branch</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Branch</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Branch</em>' reference.
+	 * @see #setBranch(Branch)
+	 * @see ProVerVisual.ProVerVisualPackage#getTransition_Branch()
+	 * @model required="true"
+	 * @generated
+	 */
+	Branch getBranch();
+
+	/**
+	 * Sets the value of the '{@link ProVerVisual.Transition#getBranch <em>Branch</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Branch</em>' reference.
+	 * @see #getBranch()
+	 * @generated
+	 */
+	void setBranch(Branch value);
 
 } // Transition

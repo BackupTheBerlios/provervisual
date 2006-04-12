@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProVerVisualAdapterFactory.java,v 1.1 2006/04/10 06:02:39 rustikus Exp $
+ * $Id: ProVerVisualAdapterFactory.java,v 1.2 2006/04/12 15:03:45 rustikus Exp $
  */
 package ProVerVisual.util;
 
@@ -70,23 +70,14 @@ public class ProVerVisualAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected ProVerVisualSwitch modelSwitch =
 		new ProVerVisualSwitch() {
+			public Object caseTransition(Transition object) {
+				return createTransitionAdapter();
+			}
 			public Object caseProtocol(Protocol object) {
 				return createProtocolAdapter();
 			}
 			public Object caseState(State object) {
 				return createStateAdapter();
-			}
-			public Object caseInitialState(InitialState object) {
-				return createInitialStateAdapter();
-			}
-			public Object caseActionState(ActionState object) {
-				return createActionStateAdapter();
-			}
-			public Object caseFinalState(FinalState object) {
-				return createFinalStateAdapter();
-			}
-			public Object caseTransition(Transition object) {
-				return createTransitionAdapter();
 			}
 			public Object caseBranch(Branch object) {
 				return createBranchAdapter();
@@ -134,48 +125,6 @@ public class ProVerVisualAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ProVerVisual.InitialState <em>Initial State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ProVerVisual.InitialState
-	 * @generated
-	 */
-	public Adapter createInitialStateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ProVerVisual.ActionState <em>Action State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ProVerVisual.ActionState
-	 * @generated
-	 */
-	public Adapter createActionStateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ProVerVisual.FinalState <em>Final State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ProVerVisual.FinalState
-	 * @generated
-	 */
-	public Adapter createFinalStateAdapter() {
 		return null;
 	}
 
