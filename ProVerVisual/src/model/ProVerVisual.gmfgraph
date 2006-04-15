@@ -5,14 +5,15 @@
       <children xsi:type="gmfgraph:Label" name="TransitionDescriptionFigure" text="&lt;...>"/>
       <children xsi:type="gmfgraph:Label" name="TransitionConstraintFigure" text="&lt;...>"/>
     </figures>
-    <figures xsi:type="gmfgraph:Rectangle" name="StateFigure">
+    <figures xsi:type="gmfgraph:Rectangle" name="BranchFigure">
+      <children xsi:type="gmfgraph:Label" name="BranchDescriptionFigure" text="&lt;...>"/>
+    </figures>
+    <figures xsi:type="gmfgraph:RoundedRectangle" name="StateFigure" cornerWidth="12" cornerHeight="12">
       <children xsi:type="gmfgraph:Label" name="StateTypeFigure" text="&lt;...>"/>
       <children xsi:type="gmfgraph:Label" name="StateDescriptionFigure" text="&lt;...>"/>
       <children xsi:type="gmfgraph:Label" name="StateOperationAbbrevFigure" text="&lt;...>"/>
       <children xsi:type="gmfgraph:Label" name="StateOperationFullNameFigure" text="&lt;...>"/>
-    </figures>
-    <figures xsi:type="gmfgraph:Rectangle" name="BranchFigure">
-      <children xsi:type="gmfgraph:Label" name="BranchDescriptionFigure" text="&lt;...>"/>
+      <backgroundColor xsi:type="gmfgraph:RGBColor" red="237" green="212"/>
     </figures>
   </figures>
   <nodes name="StateNode" figure="StateFigure"/>
