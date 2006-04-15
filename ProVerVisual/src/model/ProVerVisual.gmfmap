@@ -25,18 +25,34 @@
     </ownedChild>
   </nodes>
   <links>
+    <domainMetaElement href="ProVerVisual.ecore#//Transition"/>
+    <labelMappings text="" defaultText="" viewPattern="constraint: {0}" editPattern="{0}">
+      <diagramLabel href="ProVerVisual.gmfgraph#TransitionConstraintLabel"/>
+      <features href="ProVerVisual.ecore#//Transition/constraint"/>
+    </labelMappings>
+    <containmentFeature href="ProVerVisual.ecore#//Protocol/transitions"/>
     <tool xsi:type="gmftool:CreationTool" href="ProVerVisual.gmftool#//@palette/@tools.0/@tools.0"/>
     <diagramLink href="ProVerVisual.gmfgraph#TransitionLink"/>
-    <linkMetaFeature xsi:type="ecore:EReference" href="ProVerVisual.ecore#//Transition/sourceState"/>
+    <sourceMetaFeature xsi:type="ecore:EReference" href="ProVerVisual.ecore#//Transition/sourceState"/>
+    <linkMetaFeature xsi:type="ecore:EReference" href="ProVerVisual.ecore#//Transition/destinationState"/>
+    <creationConstraints>
+      <targetEnd body="oppositeEnd.oclIsUndefined() or self &lt;> oppositeEnd"/>
+    </creationConstraints>
   </links>
   <links>
-    <tool xsi:type="gmftool:CreationTool" href="ProVerVisual.gmftool#//@palette/@tools.0/@tools.1"/>
+    <domainMetaElement href="ProVerVisual.ecore#//Transition"/>
+    <containmentFeature href="ProVerVisual.ecore#//Protocol/transitions"/>
+    <tool xsi:type="gmftool:CreationTool" href="ProVerVisual.gmftool#//@palette/@tools.0/@tools.0"/>
     <diagramLink href="ProVerVisual.gmfgraph#TransitionLink"/>
+    <sourceMetaFeature xsi:type="ecore:EReference" href="ProVerVisual.ecore#//Transition/branch"/>
     <linkMetaFeature xsi:type="ecore:EReference" href="ProVerVisual.ecore#//Transition/destinationState"/>
   </links>
   <links>
-    <tool xsi:type="gmftool:CreationTool" href="ProVerVisual.gmftool#//@palette/@tools.0/@tools.2"/>
+    <domainMetaElement href="ProVerVisual.ecore#//Transition"/>
+    <containmentFeature href="ProVerVisual.ecore#//Protocol/transitions"/>
+    <tool xsi:type="gmftool:CreationTool" href="ProVerVisual.gmftool#//@palette/@tools.0/@tools.0"/>
     <diagramLink href="ProVerVisual.gmfgraph#TransitionLink"/>
+    <sourceMetaFeature xsi:type="ecore:EReference" href="ProVerVisual.ecore#//Transition/sourceState"/>
     <linkMetaFeature xsi:type="ecore:EReference" href="ProVerVisual.ecore#//Transition/branch"/>
   </links>
   <diagram>
