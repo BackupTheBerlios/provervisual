@@ -5,25 +5,33 @@
       <children xsi:type="gmfgraph:Label" name="TransitionDescriptionFigure" text="&lt;...>"/>
       <children xsi:type="gmfgraph:Label" name="TransitionConstraintFigure" text="&lt;...>"/>
     </figures>
-    <figures xsi:type="gmfgraph:Rectangle" name="BranchFigure">
-      <children xsi:type="gmfgraph:Label" name="BranchDescriptionFigure" text="&lt;...>"/>
+    <figures xsi:type="gmfgraph:Rectangle" name="ActionStateFigure">
+      <children xsi:type="gmfgraph:Label" name="ElementsDescriptionFigure" text="&lt;...>"/>
+      <children xsi:type="gmfgraph:Label" name="ActionStateOperationAbbrevFigure" text="&lt;...>"/>
+      <children xsi:type="gmfgraph:Label" name="ActionStateOperationFullNameFigure" text="&lt;...>"/>
+      <backgroundColor xsi:type="gmfgraph:RGBColor" red="237" green="244"/>
     </figures>
-    <figures xsi:type="gmfgraph:RoundedRectangle" name="StateFigure" cornerWidth="12" cornerHeight="12">
-      <children xsi:type="gmfgraph:Label" name="StateTypeFigure" text="&lt;...>"/>
-      <children xsi:type="gmfgraph:Label" name="StateDescriptionFigure" text="&lt;...>"/>
-      <children xsi:type="gmfgraph:Label" name="StateOperationAbbrevFigure" text="&lt;...>"/>
-      <children xsi:type="gmfgraph:Label" name="StateOperationFullNameFigure" text="&lt;...>"/>
-      <backgroundColor xsi:type="gmfgraph:RGBColor" red="237" green="212"/>
+    <figures xsi:type="gmfgraph:Rectangle" name="InitialStateFigure">
+      <children xsi:type="gmfgraph:Label" name="ElementsDescriptionFigure" text="&lt;...>"/>
+    </figures>
+    <figures xsi:type="gmfgraph:Rectangle" name="EndStateFigure">
+      <children xsi:type="gmfgraph:Label" name="ElementsDescriptionFigure" text="&lt;...>"/>
+    </figures>
+    <figures xsi:type="gmfgraph:Rectangle" name="BranchFigure">
+      <children xsi:type="gmfgraph:Label" name="ElementsDescriptionFigure" text="&lt;...>"/>
     </figures>
   </figures>
-  <nodes name="StateNode" figure="StateFigure"/>
+  <nodes name="ActionStateNode" figure="ActionStateFigure"/>
+  <nodes name="InitialStateNode" figure="InitialStateFigure"/>
+  <nodes name="EndStateNode" figure="EndStateFigure"/>
   <nodes name="BranchNode" figure="BranchFigure"/>
   <connections name="TransitionLink" figure="TransitionFigure"/>
   <labels name="TransitionDescriptionLabel" figure="TransitionDescriptionFigure"/>
   <labels name="TransitionConstraintLabel" figure="TransitionConstraintFigure"/>
-  <labels name="StateTypeLabel" figure="StateTypeFigure"/>
-  <labels name="StateDescriptionLabel" figure="StateDescriptionFigure"/>
-  <labels name="StateOperationAbbrevLabel" figure="StateOperationAbbrevFigure"/>
-  <labels name="StateOperationFullNameLabel" figure="StateOperationFullNameFigure"/>
-  <labels name="BranchDescriptionLabel" figure="BranchDescriptionFigure"/>
+  <labels name="ElementsDescriptionLabel" figure="ElementsDescriptionFigure"/>
+  <labels name="ActionStateOperationAbbrevLabel" figure="ActionStateOperationAbbrevFigure"/>
+  <labels name="ActionStateOperationFullNameLabel" figure="ActionStateOperationFullNameFigure"/>
+  <labels name="ElementsDescriptionLabel" figure="ElementsDescriptionFigure"/>
+  <labels name="ElementsDescriptionLabel" figure="ElementsDescriptionFigure"/>
+  <labels name="ElementsDescriptionLabel" figure="ElementsDescriptionFigure"/>
 </gmfgraph:Canvas>

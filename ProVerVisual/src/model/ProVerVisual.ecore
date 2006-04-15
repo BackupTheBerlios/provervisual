@@ -6,12 +6,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceState" lowerBound="1"
-        eType="#//State"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="destinationState" lowerBound="1"
-        eType="#//State"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="branch" lowerBound="1"
-        eType="#//Branch"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceElement" lowerBound="1"
+        eType="#//Elements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destinationElement" lowerBound="1"
+        eType="#//Elements"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Protocol">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -19,27 +17,21 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
         eType="#//Transition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
-        eType="#//State" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="branches" upperBound="-1"
-        eType="#//Branch" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Elements" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ProtocolType">
     <eLiterals name="Component"/>
     <eLiterals name="Interaction" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="State">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//StateType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionState" eSuperTypes="#//Elements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationAbbrev" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationFullName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="StateType">
-    <eLiterals name="Initial"/>
-    <eLiterals name="Action" value="1"/>
-    <eLiterals name="Final" value="2"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Branch">
+  <eClassifiers xsi:type="ecore:EClass" name="InitialState" eSuperTypes="#//Elements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EndState" eSuperTypes="#//Elements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Elements" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Branch" eSuperTypes="#//Elements"/>
 </ecore:EPackage>
