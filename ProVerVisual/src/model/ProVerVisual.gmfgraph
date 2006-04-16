@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="ProVerVisual">
   <figures name="default">
-    <figures xsi:type="gmfgraph:PolylineConnection" name="TransitionFigure">
+    <figures xsi:type="gmfgraph:PolylineConnection" name="TransitionFigure" lineWidth="2" targetDecoration="Arrow">
       <children xsi:type="gmfgraph:Label" name="TransitionDescriptionFigure" text="&lt;...>"/>
-      <children xsi:type="gmfgraph:Label" name="TransitionConstraintFigure" text="&lt;...>"/>
+      <children xsi:type="gmfgraph:Label" name="TransitionConstraintFigure" text=""/>
+      <children xsi:type="gmfgraph:PolylineDecoration" name="Arrow" lineWidth="2">
+        <template x="-2" y="-2"/>
+        <template/>
+        <template x="-2" y="2"/>
+      </children>
     </figures>
-    <figures xsi:type="gmfgraph:Rectangle" name="ActionStateFigure">
-      <children xsi:type="gmfgraph:Label" name="ElementsDescriptionFigure" text="&lt;...>"/>
+    <figures xsi:type="gmfgraph:Rectangle" name="BranchFigure">
+      <children xsi:type="gmfgraph:Label" name="BranchDescriptionFigure" text=""/>
+    </figures>
+    <figures xsi:type="gmfgraph:RoundedRectangle" name="ActionStateFigure" cornerWidth="12">
+      <children xsi:type="gmfgraph:Label" name="ActionDescriptionFigure" text=""/>
       <children xsi:type="gmfgraph:Label" name="ActionStateOperationAbbrevFigure" text="&lt;...>"/>
       <children xsi:type="gmfgraph:Label" name="ActionStateOperationFullNameFigure" text="&lt;...>"/>
       <backgroundColor xsi:type="gmfgraph:RGBColor" red="237" green="244"/>
+      <preferredSize dx="100" dy="50"/>
     </figures>
-    <figures xsi:type="gmfgraph:Rectangle" name="InitialStateFigure">
-      <children xsi:type="gmfgraph:Label" name="ElementsDescriptionFigure" text="&lt;...>"/>
+    <figures xsi:type="gmfgraph:Ellipse" name="InitialStateFigure">
+      <children xsi:type="gmfgraph:Label" name="InitialDescriptionFigure" text="Init"/>
+      <backgroundColor xsi:type="gmfgraph:RGBColor"/>
     </figures>
-    <figures xsi:type="gmfgraph:Rectangle" name="EndStateFigure">
-      <children xsi:type="gmfgraph:Label" name="ElementsDescriptionFigure" text="&lt;...>"/>
-    </figures>
-    <figures xsi:type="gmfgraph:Rectangle" name="BranchFigure">
-      <children xsi:type="gmfgraph:Label" name="ElementsDescriptionFigure" text="&lt;...>"/>
+    <figures xsi:type="gmfgraph:Ellipse" name="EndStateFigure" xorFill="true" xorOutline="true">
+      <children xsi:type="gmfgraph:Label" name="EndDescriptionFigure" text="End"/>
+      <backgroundColor xsi:type="gmfgraph:RGBColor"/>
     </figures>
   </figures>
   <nodes name="ActionStateNode" figure="ActionStateFigure"/>
@@ -26,12 +34,12 @@
   <nodes name="EndStateNode" figure="EndStateFigure"/>
   <nodes name="BranchNode" figure="BranchFigure"/>
   <connections name="TransitionLink" figure="TransitionFigure"/>
+  <labels name="InitialDescriptionLabel" figure="InitialDescriptionFigure"/>
   <labels name="TransitionDescriptionLabel" figure="TransitionDescriptionFigure"/>
   <labels name="TransitionConstraintLabel" figure="TransitionConstraintFigure"/>
-  <labels name="ElementsDescriptionLabel" figure="ElementsDescriptionFigure"/>
+  <labels name="ActionDescriptionLabel" figure="ActionDescriptionFigure"/>
   <labels name="ActionStateOperationAbbrevLabel" figure="ActionStateOperationAbbrevFigure"/>
   <labels name="ActionStateOperationFullNameLabel" figure="ActionStateOperationFullNameFigure"/>
-  <labels name="ElementsDescriptionLabel" figure="ElementsDescriptionFigure"/>
-  <labels name="ElementsDescriptionLabel" figure="ElementsDescriptionFigure"/>
-  <labels name="ElementsDescriptionLabel" figure="ElementsDescriptionFigure"/>
+  <labels name="BranchDescriptionLabel" figure="BranchDescriptionFigure"/>
+  <labels name="EndDescriptionLabel" figure="EndDescriptionFigure"/>
 </gmfgraph:Canvas>

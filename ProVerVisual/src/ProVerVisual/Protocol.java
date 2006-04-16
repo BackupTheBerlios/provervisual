@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: Protocol.java,v 1.2 2006/04/12 15:03:46 rustikus Exp $
+ * $Id: Protocol.java,v 1.3 2006/04/16 12:08:20 rustikus Exp $
  */
 package ProVerVisual;
 
@@ -22,8 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ProVerVisual.Protocol#getType <em>Type</em>}</li>
  *   <li>{@link ProVerVisual.Protocol#getDescription <em>Description</em>}</li>
  *   <li>{@link ProVerVisual.Protocol#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link ProVerVisual.Protocol#getStates <em>States</em>}</li>
- *   <li>{@link ProVerVisual.Protocol#getBranches <em>Branches</em>}</li>
+ *   <li>{@link ProVerVisual.Protocol#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -130,35 +129,19 @@ public interface Protocol extends EObject {
 	EList getTransitions();
 
 	/**
-	 * Returns the value of the '<em><b>States</b></em>' containment reference list.
-	 * The list contents are of type {@link ProVerVisual.State}.
+	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+	 * The list contents are of type {@link ProVerVisual.Elements}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>States</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>States</em>' containment reference list.
-	 * @see ProVerVisual.ProVerVisualPackage#getProtocol_States()
-	 * @model type="ProVerVisual.State" containment="true"
+	 * @return the value of the '<em>Elements</em>' containment reference list.
+	 * @see ProVerVisual.ProVerVisualPackage#getProtocol_Elements()
+	 * @model type="ProVerVisual.Elements" containment="true"
 	 * @generated
 	 */
-	EList getStates();
-
-	/**
-	 * Returns the value of the '<em><b>Branches</b></em>' containment reference list.
-	 * The list contents are of type {@link ProVerVisual.Branch}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Branches</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Branches</em>' containment reference list.
-	 * @see ProVerVisual.ProVerVisualPackage#getProtocol_Branches()
-	 * @model type="ProVerVisual.Branch" containment="true"
-	 * @generated
-	 */
-	EList getBranches();
+	EList getElements();
 
 } // Protocol

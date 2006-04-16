@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProVerVisualSwitch.java,v 1.2 2006/04/12 15:03:45 rustikus Exp $
+ * $Id: ProVerVisualSwitch.java,v 1.3 2006/04/16 12:08:19 rustikus Exp $
  */
 package ProVerVisual.util;
 
@@ -99,20 +99,57 @@ public class ProVerVisualSwitch {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProVerVisualPackage.STATE: {
-				State state = (State)theEObject;
-				Object result = caseState(state);
+			case ProVerVisualPackage.ACTION_STATE: {
+				ActionState actionState = (ActionState)theEObject;
+				Object result = caseActionState(actionState);
+				if (result == null) result = caseElements(actionState);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ProVerVisualPackage.INITIAL_STATE: {
+				InitialState initialState = (InitialState)theEObject;
+				Object result = caseInitialState(initialState);
+				if (result == null) result = caseElements(initialState);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ProVerVisualPackage.END_STATE: {
+				EndState endState = (EndState)theEObject;
+				Object result = caseEndState(endState);
+				if (result == null) result = caseElements(endState);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ProVerVisualPackage.ELEMENTS: {
+				Elements elements = (Elements)theEObject;
+				Object result = caseElements(elements);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ProVerVisualPackage.BRANCH: {
 				Branch branch = (Branch)theEObject;
 				Object result = caseBranch(branch);
+				if (result == null) result = caseElements(branch);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpretting the object as an instance of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpretting the object as an instance of '<em>Transition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseTransition(Transition object) {
+		return null;
 	}
 
 	/**
@@ -131,32 +168,62 @@ public class ProVerVisualSwitch {
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>State</em>'.
+	 * Returns the result of interpretting the object as an instance of '<em>Action State</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>State</em>'.
+	 * @return the result of interpretting the object as an instance of '<em>Action State</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseState(State object) {
+	public Object caseActionState(ActionState object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Transition</em>'.
+	 * Returns the result of interpretting the object as an instance of '<em>Initial State</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Transition</em>'.
+	 * @return the result of interpretting the object as an instance of '<em>Initial State</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseTransition(Transition object) {
+	public Object caseInitialState(InitialState object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpretting the object as an instance of '<em>End State</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpretting the object as an instance of '<em>End State</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseEndState(EndState object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpretting the object as an instance of '<em>Elements</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpretting the object as an instance of '<em>Elements</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public Object caseElements(Elements object) {
 		return null;
 	}
 

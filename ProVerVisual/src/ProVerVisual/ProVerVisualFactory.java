@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProVerVisualFactory.java,v 1.2 2006/04/12 15:03:46 rustikus Exp $
+ * $Id: ProVerVisualFactory.java,v 1.3 2006/04/16 12:08:20 rustikus Exp $
  */
 package ProVerVisual;
 
@@ -26,6 +26,15 @@ public interface ProVerVisualFactory extends EFactory {
 	ProVerVisualFactory eINSTANCE = ProVerVisual.impl.ProVerVisualFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Transition</em>'.
+	 * @generated
+	 */
+	Transition createTransition();
+
+	/**
 	 * Returns a new object of class '<em>Protocol</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -35,22 +44,31 @@ public interface ProVerVisualFactory extends EFactory {
 	Protocol createProtocol();
 
 	/**
-	 * Returns a new object of class '<em>State</em>'.
+	 * Returns a new object of class '<em>Action State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>State</em>'.
+	 * @return a new object of class '<em>Action State</em>'.
 	 * @generated
 	 */
-	State createState();
+	ActionState createActionState();
 
 	/**
-	 * Returns a new object of class '<em>Transition</em>'.
+	 * Returns a new object of class '<em>Initial State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Transition</em>'.
+	 * @return a new object of class '<em>Initial State</em>'.
 	 * @generated
 	 */
-	Transition createTransition();
+	InitialState createInitialState();
+
+	/**
+	 * Returns a new object of class '<em>End State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>End State</em>'.
+	 * @generated
+	 */
+	EndState createEndState();
 
 	/**
 	 * Returns a new object of class '<em>Branch</em>'.

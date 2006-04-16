@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: Transition.java,v 1.2 2006/04/12 15:03:45 rustikus Exp $
+ * $Id: Transition.java,v 1.3 2006/04/16 12:08:19 rustikus Exp $
  */
 package ProVerVisual;
 
@@ -18,9 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ProVerVisual.Transition#getDescription <em>Description</em>}</li>
  *   <li>{@link ProVerVisual.Transition#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link ProVerVisual.Transition#getSourceState <em>Source State</em>}</li>
- *   <li>{@link ProVerVisual.Transition#getDestinationState <em>Destination State</em>}</li>
- *   <li>{@link ProVerVisual.Transition#getBranch <em>Branch</em>}</li>
+ *   <li>{@link ProVerVisual.Transition#getSourceElement <em>Source Element</em>}</li>
+ *   <li>{@link ProVerVisual.Transition#getDestinationElement <em>Destination Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,81 +81,55 @@ public interface Transition extends EObject {
 	void setConstraint(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Source State</b></em>' reference.
+	 * Returns the value of the '<em><b>Source Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source State</em>' reference isn't clear,
+	 * If the meaning of the '<em>Source Element</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source State</em>' reference.
-	 * @see #setSourceState(State)
-	 * @see ProVerVisual.ProVerVisualPackage#getTransition_SourceState()
+	 * @return the value of the '<em>Source Element</em>' reference.
+	 * @see #setSourceElement(Elements)
+	 * @see ProVerVisual.ProVerVisualPackage#getTransition_SourceElement()
 	 * @model required="true"
 	 * @generated
 	 */
-	State getSourceState();
+	Elements getSourceElement();
 
 	/**
-	 * Sets the value of the '{@link ProVerVisual.Transition#getSourceState <em>Source State</em>}' reference.
+	 * Sets the value of the '{@link ProVerVisual.Transition#getSourceElement <em>Source Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source State</em>' reference.
-	 * @see #getSourceState()
+	 * @param value the new value of the '<em>Source Element</em>' reference.
+	 * @see #getSourceElement()
 	 * @generated
 	 */
-	void setSourceState(State value);
+	void setSourceElement(Elements value);
 
 	/**
-	 * Returns the value of the '<em><b>Destination State</b></em>' reference.
+	 * Returns the value of the '<em><b>Destination Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Destination State</em>' reference isn't clear,
+	 * If the meaning of the '<em>Destination Element</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Destination State</em>' reference.
-	 * @see #setDestinationState(State)
-	 * @see ProVerVisual.ProVerVisualPackage#getTransition_DestinationState()
+	 * @return the value of the '<em>Destination Element</em>' reference.
+	 * @see #setDestinationElement(Elements)
+	 * @see ProVerVisual.ProVerVisualPackage#getTransition_DestinationElement()
 	 * @model required="true"
 	 * @generated
 	 */
-	State getDestinationState();
+	Elements getDestinationElement();
 
 	/**
-	 * Sets the value of the '{@link ProVerVisual.Transition#getDestinationState <em>Destination State</em>}' reference.
+	 * Sets the value of the '{@link ProVerVisual.Transition#getDestinationElement <em>Destination Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Destination State</em>' reference.
-	 * @see #getDestinationState()
+	 * @param value the new value of the '<em>Destination Element</em>' reference.
+	 * @see #getDestinationElement()
 	 * @generated
 	 */
-	void setDestinationState(State value);
-
-	/**
-	 * Returns the value of the '<em><b>Branch</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Branch</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Branch</em>' reference.
-	 * @see #setBranch(Branch)
-	 * @see ProVerVisual.ProVerVisualPackage#getTransition_Branch()
-	 * @model required="true"
-	 * @generated
-	 */
-	Branch getBranch();
-
-	/**
-	 * Sets the value of the '{@link ProVerVisual.Transition#getBranch <em>Branch</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Branch</em>' reference.
-	 * @see #getBranch()
-	 * @generated
-	 */
-	void setBranch(Branch value);
+	void setDestinationElement(Elements value);
 
 } // Transition

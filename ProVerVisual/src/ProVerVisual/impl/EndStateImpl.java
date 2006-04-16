@@ -2,31 +2,31 @@
  * <copyright>
  * </copyright>
  *
- * $Id: BranchImpl.java,v 1.3 2006/04/16 12:08:20 rustikus Exp $
+ * $Id: EndStateImpl.java,v 1.1 2006/04/16 12:08:20 rustikus Exp $
  */
 package ProVerVisual.impl;
 
-import ProVerVisual.Branch;
+import ProVerVisual.EndState;
 import ProVerVisual.ProVerVisualPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Branch</b></em>'.
+ * An implementation of the model object '<em><b>End State</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class BranchImpl extends ElementsImpl implements Branch {
+public class EndStateImpl extends ElementsImpl implements EndState {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BranchImpl() {
+	protected EndStateImpl() {
 		super();
 	}
 
@@ -36,7 +36,7 @@ public class BranchImpl extends ElementsImpl implements Branch {
 	 * @generated
 	 */
 	protected EClass eStaticClass() {
-		return ProVerVisualPackage.Literals.BRANCH;
+		return ProVerVisualPackage.Literals.END_STATE;
 	}
 
-} //BranchImpl
+} //EndStateImpl

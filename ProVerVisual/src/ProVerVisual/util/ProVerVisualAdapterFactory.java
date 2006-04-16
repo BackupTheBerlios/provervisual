@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProVerVisualAdapterFactory.java,v 1.2 2006/04/12 15:03:45 rustikus Exp $
+ * $Id: ProVerVisualAdapterFactory.java,v 1.3 2006/04/16 12:08:19 rustikus Exp $
  */
 package ProVerVisual.util;
 
@@ -76,8 +76,17 @@ public class ProVerVisualAdapterFactory extends AdapterFactoryImpl {
 			public Object caseProtocol(Protocol object) {
 				return createProtocolAdapter();
 			}
-			public Object caseState(State object) {
-				return createStateAdapter();
+			public Object caseActionState(ActionState object) {
+				return createActionStateAdapter();
+			}
+			public Object caseInitialState(InitialState object) {
+				return createInitialStateAdapter();
+			}
+			public Object caseEndState(EndState object) {
+				return createEndStateAdapter();
+			}
+			public Object caseElements(Elements object) {
+				return createElementsAdapter();
 			}
 			public Object caseBranch(Branch object) {
 				return createBranchAdapter();
@@ -101,6 +110,20 @@ public class ProVerVisualAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link ProVerVisual.Transition <em>Transition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ProVerVisual.Transition
+	 * @generated
+	 */
+	public Adapter createTransitionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link ProVerVisual.Protocol <em>Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -115,30 +138,58 @@ public class ProVerVisualAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ProVerVisual.State <em>State</em>}'.
+	 * Creates a new adapter for an object of class '{@link ProVerVisual.ActionState <em>Action State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ProVerVisual.State
+	 * @see ProVerVisual.ActionState
 	 * @generated
 	 */
-	public Adapter createStateAdapter() {
+	public Adapter createActionStateAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ProVerVisual.Transition <em>Transition</em>}'.
+	 * Creates a new adapter for an object of class '{@link ProVerVisual.InitialState <em>Initial State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ProVerVisual.Transition
+	 * @see ProVerVisual.InitialState
 	 * @generated
 	 */
-	public Adapter createTransitionAdapter() {
+	public Adapter createInitialStateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ProVerVisual.EndState <em>End State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ProVerVisual.EndState
+	 * @generated
+	 */
+	public Adapter createEndStateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ProVerVisual.Elements <em>Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ProVerVisual.Elements
+	 * @generated
+	 */
+	public Adapter createElementsAdapter() {
 		return null;
 	}
 

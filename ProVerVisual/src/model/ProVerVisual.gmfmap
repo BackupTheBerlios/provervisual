@@ -4,9 +4,9 @@
     <containmentFeature href="ProVerVisual.ecore#//Protocol/elements"/>
     <ownedChild>
       <domainMetaElement href="ProVerVisual.ecore#//ActionState"/>
-      <labelMappings>
+      <labelMappings viewPattern="{0}" editPattern="{0}">
         <diagramLabel href="ProVerVisual.gmfgraph#ActionStateOperationAbbrevLabel"/>
-        <features href="ProVerVisual.ecore#//Elements/description"/>
+        <features href="ProVerVisual.ecore#//ActionState/operationAbbrev"/>
       </labelMappings>
       <tool xsi:type="gmftool:CreationTool" href="ProVerVisual.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode href="ProVerVisual.gmfgraph#ActionStateNode"/>
@@ -38,6 +38,10 @@
   </nodes>
   <links>
     <domainMetaElement href="ProVerVisual.ecore#//Transition"/>
+    <labelMappings viewPattern="{0}" editPattern="{0}">
+      <diagramLabel href="ProVerVisual.gmfgraph#TransitionConstraintLabel"/>
+      <features href="ProVerVisual.ecore#//Transition/constraint"/>
+    </labelMappings>
     <containmentFeature href="ProVerVisual.ecore#//Protocol/transitions"/>
     <tool xsi:type="gmftool:CreationTool" href="ProVerVisual.gmftool#//@palette/@tools.0/@tools.0"/>
     <diagramLink href="ProVerVisual.gmfgraph#TransitionLink"/>

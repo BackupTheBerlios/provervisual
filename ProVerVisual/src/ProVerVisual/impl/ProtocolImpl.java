@@ -2,15 +2,14 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProtocolImpl.java,v 1.2 2006/04/12 15:03:46 rustikus Exp $
+ * $Id: ProtocolImpl.java,v 1.3 2006/04/16 12:08:20 rustikus Exp $
  */
 package ProVerVisual.impl;
 
-import ProVerVisual.Branch;
+import ProVerVisual.Elements;
 import ProVerVisual.ProVerVisualPackage;
 import ProVerVisual.Protocol;
 import ProVerVisual.ProtocolType;
-import ProVerVisual.State;
 import ProVerVisual.Transition;
 
 import java.util.Collection;
@@ -40,8 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link ProVerVisual.impl.ProtocolImpl#getType <em>Type</em>}</li>
  *   <li>{@link ProVerVisual.impl.ProtocolImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link ProVerVisual.impl.ProtocolImpl#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link ProVerVisual.impl.ProtocolImpl#getStates <em>States</em>}</li>
- *   <li>{@link ProVerVisual.impl.ProtocolImpl#getBranches <em>Branches</em>}</li>
+ *   <li>{@link ProVerVisual.impl.ProtocolImpl#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -119,24 +117,14 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 	protected EList transitions = null;
 
 	/**
-	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
+	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStates()
+	 * @see #getElements()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList states = null;
-
-	/**
-	 * The cached value of the '{@link #getBranches() <em>Branches</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBranches()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList branches = null;
+	protected EList elements = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -236,23 +224,11 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getStates() {
-		if (states == null) {
-			states = new EObjectContainmentEList(State.class, this, ProVerVisualPackage.PROTOCOL__STATES);
+	public EList getElements() {
+		if (elements == null) {
+			elements = new EObjectContainmentEList(Elements.class, this, ProVerVisualPackage.PROTOCOL__ELEMENTS);
 		}
-		return states;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList getBranches() {
-		if (branches == null) {
-			branches = new EObjectContainmentEList(Branch.class, this, ProVerVisualPackage.PROTOCOL__BRANCHES);
-		}
-		return branches;
+		return elements;
 	}
 
 	/**
@@ -264,10 +240,8 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 		switch (featureID) {
 			case ProVerVisualPackage.PROTOCOL__TRANSITIONS:
 				return ((InternalEList)getTransitions()).basicRemove(otherEnd, msgs);
-			case ProVerVisualPackage.PROTOCOL__STATES:
-				return ((InternalEList)getStates()).basicRemove(otherEnd, msgs);
-			case ProVerVisualPackage.PROTOCOL__BRANCHES:
-				return ((InternalEList)getBranches()).basicRemove(otherEnd, msgs);
+			case ProVerVisualPackage.PROTOCOL__ELEMENTS:
+				return ((InternalEList)getElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -287,10 +261,8 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 				return getDescription();
 			case ProVerVisualPackage.PROTOCOL__TRANSITIONS:
 				return getTransitions();
-			case ProVerVisualPackage.PROTOCOL__STATES:
-				return getStates();
-			case ProVerVisualPackage.PROTOCOL__BRANCHES:
-				return getBranches();
+			case ProVerVisualPackage.PROTOCOL__ELEMENTS:
+				return getElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -315,13 +287,9 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 				getTransitions().clear();
 				getTransitions().addAll((Collection)newValue);
 				return;
-			case ProVerVisualPackage.PROTOCOL__STATES:
-				getStates().clear();
-				getStates().addAll((Collection)newValue);
-				return;
-			case ProVerVisualPackage.PROTOCOL__BRANCHES:
-				getBranches().clear();
-				getBranches().addAll((Collection)newValue);
+			case ProVerVisualPackage.PROTOCOL__ELEMENTS:
+				getElements().clear();
+				getElements().addAll((Collection)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -346,11 +314,8 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 			case ProVerVisualPackage.PROTOCOL__TRANSITIONS:
 				getTransitions().clear();
 				return;
-			case ProVerVisualPackage.PROTOCOL__STATES:
-				getStates().clear();
-				return;
-			case ProVerVisualPackage.PROTOCOL__BRANCHES:
-				getBranches().clear();
+			case ProVerVisualPackage.PROTOCOL__ELEMENTS:
+				getElements().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -371,10 +336,8 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case ProVerVisualPackage.PROTOCOL__TRANSITIONS:
 				return transitions != null && !transitions.isEmpty();
-			case ProVerVisualPackage.PROTOCOL__STATES:
-				return states != null && !states.isEmpty();
-			case ProVerVisualPackage.PROTOCOL__BRANCHES:
-				return branches != null && !branches.isEmpty();
+			case ProVerVisualPackage.PROTOCOL__ELEMENTS:
+				return elements != null && !elements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,13 +2,12 @@
  * <copyright>
  * </copyright>
  *
- * $Id: TransitionImpl.java,v 1.2 2006/04/12 15:03:46 rustikus Exp $
+ * $Id: TransitionImpl.java,v 1.3 2006/04/16 12:08:20 rustikus Exp $
  */
 package ProVerVisual.impl;
 
-import ProVerVisual.Branch;
+import ProVerVisual.Elements;
 import ProVerVisual.ProVerVisualPackage;
-import ProVerVisual.State;
 import ProVerVisual.Transition;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -28,9 +27,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <ul>
  *   <li>{@link ProVerVisual.impl.TransitionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link ProVerVisual.impl.TransitionImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link ProVerVisual.impl.TransitionImpl#getSourceState <em>Source State</em>}</li>
- *   <li>{@link ProVerVisual.impl.TransitionImpl#getDestinationState <em>Destination State</em>}</li>
- *   <li>{@link ProVerVisual.impl.TransitionImpl#getBranch <em>Branch</em>}</li>
+ *   <li>{@link ProVerVisual.impl.TransitionImpl#getSourceElement <em>Source Element</em>}</li>
+ *   <li>{@link ProVerVisual.impl.TransitionImpl#getDestinationElement <em>Destination Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,34 +76,24 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	protected String constraint = CONSTRAINT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSourceState() <em>Source State</em>}' reference.
+	 * The cached value of the '{@link #getSourceElement() <em>Source Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSourceState()
+	 * @see #getSourceElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected State sourceState = null;
+	protected Elements sourceElement = null;
 
 	/**
-	 * The cached value of the '{@link #getDestinationState() <em>Destination State</em>}' reference.
+	 * The cached value of the '{@link #getDestinationElement() <em>Destination Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDestinationState()
+	 * @see #getDestinationElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected State destinationState = null;
-
-	/**
-	 * The cached value of the '{@link #getBranch() <em>Branch</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBranch()
-	 * @generated
-	 * @ordered
-	 */
-	protected Branch branch = null;
+	protected Elements destinationElement = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,16 +160,16 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State getSourceState() {
-		if (sourceState != null && sourceState.eIsProxy()) {
-			InternalEObject oldSourceState = (InternalEObject)sourceState;
-			sourceState = (State)eResolveProxy(oldSourceState);
-			if (sourceState != oldSourceState) {
+	public Elements getSourceElement() {
+		if (sourceElement != null && sourceElement.eIsProxy()) {
+			InternalEObject oldSourceElement = (InternalEObject)sourceElement;
+			sourceElement = (Elements)eResolveProxy(oldSourceElement);
+			if (sourceElement != oldSourceElement) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProVerVisualPackage.TRANSITION__SOURCE_STATE, oldSourceState, sourceState));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProVerVisualPackage.TRANSITION__SOURCE_ELEMENT, oldSourceElement, sourceElement));
 			}
 		}
-		return sourceState;
+		return sourceElement;
 	}
 
 	/**
@@ -189,8 +177,8 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State basicGetSourceState() {
-		return sourceState;
+	public Elements basicGetSourceElement() {
+		return sourceElement;
 	}
 
 	/**
@@ -198,11 +186,11 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSourceState(State newSourceState) {
-		State oldSourceState = sourceState;
-		sourceState = newSourceState;
+	public void setSourceElement(Elements newSourceElement) {
+		Elements oldSourceElement = sourceElement;
+		sourceElement = newSourceElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProVerVisualPackage.TRANSITION__SOURCE_STATE, oldSourceState, sourceState));
+			eNotify(new ENotificationImpl(this, Notification.SET, ProVerVisualPackage.TRANSITION__SOURCE_ELEMENT, oldSourceElement, sourceElement));
 	}
 
 	/**
@@ -210,16 +198,16 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State getDestinationState() {
-		if (destinationState != null && destinationState.eIsProxy()) {
-			InternalEObject oldDestinationState = (InternalEObject)destinationState;
-			destinationState = (State)eResolveProxy(oldDestinationState);
-			if (destinationState != oldDestinationState) {
+	public Elements getDestinationElement() {
+		if (destinationElement != null && destinationElement.eIsProxy()) {
+			InternalEObject oldDestinationElement = (InternalEObject)destinationElement;
+			destinationElement = (Elements)eResolveProxy(oldDestinationElement);
+			if (destinationElement != oldDestinationElement) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProVerVisualPackage.TRANSITION__DESTINATION_STATE, oldDestinationState, destinationState));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProVerVisualPackage.TRANSITION__DESTINATION_ELEMENT, oldDestinationElement, destinationElement));
 			}
 		}
-		return destinationState;
+		return destinationElement;
 	}
 
 	/**
@@ -227,8 +215,8 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State basicGetDestinationState() {
-		return destinationState;
+	public Elements basicGetDestinationElement() {
+		return destinationElement;
 	}
 
 	/**
@@ -236,49 +224,11 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDestinationState(State newDestinationState) {
-		State oldDestinationState = destinationState;
-		destinationState = newDestinationState;
+	public void setDestinationElement(Elements newDestinationElement) {
+		Elements oldDestinationElement = destinationElement;
+		destinationElement = newDestinationElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProVerVisualPackage.TRANSITION__DESTINATION_STATE, oldDestinationState, destinationState));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Branch getBranch() {
-		if (branch != null && branch.eIsProxy()) {
-			InternalEObject oldBranch = (InternalEObject)branch;
-			branch = (Branch)eResolveProxy(oldBranch);
-			if (branch != oldBranch) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProVerVisualPackage.TRANSITION__BRANCH, oldBranch, branch));
-			}
-		}
-		return branch;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Branch basicGetBranch() {
-		return branch;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBranch(Branch newBranch) {
-		Branch oldBranch = branch;
-		branch = newBranch;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProVerVisualPackage.TRANSITION__BRANCH, oldBranch, branch));
+			eNotify(new ENotificationImpl(this, Notification.SET, ProVerVisualPackage.TRANSITION__DESTINATION_ELEMENT, oldDestinationElement, destinationElement));
 	}
 
 	/**
@@ -292,15 +242,12 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 				return getDescription();
 			case ProVerVisualPackage.TRANSITION__CONSTRAINT:
 				return getConstraint();
-			case ProVerVisualPackage.TRANSITION__SOURCE_STATE:
-				if (resolve) return getSourceState();
-				return basicGetSourceState();
-			case ProVerVisualPackage.TRANSITION__DESTINATION_STATE:
-				if (resolve) return getDestinationState();
-				return basicGetDestinationState();
-			case ProVerVisualPackage.TRANSITION__BRANCH:
-				if (resolve) return getBranch();
-				return basicGetBranch();
+			case ProVerVisualPackage.TRANSITION__SOURCE_ELEMENT:
+				if (resolve) return getSourceElement();
+				return basicGetSourceElement();
+			case ProVerVisualPackage.TRANSITION__DESTINATION_ELEMENT:
+				if (resolve) return getDestinationElement();
+				return basicGetDestinationElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -318,14 +265,11 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 			case ProVerVisualPackage.TRANSITION__CONSTRAINT:
 				setConstraint((String)newValue);
 				return;
-			case ProVerVisualPackage.TRANSITION__SOURCE_STATE:
-				setSourceState((State)newValue);
+			case ProVerVisualPackage.TRANSITION__SOURCE_ELEMENT:
+				setSourceElement((Elements)newValue);
 				return;
-			case ProVerVisualPackage.TRANSITION__DESTINATION_STATE:
-				setDestinationState((State)newValue);
-				return;
-			case ProVerVisualPackage.TRANSITION__BRANCH:
-				setBranch((Branch)newValue);
+			case ProVerVisualPackage.TRANSITION__DESTINATION_ELEMENT:
+				setDestinationElement((Elements)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -344,14 +288,11 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 			case ProVerVisualPackage.TRANSITION__CONSTRAINT:
 				setConstraint(CONSTRAINT_EDEFAULT);
 				return;
-			case ProVerVisualPackage.TRANSITION__SOURCE_STATE:
-				setSourceState((State)null);
+			case ProVerVisualPackage.TRANSITION__SOURCE_ELEMENT:
+				setSourceElement((Elements)null);
 				return;
-			case ProVerVisualPackage.TRANSITION__DESTINATION_STATE:
-				setDestinationState((State)null);
-				return;
-			case ProVerVisualPackage.TRANSITION__BRANCH:
-				setBranch((Branch)null);
+			case ProVerVisualPackage.TRANSITION__DESTINATION_ELEMENT:
+				setDestinationElement((Elements)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -368,12 +309,10 @@ public class TransitionImpl extends EObjectImpl implements Transition {
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case ProVerVisualPackage.TRANSITION__CONSTRAINT:
 				return CONSTRAINT_EDEFAULT == null ? constraint != null : !CONSTRAINT_EDEFAULT.equals(constraint);
-			case ProVerVisualPackage.TRANSITION__SOURCE_STATE:
-				return sourceState != null;
-			case ProVerVisualPackage.TRANSITION__DESTINATION_STATE:
-				return destinationState != null;
-			case ProVerVisualPackage.TRANSITION__BRANCH:
-				return branch != null;
+			case ProVerVisualPackage.TRANSITION__SOURCE_ELEMENT:
+				return sourceElement != null;
+			case ProVerVisualPackage.TRANSITION__DESTINATION_ELEMENT:
+				return destinationElement != null;
 		}
 		return super.eIsSet(featureID);
 	}

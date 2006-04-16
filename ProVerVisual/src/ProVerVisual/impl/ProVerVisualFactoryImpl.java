@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProVerVisualFactoryImpl.java,v 1.2 2006/04/12 15:03:46 rustikus Exp $
+ * $Id: ProVerVisualFactoryImpl.java,v 1.3 2006/04/16 12:08:20 rustikus Exp $
  */
 package ProVerVisual.impl;
 
@@ -62,7 +62,9 @@ public class ProVerVisualFactoryImpl extends EFactoryImpl implements ProVerVisua
 		switch (eClass.getClassifierID()) {
 			case ProVerVisualPackage.TRANSITION: return createTransition();
 			case ProVerVisualPackage.PROTOCOL: return createProtocol();
-			case ProVerVisualPackage.STATE: return createState();
+			case ProVerVisualPackage.ACTION_STATE: return createActionState();
+			case ProVerVisualPackage.INITIAL_STATE: return createInitialState();
+			case ProVerVisualPackage.END_STATE: return createEndState();
 			case ProVerVisualPackage.BRANCH: return createBranch();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -78,8 +80,6 @@ public class ProVerVisualFactoryImpl extends EFactoryImpl implements ProVerVisua
 		switch (eDataType.getClassifierID()) {
 			case ProVerVisualPackage.PROTOCOL_TYPE:
 				return createProtocolTypeFromString(eDataType, initialValue);
-			case ProVerVisualPackage.STATE_TYPE:
-				return createStateTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -94,11 +94,19 @@ public class ProVerVisualFactoryImpl extends EFactoryImpl implements ProVerVisua
 		switch (eDataType.getClassifierID()) {
 			case ProVerVisualPackage.PROTOCOL_TYPE:
 				return convertProtocolTypeToString(eDataType, instanceValue);
-			case ProVerVisualPackage.STATE_TYPE:
-				return convertStateTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Transition createTransition() {
+		TransitionImpl transition = new TransitionImpl();
+		return transition;
 	}
 
 	/**
@@ -116,9 +124,9 @@ public class ProVerVisualFactoryImpl extends EFactoryImpl implements ProVerVisua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State createState() {
-		StateImpl state = new StateImpl();
-		return state;
+	public ActionState createActionState() {
+		ActionStateImpl actionState = new ActionStateImpl();
+		return actionState;
 	}
 
 	/**
@@ -126,9 +134,19 @@ public class ProVerVisualFactoryImpl extends EFactoryImpl implements ProVerVisua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transition createTransition() {
-		TransitionImpl transition = new TransitionImpl();
-		return transition;
+	public InitialState createInitialState() {
+		InitialStateImpl initialState = new InitialStateImpl();
+		return initialState;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EndState createEndState() {
+		EndStateImpl endState = new EndStateImpl();
+		return endState;
 	}
 
 	/**
@@ -158,26 +176,6 @@ public class ProVerVisualFactoryImpl extends EFactoryImpl implements ProVerVisua
 	 * @generated
 	 */
 	public String convertProtocolTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StateType createStateTypeFromString(EDataType eDataType, String initialValue) {
-		StateType result = StateType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertStateTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
