@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: Protocol.java,v 1.3 2006/04/16 12:08:20 rustikus Exp $
+ * $Id: Protocol.java,v 1.4 2006/04/17 20:19:33 rustikus Exp $
  */
 package ProVerVisual;
 
@@ -19,10 +19,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link ProVerVisual.Protocol#getName <em>Name</em>}</li>
- *   <li>{@link ProVerVisual.Protocol#getType <em>Type</em>}</li>
  *   <li>{@link ProVerVisual.Protocol#getDescription <em>Description</em>}</li>
- *   <li>{@link ProVerVisual.Protocol#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link ProVerVisual.Protocol#getElements <em>Elements</em>}</li>
+ *   <li>{@link ProVerVisual.Protocol#getType <em>Type</em>}</li>
+ *   <li>{@link ProVerVisual.Protocol#getOperations <em>Operations</em>}</li>
+ *   <li>{@link ProVerVisual.Protocol#getStates <em>States</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +58,32 @@ public interface Protocol extends EObject {
 	void setName(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see ProVerVisual.ProVerVisualPackage#getProtocol_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link ProVerVisual.Protocol#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link ProVerVisual.ProtocolType}.
 	 * <!-- begin-user-doc -->
@@ -87,61 +113,35 @@ public interface Protocol extends EObject {
 	void setType(ProtocolType value);
 
 	/**
-	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
+	 * The list contents are of type {@link ProVerVisual.Operation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Operations</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see #setDescription(String)
-	 * @see ProVerVisual.ProVerVisualPackage#getProtocol_Description()
-	 * @model
+	 * @return the value of the '<em>Operations</em>' containment reference list.
+	 * @see ProVerVisual.ProVerVisualPackage#getProtocol_Operations()
+	 * @model type="ProVerVisual.Operation" containment="true"
 	 * @generated
 	 */
-	String getDescription();
+	EList getOperations();
 
 	/**
-	 * Sets the value of the '{@link ProVerVisual.Protocol#getDescription <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
-	 * @see #getDescription()
-	 * @generated
-	 */
-	void setDescription(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.
-	 * The list contents are of type {@link ProVerVisual.Transition}.
+	 * Returns the value of the '<em><b>States</b></em>' containment reference list.
+	 * The list contents are of type {@link ProVerVisual.State}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Transitions</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>States</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Transitions</em>' containment reference list.
-	 * @see ProVerVisual.ProVerVisualPackage#getProtocol_Transitions()
-	 * @model type="ProVerVisual.Transition" containment="true"
+	 * @return the value of the '<em>States</em>' containment reference list.
+	 * @see ProVerVisual.ProVerVisualPackage#getProtocol_States()
+	 * @model type="ProVerVisual.State" containment="true"
 	 * @generated
 	 */
-	EList getTransitions();
-
-	/**
-	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-	 * The list contents are of type {@link ProVerVisual.Elements}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Elements</em>' containment reference list.
-	 * @see ProVerVisual.ProVerVisualPackage#getProtocol_Elements()
-	 * @model type="ProVerVisual.Elements" containment="true"
-	 * @generated
-	 */
-	EList getElements();
+	EList getStates();
 
 } // Protocol

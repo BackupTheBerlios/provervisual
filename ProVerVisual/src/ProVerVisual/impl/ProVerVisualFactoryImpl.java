@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProVerVisualFactoryImpl.java,v 1.3 2006/04/16 12:08:20 rustikus Exp $
+ * $Id: ProVerVisualFactoryImpl.java,v 1.4 2006/04/17 20:19:33 rustikus Exp $
  */
 package ProVerVisual.impl;
 
@@ -60,12 +60,12 @@ public class ProVerVisualFactoryImpl extends EFactoryImpl implements ProVerVisua
 	 */
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ProVerVisualPackage.TRANSITION: return createTransition();
 			case ProVerVisualPackage.PROTOCOL: return createProtocol();
-			case ProVerVisualPackage.ACTION_STATE: return createActionState();
+			case ProVerVisualPackage.OPERATION: return createOperation();
+			case ProVerVisualPackage.STATE: return createState();
 			case ProVerVisualPackage.INITIAL_STATE: return createInitialState();
-			case ProVerVisualPackage.END_STATE: return createEndState();
-			case ProVerVisualPackage.BRANCH: return createBranch();
+			case ProVerVisualPackage.FINAL_STATE: return createFinalState();
+			case ProVerVisualPackage.ACTION_STATE: return createActionState();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -104,16 +104,6 @@ public class ProVerVisualFactoryImpl extends EFactoryImpl implements ProVerVisua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transition createTransition() {
-		TransitionImpl transition = new TransitionImpl();
-		return transition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Protocol createProtocol() {
 		ProtocolImpl protocol = new ProtocolImpl();
 		return protocol;
@@ -124,9 +114,19 @@ public class ProVerVisualFactoryImpl extends EFactoryImpl implements ProVerVisua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionState createActionState() {
-		ActionStateImpl actionState = new ActionStateImpl();
-		return actionState;
+	public Operation createOperation() {
+		OperationImpl operation = new OperationImpl();
+		return operation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public State createState() {
+		StateImpl state = new StateImpl();
+		return state;
 	}
 
 	/**
@@ -144,9 +144,9 @@ public class ProVerVisualFactoryImpl extends EFactoryImpl implements ProVerVisua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EndState createEndState() {
-		EndStateImpl endState = new EndStateImpl();
-		return endState;
+	public FinalState createFinalState() {
+		FinalStateImpl finalState = new FinalStateImpl();
+		return finalState;
 	}
 
 	/**
@@ -154,9 +154,9 @@ public class ProVerVisualFactoryImpl extends EFactoryImpl implements ProVerVisua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Branch createBranch() {
-		BranchImpl branch = new BranchImpl();
-		return branch;
+	public ActionState createActionState() {
+		ActionStateImpl actionState = new ActionStateImpl();
+		return actionState;
 	}
 
 	/**

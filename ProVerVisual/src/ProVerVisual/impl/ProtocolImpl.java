@@ -2,15 +2,15 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProtocolImpl.java,v 1.3 2006/04/16 12:08:20 rustikus Exp $
+ * $Id: ProtocolImpl.java,v 1.4 2006/04/17 20:19:33 rustikus Exp $
  */
 package ProVerVisual.impl;
 
-import ProVerVisual.Elements;
+import ProVerVisual.Operation;
 import ProVerVisual.ProVerVisualPackage;
 import ProVerVisual.Protocol;
 import ProVerVisual.ProtocolType;
-import ProVerVisual.Transition;
+import ProVerVisual.State;
 
 import java.util.Collection;
 
@@ -36,10 +36,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ProVerVisual.impl.ProtocolImpl#getName <em>Name</em>}</li>
- *   <li>{@link ProVerVisual.impl.ProtocolImpl#getType <em>Type</em>}</li>
  *   <li>{@link ProVerVisual.impl.ProtocolImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link ProVerVisual.impl.ProtocolImpl#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link ProVerVisual.impl.ProtocolImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link ProVerVisual.impl.ProtocolImpl#getType <em>Type</em>}</li>
+ *   <li>{@link ProVerVisual.impl.ProtocolImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link ProVerVisual.impl.ProtocolImpl#getStates <em>States</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,26 +67,6 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final ProtocolType TYPE_EDEFAULT = ProtocolType.COMPONENT_LITERAL;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProtocolType type = TYPE_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,24 +87,44 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTransitions()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList transitions = null;
+	protected static final ProtocolType TYPE_EDEFAULT = ProtocolType.COMPONENT_LITERAL;
 
 	/**
-	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getElements()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList elements = null;
+	protected ProtocolType type = TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList operations = null;
+
+	/**
+	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStates()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList states = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,27 +170,6 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProtocolType getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(ProtocolType newType) {
-		ProtocolType oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProVerVisualPackage.PROTOCOL__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getDescription() {
 		return description;
 	}
@@ -212,11 +191,8 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getTransitions() {
-		if (transitions == null) {
-			transitions = new EObjectContainmentEList(Transition.class, this, ProVerVisualPackage.PROTOCOL__TRANSITIONS);
-		}
-		return transitions;
+	public ProtocolType getType() {
+		return type;
 	}
 
 	/**
@@ -224,11 +200,35 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getElements() {
-		if (elements == null) {
-			elements = new EObjectContainmentEList(Elements.class, this, ProVerVisualPackage.PROTOCOL__ELEMENTS);
+	public void setType(ProtocolType newType) {
+		ProtocolType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProVerVisualPackage.PROTOCOL__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList getOperations() {
+		if (operations == null) {
+			operations = new EObjectContainmentEList(Operation.class, this, ProVerVisualPackage.PROTOCOL__OPERATIONS);
 		}
-		return elements;
+		return operations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList getStates() {
+		if (states == null) {
+			states = new EObjectContainmentEList(State.class, this, ProVerVisualPackage.PROTOCOL__STATES);
+		}
+		return states;
 	}
 
 	/**
@@ -238,10 +238,10 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 	 */
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProVerVisualPackage.PROTOCOL__TRANSITIONS:
-				return ((InternalEList)getTransitions()).basicRemove(otherEnd, msgs);
-			case ProVerVisualPackage.PROTOCOL__ELEMENTS:
-				return ((InternalEList)getElements()).basicRemove(otherEnd, msgs);
+			case ProVerVisualPackage.PROTOCOL__OPERATIONS:
+				return ((InternalEList)getOperations()).basicRemove(otherEnd, msgs);
+			case ProVerVisualPackage.PROTOCOL__STATES:
+				return ((InternalEList)getStates()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -255,14 +255,14 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 		switch (featureID) {
 			case ProVerVisualPackage.PROTOCOL__NAME:
 				return getName();
-			case ProVerVisualPackage.PROTOCOL__TYPE:
-				return getType();
 			case ProVerVisualPackage.PROTOCOL__DESCRIPTION:
 				return getDescription();
-			case ProVerVisualPackage.PROTOCOL__TRANSITIONS:
-				return getTransitions();
-			case ProVerVisualPackage.PROTOCOL__ELEMENTS:
-				return getElements();
+			case ProVerVisualPackage.PROTOCOL__TYPE:
+				return getType();
+			case ProVerVisualPackage.PROTOCOL__OPERATIONS:
+				return getOperations();
+			case ProVerVisualPackage.PROTOCOL__STATES:
+				return getStates();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -277,19 +277,19 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 			case ProVerVisualPackage.PROTOCOL__NAME:
 				setName((String)newValue);
 				return;
-			case ProVerVisualPackage.PROTOCOL__TYPE:
-				setType((ProtocolType)newValue);
-				return;
 			case ProVerVisualPackage.PROTOCOL__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case ProVerVisualPackage.PROTOCOL__TRANSITIONS:
-				getTransitions().clear();
-				getTransitions().addAll((Collection)newValue);
+			case ProVerVisualPackage.PROTOCOL__TYPE:
+				setType((ProtocolType)newValue);
 				return;
-			case ProVerVisualPackage.PROTOCOL__ELEMENTS:
-				getElements().clear();
-				getElements().addAll((Collection)newValue);
+			case ProVerVisualPackage.PROTOCOL__OPERATIONS:
+				getOperations().clear();
+				getOperations().addAll((Collection)newValue);
+				return;
+			case ProVerVisualPackage.PROTOCOL__STATES:
+				getStates().clear();
+				getStates().addAll((Collection)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -305,17 +305,17 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 			case ProVerVisualPackage.PROTOCOL__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ProVerVisualPackage.PROTOCOL__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
 			case ProVerVisualPackage.PROTOCOL__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case ProVerVisualPackage.PROTOCOL__TRANSITIONS:
-				getTransitions().clear();
+			case ProVerVisualPackage.PROTOCOL__TYPE:
+				setType(TYPE_EDEFAULT);
 				return;
-			case ProVerVisualPackage.PROTOCOL__ELEMENTS:
-				getElements().clear();
+			case ProVerVisualPackage.PROTOCOL__OPERATIONS:
+				getOperations().clear();
+				return;
+			case ProVerVisualPackage.PROTOCOL__STATES:
+				getStates().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -330,14 +330,14 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 		switch (featureID) {
 			case ProVerVisualPackage.PROTOCOL__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ProVerVisualPackage.PROTOCOL__TYPE:
-				return type != TYPE_EDEFAULT;
 			case ProVerVisualPackage.PROTOCOL__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ProVerVisualPackage.PROTOCOL__TRANSITIONS:
-				return transitions != null && !transitions.isEmpty();
-			case ProVerVisualPackage.PROTOCOL__ELEMENTS:
-				return elements != null && !elements.isEmpty();
+			case ProVerVisualPackage.PROTOCOL__TYPE:
+				return type != TYPE_EDEFAULT;
+			case ProVerVisualPackage.PROTOCOL__OPERATIONS:
+				return operations != null && !operations.isEmpty();
+			case ProVerVisualPackage.PROTOCOL__STATES:
+				return states != null && !states.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -351,12 +351,12 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (Name: ");
+		result.append(" (name: ");
 		result.append(name);
-		result.append(", type: ");
-		result.append(type);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

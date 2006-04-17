@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: InitialStateImpl.java,v 1.3 2006/04/16 12:08:20 rustikus Exp $
+ * $Id: InitialStateImpl.java,v 1.4 2006/04/17 20:19:33 rustikus Exp $
  */
 package ProVerVisual.impl;
 
@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class InitialStateImpl extends ElementsImpl implements InitialState {
+public class InitialStateImpl extends StateImpl implements InitialState {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

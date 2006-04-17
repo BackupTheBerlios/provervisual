@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProVerVisualAdapterFactory.java,v 1.3 2006/04/16 12:08:19 rustikus Exp $
+ * $Id: ProVerVisualAdapterFactory.java,v 1.4 2006/04/17 20:19:33 rustikus Exp $
  */
 package ProVerVisual.util;
 
@@ -70,26 +70,23 @@ public class ProVerVisualAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected ProVerVisualSwitch modelSwitch =
 		new ProVerVisualSwitch() {
-			public Object caseTransition(Transition object) {
-				return createTransitionAdapter();
-			}
 			public Object caseProtocol(Protocol object) {
 				return createProtocolAdapter();
 			}
-			public Object caseActionState(ActionState object) {
-				return createActionStateAdapter();
+			public Object caseOperation(Operation object) {
+				return createOperationAdapter();
+			}
+			public Object caseState(State object) {
+				return createStateAdapter();
 			}
 			public Object caseInitialState(InitialState object) {
 				return createInitialStateAdapter();
 			}
-			public Object caseEndState(EndState object) {
-				return createEndStateAdapter();
+			public Object caseFinalState(FinalState object) {
+				return createFinalStateAdapter();
 			}
-			public Object caseElements(Elements object) {
-				return createElementsAdapter();
-			}
-			public Object caseBranch(Branch object) {
-				return createBranchAdapter();
+			public Object caseActionState(ActionState object) {
+				return createActionStateAdapter();
 			}
 			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
@@ -110,20 +107,6 @@ public class ProVerVisualAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ProVerVisual.Transition <em>Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ProVerVisual.Transition
-	 * @generated
-	 */
-	public Adapter createTransitionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link ProVerVisual.Protocol <em>Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -138,16 +121,30 @@ public class ProVerVisualAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ProVerVisual.ActionState <em>Action State</em>}'.
+	 * Creates a new adapter for an object of class '{@link ProVerVisual.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ProVerVisual.ActionState
+	 * @see ProVerVisual.Operation
 	 * @generated
 	 */
-	public Adapter createActionStateAdapter() {
+	public Adapter createOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ProVerVisual.State <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ProVerVisual.State
+	 * @generated
+	 */
+	public Adapter createStateAdapter() {
 		return null;
 	}
 
@@ -166,44 +163,30 @@ public class ProVerVisualAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ProVerVisual.EndState <em>End State</em>}'.
+	 * Creates a new adapter for an object of class '{@link ProVerVisual.FinalState <em>Final State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ProVerVisual.EndState
+	 * @see ProVerVisual.FinalState
 	 * @generated
 	 */
-	public Adapter createEndStateAdapter() {
+	public Adapter createFinalStateAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ProVerVisual.Elements <em>Elements</em>}'.
+	 * Creates a new adapter for an object of class '{@link ProVerVisual.ActionState <em>Action State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ProVerVisual.Elements
+	 * @see ProVerVisual.ActionState
 	 * @generated
 	 */
-	public Adapter createElementsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ProVerVisual.Branch <em>Branch</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ProVerVisual.Branch
-	 * @generated
-	 */
-	public Adapter createBranchAdapter() {
+	public Adapter createActionStateAdapter() {
 		return null;
 	}
 

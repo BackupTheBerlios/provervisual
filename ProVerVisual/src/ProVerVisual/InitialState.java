@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: InitialState.java,v 1.3 2006/04/16 12:08:20 rustikus Exp $
+ * $Id: InitialState.java,v 1.4 2006/04/17 20:19:33 rustikus Exp $
  */
 package ProVerVisual;
 
@@ -17,5 +17,5 @@ package ProVerVisual;
  * @model
  * @generated
  */
-public interface InitialState extends Elements {
+public interface InitialState extends State {
 } // InitialState

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProtocolType.java,v 1.2 2006/04/16 12:08:19 rustikus Exp $
+ * $Id: ProtocolType.java,v 1.3 2006/04/17 20:19:33 rustikus Exp $
  */
 package ProVerVisual;
 

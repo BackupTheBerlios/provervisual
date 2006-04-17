@@ -2,12 +2,12 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ElementsImpl.java,v 1.1 2006/04/16 12:08:20 rustikus Exp $
+ * $Id: StateImpl.java,v 1.4 2006/04/17 20:19:33 rustikus Exp $
  */
 package ProVerVisual.impl;
 
-import ProVerVisual.Elements;
 import ProVerVisual.ProVerVisualPackage;
+import ProVerVisual.State;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -18,18 +18,18 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Elements</b></em>'.
+ * An implementation of the model object '<em><b>State</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ProVerVisual.impl.ElementsImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link ProVerVisual.impl.StateImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ElementsImpl extends EObjectImpl implements Elements {
+public class StateImpl extends EObjectImpl implements State {
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -55,7 +55,7 @@ public abstract class ElementsImpl extends EObjectImpl implements Elements {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ElementsImpl() {
+	protected StateImpl() {
 		super();
 	}
 
@@ -65,7 +65,7 @@ public abstract class ElementsImpl extends EObjectImpl implements Elements {
 	 * @generated
 	 */
 	protected EClass eStaticClass() {
-		return ProVerVisualPackage.Literals.ELEMENTS;
+		return ProVerVisualPackage.Literals.STATE;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public abstract class ElementsImpl extends EObjectImpl implements Elements {
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProVerVisualPackage.ELEMENTS__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, ProVerVisualPackage.STATE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -96,7 +96,7 @@ public abstract class ElementsImpl extends EObjectImpl implements Elements {
 	 */
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProVerVisualPackage.ELEMENTS__DESCRIPTION:
+			case ProVerVisualPackage.STATE__DESCRIPTION:
 				return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -109,7 +109,7 @@ public abstract class ElementsImpl extends EObjectImpl implements Elements {
 	 */
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProVerVisualPackage.ELEMENTS__DESCRIPTION:
+			case ProVerVisualPackage.STATE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 		}
@@ -123,7 +123,7 @@ public abstract class ElementsImpl extends EObjectImpl implements Elements {
 	 */
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProVerVisualPackage.ELEMENTS__DESCRIPTION:
+			case ProVerVisualPackage.STATE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public abstract class ElementsImpl extends EObjectImpl implements Elements {
 	 */
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProVerVisualPackage.ELEMENTS__DESCRIPTION:
+			case ProVerVisualPackage.STATE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
@@ -158,4 +158,4 @@ public abstract class ElementsImpl extends EObjectImpl implements Elements {
 		return result.toString();
 	}
 
-} //ElementsImpl
+} //StateImpl
