@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: Operation.java,v 1.1 2006/04/17 20:19:33 rustikus Exp $
+ * $Id: Operation.java,v 1.2 2006/04/20 10:10:41 rustikus Exp $
  */
 package ProVerVisual;
 

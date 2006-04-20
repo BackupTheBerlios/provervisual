@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: InitialStateImpl.java,v 1.4 2006/04/17 20:19:33 rustikus Exp $
+ * $Id: InitialStateImpl.java,v 1.5 2006/04/20 10:10:41 rustikus Exp $
  */
 package ProVerVisual.impl;
 

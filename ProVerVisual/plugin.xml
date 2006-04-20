@@ -5,14 +5,14 @@
  <copyright>
  </copyright>
 
- $Id: plugin.xml,v 1.1 2006/04/10 06:02:39 rustikus Exp $
+ $Id: plugin.xml,v 1.2 2006/04/20 10:10:41 rustikus Exp $
 -->
 
 <plugin>
 
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
-       uri = "http://ProVerVisual" 
+       uri = "http://provervisual.berlios.de" 
        class = "ProVerVisual.ProVerVisualPackage"
        genModel = "src/model/ProVerVisual.genmodel" /> 
   </extension>
