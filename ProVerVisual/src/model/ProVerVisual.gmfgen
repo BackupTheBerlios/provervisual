@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2005/GenModel" modelID="ProVerVisual">
+<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2005/GenModel" modelID="ProVerVisual" diagramFileExtension="pvd">
   <diagram visualID="79" editPartClassName="ProtocolEditPart" itemSemanticEditPolicyClassName="ProtocolItemSemanticEditPolicy" notationViewFactoryClassName="ProtocolViewFactory" iconProviderPriority="Low" canonicalEditPolicyClassName="ProtocolCanonicalEditPolicy">
     <diagramRunTimeClass href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
     <elementType xsi:type="gmfgen:MetamodelType"/>
@@ -65,7 +65,7 @@
         <nodeTools titleKey="InitialState" descriptionKey="Create new InitialState" entryID="1001" genNode="//@diagram/@topLevelNodes.0"/>
         <nodeTools titleKey="ActionState" descriptionKey="Create new ActionState" entryID="1002" genNode="//@diagram/@topLevelNodes.1"/>
         <nodeTools titleKey="FinalState" descriptionKey="Create new FinalState" entryID="1003" genNode="//@diagram/@topLevelNodes.2"/>
-        <linkTools titleKey="Operation" descriptionKey="Create new Operation" entryID="2001" genLink="//@diagram/@links.0"/>
+        <linkTools titleKey="Operation" descriptionKey="Create new Operation" smallIconPath="platform:/plugin/de.berlios.provervisual/icons/link.gif" entryID="2001" genLink="//@diagram/@links.0"/>
       </groups>
     </palette>
   </diagram>

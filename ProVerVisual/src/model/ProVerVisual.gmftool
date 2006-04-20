@@ -3,7 +3,7 @@
   <palette>
     <tools xsi:type="gmftool:ToolGroup" title="ProVerVisual">
       <tools xsi:type="gmftool:CreationTool" title="Operation" description="Create new Operation">
-        <smallIcon xsi:type="gmftool:DefaultImage"/>
+        <smallIcon xsi:type="gmftool:BundleImage" path="platform:/plugin/de.berlios.provervisual/icons/link.gif"/>
         <largeIcon xsi:type="gmftool:DefaultImage"/>
       </tools>
       <tools xsi:type="gmftool:CreationTool" title="InitialState" description="Create new InitialState">

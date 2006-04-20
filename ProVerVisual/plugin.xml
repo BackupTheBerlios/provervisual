@@ -5,7 +5,7 @@
  <copyright>
  </copyright>
 
- $Id: plugin.xml,v 1.2 2006/04/20 10:10:41 rustikus Exp $
+ $Id: plugin.xml,v 1.3 2006/04/20 16:15:41 rustikus Exp $
 -->
 
 <plugin>
@@ -15,6 +15,22 @@
        uri = "http://provervisual.berlios.de" 
        class = "ProVerVisual.ProVerVisualPackage"
        genModel = "src/model/ProVerVisual.genmodel" /> 
+  </extension>
+  <extension
+        point="org.eclipse.ui.importWizards">
+     <category
+           id="ProVerVisual.importWizards.sampleCategory"
+           name="File Import"/>
+     <wizard
+           category="ProVerVisual.importWizards.sampleCategory"
+           class="ProVerVisual.importWizards.ImportWizard"
+           icon="icons/end.gif"
+           id="ProVerVisual.importWizards.ImportWizard"
+           name="Import Protocol File">
+        <description>
+           Import a file from the local file system into the workspace.
+        </description>
+     </wizard>
   </extension>
 
 </plugin>
