@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="/home/frank/workspace/libs/ws-jaxme-0.5.1/lib/jaxmejs-0.5.1.jar"/>
+	<classpathentry kind="lib" path="/home/frank/workspace/libs/antlr-2.7.6/antlr.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

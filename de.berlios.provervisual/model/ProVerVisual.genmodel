@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.berlios.provervisual/src"
+    modelPluginID="de.berlios.provervisual" modelName="ProVerVisual" importerID="org.eclipse.emf.importer.ecore">
+  <foreignModel>ProVerVisual.ecore</foreignModel>
+  <genPackages prefix="Provervisual" disposableProviderFactory="true" ecorePackage="ProVerVisual.ecore#/">
+    <genEnums ecoreEnum="ProVerVisual.ecore#//ProtocolType">
+      <genEnumLiterals ecoreEnumLiteral="ProVerVisual.ecore#//ProtocolType/Component"/>
+      <genEnumLiterals ecoreEnumLiteral="ProVerVisual.ecore#//ProtocolType/Interaction"/>
+    </genEnums>
+    <genClasses ecoreClass="ProVerVisual.ecore#//Protocol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Protocol/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Protocol/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Protocol/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Protocol/operations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Protocol/states"/>
+    </genClasses>
+    <genClasses ecoreClass="ProVerVisual.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Operation/operationAbbrev"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Operation/operationName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//Operation/operationDescription"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Operation/startState"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Operation/operationParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Operation/operationGuard"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ProVerVisual.ecore#//Operation/endState"/>
+    </genClasses>
+    <genClasses ecoreClass="ProVerVisual.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//State/stateDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//State/number"/>
+    </genClasses>
+    <genClasses ecoreClass="ProVerVisual.ecore#//InitialState"/>
+    <genClasses ecoreClass="ProVerVisual.ecore#//FinalState"/>
+    <genClasses ecoreClass="ProVerVisual.ecore#//ActionState"/>
+    <genClasses ecoreClass="ProVerVisual.ecore#//OperationParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//OperationParameter/parameterType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//OperationParameter/parameterAbbrev"/>
+    </genClasses>
+    <genClasses ecoreClass="ProVerVisual.ecore#//OperationGuard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//OperationGuard/guardConstraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProVerVisual.ecore#//OperationGuard/guardDescription"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

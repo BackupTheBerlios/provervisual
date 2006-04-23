@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://provervisual.berlios.de" 
+       class = "provervisual.ProvervisualPackage"
+       genModel = "model/ProVerVisual.genmodel" /> 
+  </extension>
+  <extension
+        point="org.eclipse.ui.views">
+     <category
+           id="de.berlios.provervisual"
+           name="Protocol Verification"/>
+     <view
+           category="de.berlios.provervisual"
+           class="provervisual.views.OperationsView"
+           icon="icons/sample.gif"
+           id="provervisual.views.viewOperations"
+           name="Operations View"/>
+     <view
+           category="de.berlios.provervisual"
+           class="provervisual.views.SelectionView"
+           icon="icons/sample.gif"
+           id="provervisual.views.viewSelection"
+           name="Selection View"/>
+  </extension>
+  <extension
+        point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension targetID="org.eclipse.ui.resourcePerspective">
+        <view
+              id="provervisual.views.ViewOperations"
+              ratio="0.5"
+              relationship="right"
+              relative="org.eclipse.ui.views.TaskList"/>
+     </perspectiveExtension>
+  </extension>
+  <extension
+        point="org.eclipse.ui.importWizards">
+     <category
+           id="provervisual.importWizards.javaFile"
+           name="Protocol Verification"/>
+     <wizard
+           category="provervisual.importWizards.javaFile"
+           class="provervisual.importWizards.ImportWizard"
+           icon="icons/sample.gif"
+           id="provervisual.importWizards.javaFile"
+           name="Import Java Source File">
+        <description>
+           Import a file from the local file system into the workspace.
+        </description>
+     </wizard>
+  </extension>
+  <extension
+        point="org.eclipse.ui.actionSets">
+     <actionSet
+           id="de.berlios.provervisual.actionSet"
+           label="Sample Action Set"
+           visible="true">
+        <menu
+              id="sampleMenu"
+              label="Sample &amp;Menu">
+           <separator name="sampleGroup"/>
+        </menu>
+        <action
+              class="de.berlios.provervisual.actions.SampleAction"
+              icon="icons/sample.gif"
+              id="de.berlios.provervisual.actions.SampleAction"
+              label="&amp;Sample Action"
+              menubarPath="sampleMenu/sampleGroup"
+              toolbarPath="sampleGroup"
+              tooltip="Hello, Eclipse world"/>
+     </actionSet>
+  </extension>
+  <extension
+        point="org.eclipse.ui.exportWizards">
+     <category
+           id="provervisual.exportWizards.protocolFile"
+           name="Protocol Verification"/>
+     <wizard
+           category="provervisual.exportWizards.protocolFile"
+           class="provervisual.exportWizards.ExportWizard"
+           icon="icons/sample.gif"
+           id="provervisual.exportWizards.protocolFile"
+           name="Export Protocol File">
+        <description/>
+     </wizard>
+  </extension>
+
+</plugin>
+
