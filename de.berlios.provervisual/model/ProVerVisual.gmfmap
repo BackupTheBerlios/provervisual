@@ -45,6 +45,10 @@
   </nodes>
   <links>
     <domainMetaElement href="ProVerVisual.ecore#//Operation"/>
+    <labelMappings viewPattern="{0}" editPattern="{0}">
+      <diagramLabel href="ProVerVisual.gmfgraph#OperationOperationAbbrevLabel"/>
+      <features href="ProVerVisual.ecore#//Operation/operationAbbrev"/>
+    </labelMappings>
     <containmentFeature href="ProVerVisual.ecore#//Protocol/operations"/>
     <tool xsi:type="gmftool:CreationTool" href="ProVerVisual.gmftool#//@palette/@tools.0/@tools.1"/>
     <diagramLink href="ProVerVisual.gmfgraph#OperationLink"/>

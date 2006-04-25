@@ -5,5 +5,10 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="lib" path="/home/frank/workspace/libs/ws-jaxme-0.5.1/lib/jaxmejs-0.5.1.jar"/>
 	<classpathentry kind="lib" path="/home/frank/workspace/libs/antlr-2.7.6/antlr.jar"/>
+	<classpathentry sourcepath="/home/frank/workspace/libs/jpaul-2.5.1/src" kind="lib" path="/home/frank/workspace/libs/jpaul-2.5.1/jpaul.jar">
+		<attributes>
+			<attribute value="file:/home/frank/workspace/libs/jpaul-2.5.1/htdocs/javadoc/" name="javadoc_location"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

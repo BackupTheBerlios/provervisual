@@ -85,6 +85,13 @@
         <sourceMetaFeature href="ProVerVisual.genmodel#//provervisual/Operation/startState"/>
         <targetMetaFeature href="ProVerVisual.genmodel#//provervisual/Operation/endState"/>
       </modelFacet>
+      <labels visualID="4004" editPartClassName="Operation_operationAbbrev2EditPart" itemSemanticEditPolicyClassName="Operation_operationAbbrev2ItemSemanticEditPolicy" notationViewFactoryClassName="Operation_operationAbbrev2ViewFactory">
+        <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="OperationOperationAbbrevFigure" classBody="&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;public class OperationOperationAbbrevFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel {&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public OperationOperationAbbrevFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#xA;&#x9;&#x9;this.setText(&quot;&lt;...>&quot;);&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;protected boolean useLocalCoordinates() {&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xA;&#x9;}&#xA;&#x9;&#xA;}&#xA;"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" viewPattern="{0}" editPattern="{0}">
+          <metaFeature href="ProVerVisual.genmodel#//provervisual/Operation/operationAbbrev"/>
+        </modelFacet>
+      </labels>
     </links>
     <palette>
       <groups titleKey="provervisual" entryID="1">
