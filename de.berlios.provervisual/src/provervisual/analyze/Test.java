@@ -1,4 +1,4 @@
-package provervisual.anaylze;
+package provervisual.analyze;
 
 public class Test {
 	

@@ -12,8 +12,8 @@ import org.eclipse.ui.*;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.SWT;
 
-import provervisual.anaylze.AnalyzeJavaSource;
-import provervisual.anaylze.Test;
+import provervisual.analyze.AnalyzeJavaSource;
+import provervisual.analyze.Test;
 
 
 /**

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package provervisual.anaylze;
+package provervisual.analyze;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

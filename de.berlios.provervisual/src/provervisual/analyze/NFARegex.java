@@ -1,4 +1,4 @@
-package provervisual.anaylze;
+package provervisual.analyze;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -14,6 +14,7 @@ import provervisual.FinalState;
 import provervisual.InitialState;
 import provervisual.Operation;
 import provervisual.Protocol;
+import provervisual.impl.ProtocolImpl;
 
 import jpaul.DataStructs.Factory;
 import jpaul.DataStructs.MapWithDefault;
@@ -27,22 +28,26 @@ import jpaul.RegExps.RegExp;
  * regular expression. The regular expression is minimized. The convertion is
  * done by the package jpaul from http://jpaul.sourceforge.net
  */
-public class NFAtoRegex {
+public class NFARegex {
 
-
+	Protocol protocol; 
+	NFA<Object, String> nfa;
+	
 	public static void main(String args[]){
 		URI uri = URI
 		.createFileURI("/home/frank/runtime-de.berlios.provervisual/test/simple.provervisual");
 
-		Protocol protocol = ProtocolMethods.getProtocolFromUri(uri);
-		ProtocolMethods.print(protocol);
-
-		System.out.println(getRegExp(protocol));
-		System.out.println(getSimpleRegExp(protocol));
+		ProtocolImpl protocol = new ProtocolImpl(uri);
+		System.out.println(protocol);
 		
 	}
+	
+	public NFARegex(Protocol protocol){
+		this.protocol = protocol;
+		nfa = createNFA(protocol);
+	}
 
-	private static NFA<Object, String> createNFA(Protocol protocol){
+	private NFA<Object, String> createNFA(Protocol protocol){
 		
 		EList states = protocol.getStates();
 		provervisual.State initState = null;
@@ -62,8 +67,7 @@ public class NFAtoRegex {
 		
 		EList operations = protocol.getOperations();
 		
-		Map<Object, List<Pair<Object, String>>> node2arcs = NFAtoRegex
-				.<Object, String> makeNode2Arcs();
+		Map<Object, List<Pair<Object, String>>> node2arcs = this.<Object, String> makeNode2Arcs();
 		
 		for(Iterator i = operations.iterator(); i.hasNext();){
 			
@@ -79,18 +83,14 @@ public class NFAtoRegex {
 		return nfa;
 	}
 	
-	public static RegExp getRegExp(Protocol protocol) {
-
-		NFA<Object, String> nfa = createNFA(protocol);
+	public RegExp getRegExp() {
 
 		return nfa.toRegExp();
 		
 	}
 
-	public static RegExp getSimpleRegExp(Protocol protocol) {
+	public RegExp getSimpleRegExp() {
 
-		NFA<Object, String> nfa = createNFA(protocol);
-		
 		NFA<NFA.BigState<NFA.BigState<NFA.BigState<Object>>>, String> simplifiedNFA = nfa
 		.simplify().simplify().simplify();
 		
@@ -98,7 +98,7 @@ public class NFAtoRegex {
 
 	}
 		
-	private static <State, Label> Map<State, List<Pair<State, Label>>> makeNode2Arcs() {
+	private <State, Label> Map<State, List<Pair<State, Label>>> makeNode2Arcs() {
 		return new MapWithDefault<State, List<Pair<State, Label>>>(
 				new Factory<List<Pair<State, Label>>>() {
 					public List<Pair<State, Label>> create() {
@@ -113,14 +113,14 @@ public class NFAtoRegex {
 	}
 
 	// Adds the edge/transition <s1, label, s2>
-	private static <State, A> void addTrans(
+	private <State, A> void addTrans(
 			Map<State, List<Pair<State, A>>> node2edges, State s1, A label,
 			State s2) {
 		List<Pair<State, A>> edges = node2edges.get(s1);
 		edges.add(new Pair<State, A>(s2, label));
 	}
 
-	private static <State, A> NFA<State, A> makeNFA(State begin,
+	private <State, A> NFA<State, A> makeNFA(State begin,
 			Set<State> acceptStates,
 			final Map<State, List<Pair<State, A>>> state2edges) {
 

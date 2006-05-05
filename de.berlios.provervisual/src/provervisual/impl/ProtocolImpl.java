@@ -2,31 +2,43 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProtocolImpl.java,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ * $Id: ProtocolImpl.java,v 1.2 2006/05/05 17:35:58 rustikus Exp $
  */
 package provervisual.impl;
 
+import java.io.IOException;
 import java.util.Collection;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import provervisual.Operation;
 import provervisual.Protocol;
 import provervisual.ProtocolType;
+import provervisual.ProvervisualFactory;
 import provervisual.ProvervisualPackage;
 import provervisual.State;
+import provervisual.analyze.NFARegex;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,6 +147,81 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 		super();
 	}
 
+	/**
+	 *
+	 */
+	public ProtocolImpl(URI uri){
+		
+		// Create a resource set to hold the resources.
+		//
+		ResourceSet resourceSet = new ResourceSetImpl();
+
+		// Register the appropriate resource factory to handle all file
+		// extentions.
+		//
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap()
+				.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
+						new XMIResourceFactoryImpl());
+
+		// Register the package to ensure it is available during loading.
+		//
+		resourceSet.getPackageRegistry().put(ProvervisualPackage.eNS_URI,
+				ProvervisualPackage.eINSTANCE);
+
+		// If there are no arguments, emit an appropriate usage message.
+		//
+		if (uri == null) {
+			System.out
+					.println("Parameter should be a URIs that have content like this:");
+			try {
+				Resource resource = resourceSet.createResource(URI
+						.createURI("http:///My.provervisual"));
+				Protocol root = ProvervisualFactory.eINSTANCE.createProtocol();
+				resource.getContents().add(root);
+				resource.save(System.out, null);
+			} catch (IOException exception) {
+				exception.printStackTrace();
+			}
+		} else {
+			try {
+				// Demand load resource for this file.
+				//
+				Resource resource = resourceSet.getResource(uri, true);
+//				System.out.println("Loaded: \"" + uri + "\"");
+
+				// Validate the contents of the loaded resource.
+				//
+				for (Iterator j = resource.getContents().iterator(); j
+						.hasNext();) {
+					EObject eObject = (EObject) j.next();
+					Diagnostic diagnostic = Diagnostician.INSTANCE
+							.validate(eObject);
+					if (diagnostic.getSeverity() != Diagnostic.OK) {
+						System.err.println(diagnostic.getMessage());
+					} else {
+//						System.out.println("File is valid!\n");
+					}
+				}
+
+				// At the moment one file should contain only one protocol
+				EObject eObject = (EObject) resource.getContents().get(0);
+				Protocol protocol = (Protocol) eObject;
+				this.type = protocol.getType();
+				this.description = protocol.getDescription();
+				this.name = protocol.getName();
+				this.operations = protocol.getOperations();
+				this.states = protocol.getStates();
+
+
+			} catch (RuntimeException exception) {
+				System.out.println("Problem loading " + uri);
+				exception.printStackTrace();
+			}
+		}
+		
+	}
+	
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -345,20 +432,37 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", description: ");
-		result.append(description);
-		result.append(", type: ");
-		result.append(type);
-		result.append(')');
+		StringBuffer result = new StringBuffer();
+		String test = name != null ? "Protocol Name: "
+				+ name : "Protocol Name not specified";
+		result.append(test + "\n");
+		result.append("Protocol Type: " + type + "\n");
+		test = description != null ? "Protocol Description: "
+				+ description : "No Description available";
+		result.append(test + "\n");
+		result.append("Operations defined:\n");
+		for (Iterator j = operations.iterator(); j.hasNext();) {
+			result.append(((Operation) j.next()).getOperationAbbrev() + "\n");
+		}
+
+//		result.append("\n" +getRegEx());
+		
 		return result.toString();
+		
+		
 	}
+	
+	public String getRegEx(){
+		
+		NFARegex test = new NFARegex(this);
+		return test.getSimpleRegExp().toString();
+		
+	}
+	
 
 } //ProtocolImpl

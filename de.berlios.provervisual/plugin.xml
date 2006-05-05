@@ -5,7 +5,7 @@
  <copyright>
  </copyright>
 
- $Id: plugin.xml,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ $Id: plugin.xml,v 1.2 2006/05/05 17:35:58 rustikus Exp $
 -->
 
 <plugin>
@@ -61,27 +61,6 @@
      </wizard>
   </extension>
   <extension
-        point="org.eclipse.ui.actionSets">
-     <actionSet
-           id="de.berlios.provervisual.actionSet"
-           label="Sample Action Set"
-           visible="true">
-        <menu
-              id="sampleMenu"
-              label="Sample &amp;Menu">
-           <separator name="sampleGroup"/>
-        </menu>
-        <action
-              class="de.berlios.provervisual.actions.SampleAction"
-              icon="icons/sample.gif"
-              id="de.berlios.provervisual.actions.SampleAction"
-              label="&amp;Sample Action"
-              menubarPath="sampleMenu/sampleGroup"
-              toolbarPath="sampleGroup"
-              tooltip="Hello, Eclipse world"/>
-     </actionSet>
-  </extension>
-  <extension
         point="org.eclipse.ui.exportWizards">
      <category
            id="provervisual.exportWizards.protocolFile"
@@ -92,7 +71,9 @@
            icon="icons/sample.gif"
            id="provervisual.exportWizards.protocolFile"
            name="Export Protocol File">
-        <description/>
+        <description>
+           Export a single diagram file to the Protocol Verification format.
+        </description>
      </wizard>
   </extension>
 
