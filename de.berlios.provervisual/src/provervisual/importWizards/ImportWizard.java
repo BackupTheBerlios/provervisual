@@ -10,6 +10,10 @@
  *******************************************************************************/
 package provervisual.importWizards;
 
+/*
+ * Import java source files and eventually open OperationView
+ */
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;

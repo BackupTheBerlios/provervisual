@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProvervisualPackageImpl.java,v 1.2 2006/05/07 11:45:50 rustikus Exp $
+ * $Id: ProvervisualPackageImpl.java,v 1.3 2006/05/07 22:19:54 rustikus Exp $
  */
 package provervisual.impl;
 
@@ -376,6 +376,15 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getOperationParameter_ParameterName() {
+		return (EAttribute)operationParameterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOperationGuard() {
 		return operationGuardEClass;
 	}
@@ -464,6 +473,7 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 		operationParameterEClass = createEClass(OPERATION_PARAMETER);
 		createEAttribute(operationParameterEClass, OPERATION_PARAMETER__PARAMETER_TYPE);
 		createEAttribute(operationParameterEClass, OPERATION_PARAMETER__PARAMETER_ABBREV);
+		createEAttribute(operationParameterEClass, OPERATION_PARAMETER__PARAMETER_NAME);
 
 		operationGuardEClass = createEClass(OPERATION_GUARD);
 		createEAttribute(operationGuardEClass, OPERATION_GUARD__GUARD_CONSTRAINT);
@@ -533,6 +543,7 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 		initEClass(operationParameterEClass, OperationParameter.class, "OperationParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOperationParameter_ParameterType(), ecorePackage.getEString(), "parameterType", null, 0, 1, OperationParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperationParameter_ParameterAbbrev(), ecorePackage.getEString(), "parameterAbbrev", null, 0, 1, OperationParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperationParameter_ParameterName(), ecorePackage.getEString(), "parameterName", "", 0, 1, OperationParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationGuardEClass, OperationGuard.class, "OperationGuard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOperationGuard_GuardConstraint(), ecorePackage.getEString(), "guardConstraint", null, 0, 1, OperationGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

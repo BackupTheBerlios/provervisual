@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProtocolImpl.java,v 1.3 2006/05/07 11:45:50 rustikus Exp $
+ * $Id: ProtocolImpl.java,v 1.4 2006/05/07 22:19:54 rustikus Exp $
  */
 package provervisual.impl;
 
@@ -450,7 +450,7 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 		result.append(test + "\n");
 		result.append("Operations defined:\n");
 		for (Iterator j = operations.iterator(); j.hasNext();) {
-			result.append(((Operation) j.next()).getOperationAbbrev() + "\n");
+			result.append(((Operation) j.next()).getOperationName() + "\n");
 		}
 
 		result.append("\n" +getRegEx());

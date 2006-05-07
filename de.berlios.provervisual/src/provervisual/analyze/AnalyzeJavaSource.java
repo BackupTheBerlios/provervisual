@@ -23,6 +23,12 @@ import antlr.RecognitionException;
 import antlr.TokenStreamException;
 
 public class AnalyzeJavaSource {
+	
+	public static void main(String args[]){
+		
+		getOperationNames();
+		
+	}
 
 	public static String getOperationNames() {
 

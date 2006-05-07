@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: OperationParameterImpl.java,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ * $Id: OperationParameterImpl.java,v 1.2 2006/05/07 22:19:54 rustikus Exp $
  */
 package provervisual.impl;
 
@@ -25,6 +25,7 @@ import provervisual.ProvervisualPackage;
  * <ul>
  *   <li>{@link provervisual.impl.OperationParameterImpl#getParameterType <em>Parameter Type</em>}</li>
  *   <li>{@link provervisual.impl.OperationParameterImpl#getParameterAbbrev <em>Parameter Abbrev</em>}</li>
+ *   <li>{@link provervisual.impl.OperationParameterImpl#getParameterName <em>Parameter Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +71,26 @@ public class OperationParameterImpl extends EObjectImpl implements OperationPara
 	 * @ordered
 	 */
 	protected String parameterAbbrev = PARAMETER_ABBREV_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getParameterName() <em>Parameter Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameterName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PARAMETER_NAME_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getParameterName() <em>Parameter Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameterName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String parameterName = PARAMETER_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,12 +157,35 @@ public class OperationParameterImpl extends EObjectImpl implements OperationPara
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getParameterName() {
+		return parameterName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParameterName(String newParameterName) {
+		String oldParameterName = parameterName;
+		parameterName = newParameterName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProvervisualPackage.OPERATION_PARAMETER__PARAMETER_NAME, oldParameterName, parameterName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ProvervisualPackage.OPERATION_PARAMETER__PARAMETER_TYPE:
 				return getParameterType();
 			case ProvervisualPackage.OPERATION_PARAMETER__PARAMETER_ABBREV:
 				return getParameterAbbrev();
+			case ProvervisualPackage.OPERATION_PARAMETER__PARAMETER_NAME:
+				return getParameterName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,6 +202,9 @@ public class OperationParameterImpl extends EObjectImpl implements OperationPara
 				return;
 			case ProvervisualPackage.OPERATION_PARAMETER__PARAMETER_ABBREV:
 				setParameterAbbrev((String)newValue);
+				return;
+			case ProvervisualPackage.OPERATION_PARAMETER__PARAMETER_NAME:
+				setParameterName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +223,9 @@ public class OperationParameterImpl extends EObjectImpl implements OperationPara
 			case ProvervisualPackage.OPERATION_PARAMETER__PARAMETER_ABBREV:
 				setParameterAbbrev(PARAMETER_ABBREV_EDEFAULT);
 				return;
+			case ProvervisualPackage.OPERATION_PARAMETER__PARAMETER_NAME:
+				setParameterName(PARAMETER_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -191,6 +241,8 @@ public class OperationParameterImpl extends EObjectImpl implements OperationPara
 				return PARAMETER_TYPE_EDEFAULT == null ? parameterType != null : !PARAMETER_TYPE_EDEFAULT.equals(parameterType);
 			case ProvervisualPackage.OPERATION_PARAMETER__PARAMETER_ABBREV:
 				return PARAMETER_ABBREV_EDEFAULT == null ? parameterAbbrev != null : !PARAMETER_ABBREV_EDEFAULT.equals(parameterAbbrev);
+			case ProvervisualPackage.OPERATION_PARAMETER__PARAMETER_NAME:
+				return PARAMETER_NAME_EDEFAULT == null ? parameterName != null : !PARAMETER_NAME_EDEFAULT.equals(parameterName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,6 +260,8 @@ public class OperationParameterImpl extends EObjectImpl implements OperationPara
 		result.append(parameterType);
 		result.append(", parameterAbbrev: ");
 		result.append(parameterAbbrev);
+		result.append(", parameterName: ");
+		result.append(parameterName);
 		result.append(')');
 		return result.toString();
 	}

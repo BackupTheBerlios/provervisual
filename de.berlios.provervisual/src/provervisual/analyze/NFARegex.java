@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -38,11 +39,10 @@ public class NFARegex {
 		URI uri = URI
 		.createFileURI("/home/frank/runtime-de.berlios.provervisual/test/simple.provervisual");
 
-		ProtocolImpl protocol = new ProtocolImpl(uri);
-		System.out.println(protocol);
-		NFARegex test = new NFARegex(protocol);
-		test.toFile(null);
+		Logger logger = Logger.getLogger("default");
 		
+		ProtocolImpl protocol = new ProtocolImpl(uri);
+		logger.info(protocol.toString());
 	}
 	
 	public NFARegex(Protocol protocol){

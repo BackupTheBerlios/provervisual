@@ -1,6 +1,5 @@
 package provervisual.views;
 
-
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.internal.dialogs.ViewContentProvider;
 import org.eclipse.ui.part.*;
@@ -11,65 +10,61 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.*;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.SWT;
-
 import provervisual.analyze.AnalyzeJavaSource;
-import provervisual.analyze.Tests;
-
 
 /**
- * This sample class demonstrates how to plug-in a new
- * workbench view. The view shows data obtained from the
- * model. The sample creates a dummy model on the fly,
- * but a real implementation would connect to the model
- * available either in this or another plug-in (e.g. the workspace).
- * The view is connected to the model using a content provider.
+ * This sample class demonstrates how to plug-in a new workbench view. The view
+ * shows data obtained from the model. The sample creates a dummy model on the
+ * fly, but a real implementation would connect to the model available either in
+ * this or another plug-in (e.g. the workspace). The view is connected to the
+ * model using a content provider.
  * <p>
- * The view uses a label provider to define how model
- * objects should be presented in the view. Each
- * view can present the same model objects using
- * different labels and icons, if needed. Alternatively,
- * a single label provider can be shared between views
- * in order to ensure that objects of the same type are
- * presented in the same way everywhere.
+ * The view uses a label provider to define how model objects should be
+ * presented in the view. Each view can present the same model objects using
+ * different labels and icons, if needed. Alternatively, a single label provider
+ * can be shared between views in order to ensure that objects of the same type
+ * are presented in the same way everywhere.
  * <p>
  */
 
 public class OperationsView extends ViewPart {
 	private TableViewer viewer;
+
 	private Action analyzeSource;
-	private Action action2;
+
 	private Action doubleClickAction;
 
 	private PageBook pagebook;
+
 	private TableViewer tableviewer;
 
-	
 	/*
-	 * The content provider class is responsible for
-	 * providing objects to the view. It can wrap
-	 * existing objects in adapters or simply return
-	 * objects as-is. These objects may be sensitive
-	 * to the current input of the view, or ignore
-	 * it and always show the same content 
-	 * (like Task List, for example).
+	 * The content provider class is responsible for providing objects to the
+	 * view. It can wrap existing objects in adapters or simply return objects
+	 * as-is. These objects may be sensitive to the current input of the view,
+	 * or ignore it and always show the same content (like Task List, for
+	 * example).
 	 */
-	 
-/*	class ViewContentProvider implements IStructuredContentProvider {
+
+	class ViewContentProvider implements IStructuredContentProvider {
 		public void inputChanged(Viewer v, Object oldInput, Object newInput) {
 		}
+
 		public void dispose() {
 		}
+
 		public Object[] getElements(Object parent) {
-			return new String[] { "One", "Two", "Three" };
+			return new String[] { "Select a java source file to display methods" };
 		}
 	}
-*/	
-	// the listener we register with the selection service 
+
+	// the listener we register with the selection service
 	private ISelectionListener listener = new ISelectionListener() {
-		public void selectionChanged(IWorkbenchPart sourcepart, ISelection selection) {
+		public void selectionChanged(IWorkbenchPart sourcepart,
+				ISelection selection) {
 			// we ignore our own selections
 			if (sourcepart != OperationsView.this) {
-			    showSelection(sourcepart, selection);
+				showSelection(sourcepart, selection);
 			}
 		}
 	};
@@ -78,29 +73,32 @@ public class OperationsView extends ViewPart {
 	 * Shows the given selection in this view.
 	 */
 	public void showSelection(IWorkbenchPart sourcepart, ISelection selection) {
-		setContentDescription(sourcepart.getTitle() + " (" + selection.getClass().getName() + ")");
+		setContentDescription(sourcepart.getTitle() + " ("
+				+ selection.getClass().getName() + ")");
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection ss = (IStructuredSelection) selection;
 			showItems(ss.toArray());
 		}
 	}
 
-		private void showItems(Object[] items) {
-			tableviewer.setInput(items);
-			pagebook.showPage(tableviewer.getControl());
-		}
-		
-	
-	class ViewLabelProvider extends LabelProvider implements ITableLabelProvider {
+	private void showItems(Object[] items) {
+		tableviewer.setInput(items);
+		pagebook.showPage(tableviewer.getControl());
+	}
+
+	class ViewLabelProvider extends LabelProvider implements
+			ITableLabelProvider {
 		public String getColumnText(Object obj, int index) {
 			return getText(obj);
 		}
+
 		public Image getColumnImage(Object obj, int index) {
 			return getImage(obj);
 		}
+
 		public Image getImage(Object obj) {
-			return PlatformUI.getWorkbench().
-					getSharedImages().getImage(ISharedImages.IMG_OBJ_ELEMENT);
+			return PlatformUI.getWorkbench().getSharedImages().getImage(
+					ISharedImages.IMG_OBJ_ELEMENT);
 		}
 	}
 
@@ -114,11 +112,12 @@ public class OperationsView extends ViewPart {
 	}
 
 	/**
-	 * This is a callback that will allow us
-	 * to create the viewer and initialize it.
+	 * This is a callback that will allow us to create the viewer and initialize
+	 * it.
 	 */
 	public void createPartControl(Composite parent) {
-		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
+		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL
+				| SWT.V_SCROLL);
 		viewer.setContentProvider(new ViewContentProvider());
 		viewer.setLabelProvider(new ViewLabelProvider());
 		viewer.setSorter(new NameSorter());
@@ -151,47 +150,37 @@ public class OperationsView extends ViewPart {
 	private void fillLocalPullDown(IMenuManager manager) {
 		manager.add(analyzeSource);
 		manager.add(new Separator());
-		manager.add(action2);
 	}
 
 	private void fillContextMenu(IMenuManager manager) {
 		manager.add(analyzeSource);
-		manager.add(action2);
 		// Other plug-ins can contribute there actions here
 		manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
 	}
-	
+
 	private void fillLocalToolBar(IToolBarManager manager) {
 		manager.add(analyzeSource);
-		manager.add(action2);
 	}
 
 	private void makeActions() {
 		analyzeSource = new Action() {
 			public void run() {
-//				showMessage("Analyzing the java source code via jaxme");
+				// showMessage("Analyzing the java source code via jaxme");
 				showMessage(AnalyzeJavaSource.getOperationNames());
 			}
 		};
 		analyzeSource.setText("Analyze java source");
 		analyzeSource.setToolTipText("Analyze sourcecode via jaxme");
-		analyzeSource.setImageDescriptor(PlatformUI.getWorkbench().getSharedImages().
-			getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK));
-		
-		action2 = new Action() {
-			public void run() {
-				showMessage("Action 2 executed");
-			}
-		};
-		action2.setText("Action 2");
-		action2.setToolTipText("Action 2 tooltip");
-		action2.setImageDescriptor(PlatformUI.getWorkbench().getSharedImages().
-				getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK));
+		analyzeSource.setImageDescriptor(PlatformUI.getWorkbench()
+				.getSharedImages().getImageDescriptor(
+						ISharedImages.IMG_OBJS_INFO_TSK));
+
 		doubleClickAction = new Action() {
 			public void run() {
 				ISelection selection = viewer.getSelection();
-				Object obj = ((IStructuredSelection)selection).getFirstElement();
-				showMessage("Double-click detected on "+obj.toString());
+				Object obj = ((IStructuredSelection) selection)
+						.getFirstElement();
+				showMessage("Double-click detected on " + obj.toString());
 			}
 		};
 	}
@@ -203,11 +192,10 @@ public class OperationsView extends ViewPart {
 			}
 		});
 	}
+
 	private void showMessage(String message) {
-		MessageDialog.openInformation(
-			viewer.getControl().getShell(),
-			"Operations View",
-			message);
+		MessageDialog.openInformation(viewer.getControl().getShell(),
+				"Operations View", message);
 	}
 
 	/**

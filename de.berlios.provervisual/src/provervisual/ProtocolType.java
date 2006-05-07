@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProtocolType.java,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ * $Id: ProtocolType.java,v 1.2 2006/05/07 22:19:54 rustikus Exp $
  */
 package provervisual;
 
@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.AbstractEnumerator;
  */
 public final class ProtocolType extends AbstractEnumerator {
 	/**
-	 * The '<em><b>Component</b></em>' literal value.
+	 * The '<em><b>COMPONENT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Component</b></em>' literal object isn't clear,
@@ -31,14 +31,14 @@ public final class ProtocolType extends AbstractEnumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #COMPONENT_LITERAL
-	 * @model name="Component"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
 	public static final int COMPONENT = 0;
 
 	/**
-	 * The '<em><b>Interaction</b></em>' literal value.
+	 * The '<em><b>INTERACTION</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Interaction</b></em>' literal object isn't clear,
@@ -46,31 +46,31 @@ public final class ProtocolType extends AbstractEnumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INTERACTION_LITERAL
-	 * @model name="Interaction"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
 	public static final int INTERACTION = 1;
 
 	/**
-	 * The '<em><b>Component</b></em>' literal object.
+	 * The '<em><b>COMPONENT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #COMPONENT
 	 * @generated
 	 * @ordered
 	 */
-	public static final ProtocolType COMPONENT_LITERAL = new ProtocolType(COMPONENT, "Component", "Component");
+	public static final ProtocolType COMPONENT_LITERAL = new ProtocolType(COMPONENT, "COMPONENT", "COMPONENT");
 
 	/**
-	 * The '<em><b>Interaction</b></em>' literal object.
+	 * The '<em><b>INTERACTION</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #INTERACTION
 	 * @generated
 	 * @ordered
 	 */
-	public static final ProtocolType INTERACTION_LITERAL = new ProtocolType(INTERACTION, "Interaction", "Interaction");
+	public static final ProtocolType INTERACTION_LITERAL = new ProtocolType(INTERACTION, "INTERACTION", "INTERACTION");
 
 	/**
 	 * An array of all the '<em><b>Protocol Type</b></em>' enumerators.

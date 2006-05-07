@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProvervisualPackage.java,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ * $Id: ProvervisualPackage.java,v 1.2 2006/05/07 22:19:54 rustikus Exp $
  */
 package provervisual;
 
@@ -383,13 +383,22 @@ public interface ProvervisualPackage extends EPackage {
 	int OPERATION_PARAMETER__PARAMETER_ABBREV = 1;
 
 	/**
+	 * The feature id for the '<em><b>Parameter Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_PARAMETER__PARAMETER_NAME = 2;
+
+	/**
 	 * The number of structural features of the '<em>Operation Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_PARAMETER_FEATURE_COUNT = 2;
+	int OPERATION_PARAMETER_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link provervisual.impl.OperationGuardImpl <em>Operation Guard</em>}' class.
@@ -686,6 +695,17 @@ public interface ProvervisualPackage extends EPackage {
 	EAttribute getOperationParameter_ParameterAbbrev();
 
 	/**
+	 * Returns the meta object for the attribute '{@link provervisual.OperationParameter#getParameterName <em>Parameter Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Parameter Name</em>'.
+	 * @see provervisual.OperationParameter#getParameterName()
+	 * @see #getOperationParameter()
+	 * @generated
+	 */
+	EAttribute getOperationParameter_ParameterName();
+
+	/**
 	 * Returns the meta object for class '{@link provervisual.OperationGuard <em>Operation Guard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -748,7 +768,7 @@ public interface ProvervisualPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	interface Literals {
+	interface Literals  {
 		/**
 		 * The meta object literal for the '{@link provervisual.impl.ProtocolImpl <em>Protocol</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -946,6 +966,14 @@ public interface ProvervisualPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OPERATION_PARAMETER__PARAMETER_ABBREV = eINSTANCE.getOperationParameter_ParameterAbbrev();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATION_PARAMETER__PARAMETER_NAME = eINSTANCE.getOperationParameter_ParameterName();
 
 		/**
 		 * The meta object literal for the '{@link provervisual.impl.OperationGuardImpl <em>Operation Guard</em>}' class.
