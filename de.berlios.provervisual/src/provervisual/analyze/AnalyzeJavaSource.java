@@ -6,7 +6,6 @@ package provervisual.analyze;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Iterator;
-import java.util.List;
 
 import org.apache.ws.jaxme.js.JavaMethod;
 import org.apache.ws.jaxme.js.JavaSource;
@@ -16,15 +15,10 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
-
-import provervisual.importWizards.ImportWizard;
-
-
 import antlr.RecognitionException;
 import antlr.TokenStreamException;
 

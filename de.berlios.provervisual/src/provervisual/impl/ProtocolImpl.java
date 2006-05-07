@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProtocolImpl.java,v 1.2 2006/05/05 17:35:58 rustikus Exp $
+ * $Id: ProtocolImpl.java,v 1.3 2006/05/07 11:45:50 rustikus Exp $
  */
 package provervisual.impl;
 
@@ -148,7 +148,10 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 	}
 
 	/**
-	 *
+	 * <!-- begin-user-doc -->
+	 * The default constructor for a given URI.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	public ProtocolImpl(URI uri){
 		
@@ -450,17 +453,21 @@ public class ProtocolImpl extends EObjectImpl implements Protocol {
 			result.append(((Operation) j.next()).getOperationAbbrev() + "\n");
 		}
 
-//		result.append("\n" +getRegEx());
+		result.append("\n" +getRegEx());
 		
 		return result.toString();
-		
-		
+
 	}
 	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	public String getRegEx(){
 		
 		NFARegex test = new NFARegex(this);
-		return test.getSimpleRegExp().toString();
+		return test.getSimpleRegExp().toString().replace(".","");
 		
 	}
 	

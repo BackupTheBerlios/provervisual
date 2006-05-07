@@ -13,7 +13,7 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.SWT;
 
 import provervisual.analyze.AnalyzeJavaSource;
-import provervisual.analyze.Test;
+import provervisual.analyze.Tests;
 
 
 /**

@@ -3,10 +3,20 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: de.berlios.provervisual; singleton:=true
 Bundle-Version: 1.0.0
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ libs/antlr.jar,
+ libs/jaxmejs-0.5.1.jar,
+ libs/jpaul.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: provervisual,
+Export-Package: jpaul,
+ jpaul.Constraints,
+ jpaul.Constraints.SetConstraints,
+ jpaul.DataStructs,
+ jpaul.Graphs,
+ jpaul.Misc,
+ jpaul.RegExps,
+ provervisual,
  provervisual.analyze,
  provervisual.impl,
  provervisual.util

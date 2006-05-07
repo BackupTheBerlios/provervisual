@@ -7,6 +7,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.IExportWizard;
 import org.eclipse.ui.IWorkbench;
 import provervisual.Protocol;
+import provervisual.analyze.NFARegex;
 import provervisual.impl.ProtocolImpl;
 
 public class ExportWizard extends Wizard implements IExportWizard {
@@ -22,9 +23,10 @@ public class ExportWizard extends Wizard implements IExportWizard {
         if (file == null)
             return false;
 		URI uri = URI.createFileURI(file.toOSString());
-		ProtocolImpl protocol = new ProtocolImpl(uri);
+		Protocol protocol = new ProtocolImpl(uri);
         System.out.println(protocol.toString());
-        
+        NFARegex nfa = new NFARegex(protocol);
+        nfa.toFile(mainPage.getfilePath().toFile());
         return true;
 	}
 

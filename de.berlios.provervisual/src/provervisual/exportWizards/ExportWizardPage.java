@@ -14,7 +14,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.FileDialog;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.dialogs.WizardExportResourcesPage;
@@ -60,7 +59,7 @@ public class ExportWizardPage extends WizardExportResourcesPage {
 		destinationSelectionGroup.setLayoutData(new GridData(
 				GridData.FILL_HORIZONTAL));
 
-		Label label = new Label(destinationSelectionGroup, SWT.NONE);
+		//Label label = new Label(destinationSelectionGroup, SWT.NONE);
 
 		// destination filename field
 		fileNameField = new Text(destinationSelectionGroup, SWT.BORDER

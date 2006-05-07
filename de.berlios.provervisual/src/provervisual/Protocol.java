@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: Protocol.java,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ * $Id: Protocol.java,v 1.2 2006/05/07 11:45:50 rustikus Exp $
  */
 package provervisual;
 
@@ -143,5 +143,13 @@ public interface Protocol extends EObject {
 	 * @generated
 	 */
 	EList getStates();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	String getRegEx();
 
 } // Protocol

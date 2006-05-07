@@ -1,2 +1,2 @@
-provervisual.anaylze.AnalyzeJavaSource.getOperationNames();
+System.out.println(System.getProperty("java.io.tmpdir"));
 

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProvervisualPackageImpl.java,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ * $Id: ProvervisualPackageImpl.java,v 1.2 2006/05/07 11:45:50 rustikus Exp $
  */
 package provervisual.impl;
 
@@ -508,6 +508,8 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 		initEAttribute(getProtocol_Type(), this.getProtocolType(), "type", null, 0, 1, Protocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProtocol_Operations(), this.getOperation(), null, "operations", null, 0, -1, Protocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProtocol_States(), this.getState(), null, "states", null, 0, -1, Protocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(protocolEClass, ecorePackage.getEString(), "getRegEx", 0, 1);
 
 		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOperation_OperationAbbrev(), ecorePackage.getEString(), "operationAbbrev", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

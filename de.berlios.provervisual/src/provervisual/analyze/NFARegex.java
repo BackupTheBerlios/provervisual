@@ -1,5 +1,6 @@
 package provervisual.analyze;
 
+import java.io.File;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -39,6 +40,8 @@ public class NFARegex {
 
 		ProtocolImpl protocol = new ProtocolImpl(uri);
 		System.out.println(protocol);
+		NFARegex test = new NFARegex(protocol);
+		test.toFile(null);
 		
 	}
 	
@@ -73,7 +76,7 @@ public class NFARegex {
 			
 			Operation op = (Operation) i.next() ;
 			
-			addTrans(node2arcs, op.getStartState(), op.getOperationAbbrev(), op.getEndState() );
+			addTrans(node2arcs, op.getStartState(), "<"+op.getOperationAbbrev()+">", op.getEndState() );
 			
 		}
 		
@@ -83,21 +86,6 @@ public class NFARegex {
 		return nfa;
 	}
 	
-	public RegExp getRegExp() {
-
-		return nfa.toRegExp();
-		
-	}
-
-	public RegExp getSimpleRegExp() {
-
-		NFA<NFA.BigState<NFA.BigState<NFA.BigState<Object>>>, String> simplifiedNFA = nfa
-		.simplify().simplify().simplify();
-		
-		return simplifiedNFA.toRegExp();
-
-	}
-		
 	private <State, Label> Map<State, List<Pair<State, Label>>> makeNode2Arcs() {
 		return new MapWithDefault<State, List<Pair<State, Label>>>(
 				new Factory<List<Pair<State, Label>>>() {
@@ -133,4 +121,63 @@ public class NFARegex {
 				});
 	}
 
+	public RegExp getRegExp() {
+
+		return nfa.toRegExp();
+		
+	}
+
+	public RegExp getSimpleRegExp() {
+
+		NFA<NFA.BigState<NFA.BigState<NFA.BigState<Object>>>, String> simplifiedNFA = nfa
+		.simplify().simplify().simplify();
+		
+		return simplifiedNFA.toRegExp();
+
+	}
+		
+	public boolean toFile(File destination){
+		
+		StringBuffer text = new StringBuffer();
+		text.append("PROTOCOL_TYPE="+protocol.getType()+"\n\n");
+		
+		text.append("OPERATION_ABBREVIATION\n");
+
+		EList operations = protocol.getOperations();
+		
+		for(Iterator i = operations.iterator(); i.hasNext();){
+			
+			Operation op = (Operation) i.next();
+			
+			// Operation parameter definition only with full names at the moment
+			text.append(op.getOperationAbbrev()+" ");
+			text.append(op.getOperationName()+"\n");
+			
+			/* TODO: Implement different operation parameters 
+			 * Not included in diagram editor at the moment
+
+			text.append(op.getOperationName()+"(");
+			
+			for(Iterator j = op.getOperationParameter().iterator(); j.hasNext();){
+				String pa = (String) j.next();
+				text.append(pa);
+				if(j.hasNext())
+					text.append(",");
+			}
+			text.append(")\n");
+			
+			 */
+			
+		}
+		
+		text.append("\nALLOWED_SEQUENCE\n");
+		text.append(protocol.getRegEx());
+		
+		IO.stringToFile(text.toString(), destination);
+		
+		return true;
+		
+	}
+	
+	
 }
