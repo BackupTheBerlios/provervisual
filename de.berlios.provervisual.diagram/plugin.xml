@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="provervisual.diagram.part.ProVerVisualDiagramPreferenceInitializer"/>
+   </extension>
+
+  <extension point="org.eclipse.team.core.fileTypes">
+      <fileTypes
+         type="text"
+         extension="pvd">
+      </fileTypes>
+  </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+         type="pvd"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+     <editor
+        id="provervisual.diagram.part.ProVerVisualDiagramEditorID"
+        name="ProVerVisual Diagram Editor"
+        icon="../de.berlios.provervisual.editor/icons/full/obj16/ProvervisualModelFile.gif"
+        extensions="pvd"
+        default="true"
+        class="provervisual.diagram.part.ProVerVisualDiagramEditor"
+        matchingStrategy="provervisual.diagram.part.ProVerVisualMatchingStrategy"
+        contributorClass="provervisual.diagram.part.ProVerVisualDiagramActionBarContributor">
+     </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+  	  <wizard
+  	     name="ProVerVisual Diagram"
+  	     icon="../de.berlios.provervisual.editor/icons/full/obj16/ProvervisualModelFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="provervisual.diagram.part.ProVerVisualCreationWizard"
+  	     id="provervisual.diagram.part.ProVerVisualCreationWizardID">
+  	  	 <description>
+  	  		Creates ProVerVisual diagram.
+  	  	 </description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="de.berlios.provervisual.diagram.ui.objectContribution.IFile1"
+            nameFilter="*.provervisual"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="Initialize pvd diagram file"
+               class="provervisual.diagram.part.ProVerVisualInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="provervisual.diagram.part.ProVerVisualInitDiagramFileActionID">
+         </action>
+      </objectContribution>  
+      <objectContribution
+            adaptable="false"
+            id="de.berlios.provervisual.diagram.ui.objectContribution.ProtocolEditPart2"
+            objectClass="provervisual.diagram.edit.parts.ProtocolEditPart">
+         <action
+               class="provervisual.diagram.part.ProVerVisualLoadResourceAction"
+               enablesFor="1"
+               id="provervisual.diagram.part.ProVerVisualLoadResourceActionID"
+               label="Load Resource..."
+               menubarPath="additions">
+         </action>
+      </objectContribution>                      
+  </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="ProVerVisualPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="provervisual.diagram.part.ProVerVisualDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="ProVerVisualPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="provervisual.diagram.part.ProVerVisualDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="ProVerVisualRender">
+         <Priority name="Lowest"/>
+         <ViewId id="provervisual.diagram.part.ProVerVisualDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
+      <viewProvider class="provervisual.diagram.providers.ProVerVisualViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="ProVerVisual"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider class="provervisual.diagram.providers.ProVerVisualEditPartProvider">
+         <Priority name="Lowest"/>
+      </editpartProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders">
+      <paletteProvider class="provervisual.diagram.providers.ProVerVisualPaletteProvider">
+         <Priority name="Lowest"/>
+         <editor id="provervisual.diagram.part.ProVerVisualDiagramEditorID"/>
+      </paletteProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
+      <modelingAssistantProvider class="provervisual.diagram.providers.ProVerVisualModelingAssistantProvider">
+         <Priority name="Lowest"/>
+      </modelingAssistantProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.properties.propertiesProviders">
+      <PropertiesProvider
+            verifyPluginLoaded="false"
+            class="provervisual.diagram.providers.ProVerVisualPropertyProvider">
+         <Priority name="Lowest"/>
+      </PropertiesProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders">
+      <IconProvider class="provervisual.diagram.providers.ProVerVisualIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
+      <ParserProvider class="provervisual.diagram.providers.ProVerVisualParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+
+      <metamodel nsURI="http://provervisual.berlios.de">
+         <metamodelType
+               id="de.berlios.provervisual.diagram.Protocol_79"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Protocol"
+               edithelper="provervisual.diagram.edit.helpers.Protocol_79EditHelper">
+            <param name="semanticHint" value="79"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://provervisual.berlios.de">
+         <metamodelType
+               id="de.berlios.provervisual.diagram.InitialState_1001"
+               name="InitialState"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InitialState"
+               edithelper="provervisual.diagram.edit.helpers.InitialState_1001EditHelper">
+            <param name="semanticHint" value="1001"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://provervisual.berlios.de">
+         <metamodelType
+               id="de.berlios.provervisual.diagram.FinalState_1002"
+               name="FinalState"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="FinalState"
+               edithelper="provervisual.diagram.edit.helpers.FinalState_1002EditHelper">
+            <param name="semanticHint" value="1002"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://provervisual.berlios.de">
+         <metamodelType
+               id="de.berlios.provervisual.diagram.ActionState_1003"
+               name="ActionState"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActionState"
+               edithelper="provervisual.diagram.edit.helpers.ActionState_1003EditHelper">
+            <param name="semanticHint" value="1003"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://provervisual.berlios.de">
+         <metamodelType
+               id="de.berlios.provervisual.diagram.Operation_1004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Operation"
+               edithelper="provervisual.diagram.edit.helpers.Operation_1004EditHelper">
+            <param name="semanticHint" value="1004"/>
+         </metamodelType>
+      </metamodel>
+
+      <metamodel nsURI="http://provervisual.berlios.de">
+         <specializationType
+               id="de.berlios.provervisual.diagram.Operation_3001"
+               name="Operation"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               edithelperadvice="provervisual.diagram.edit.helpers.Operation_3001EditHelperAdvice">
+            <specializes id="de.berlios.provervisual.diagram.Operation_1004"/>
+            <param name="semanticHint" value="3001"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+</plugin>
