@@ -5,7 +5,7 @@
  <copyright>
  </copyright>
 
- $Id: plugin.xml,v 1.2 2006/05/05 17:35:58 rustikus Exp $
+ $Id: plugin.xml,v 1.3 2006/05/16 19:25:17 rustikus Exp $
 -->
 
 <plugin>
@@ -23,16 +23,12 @@
            name="Protocol Verification"/>
      <view
            category="de.berlios.provervisual"
-           class="provervisual.views.OperationsView"
-           icon="icons/sample.gif"
-           id="provervisual.views.viewOperations"
-           name="Operations View"/>
+           class="provervisual.views.SampleView"         icon="icons/sample.gif"
+           id="provervisual.views.viewSample"     name="Sample View"/>
      <view
            category="de.berlios.provervisual"
-           class="provervisual.views.SelectionView"
-           icon="icons/sample.gif"
-           id="provervisual.views.viewSelection"
-           name="Selection View"/>
+           class="provervisual.views.OperationView" icon="icons/sample.gif"
+           id="provervisual.views.viewOperation" name="Operation View"/>
   </extension>
   <extension
         point="org.eclipse.ui.perspectiveExtensions">

@@ -1,84 +1,75 @@
 package provervisual.views;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Vector;
 
-import org.apache.ws.jaxme.js.JavaMethod;
-import org.apache.ws.jaxme.js.JavaSource;
-import org.apache.ws.jaxme.js.JavaSourceFactory;
-import org.apache.ws.jaxme.js.util.JavaParser;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.CoreException;
+import org.eclipse.jdt.core.ICompilationUnit;
+import org.eclipse.jdt.core.IJavaElement;
+import org.eclipse.jdt.core.IMethod;
+import org.eclipse.jdt.core.IType;
+//import org.eclipse.jdt.core.Flags;
+import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
 
-import provervisual.Operation;
+/**
+ * Provide a ContentProvider for the OperationView TODO:
+ */
+class OperationContentProvider implements IStructuredContentProvider {
 
-import antlr.RecognitionException;
-import antlr.TokenStreamException;
-
-public class OperationContentProvider implements IStructuredContentProvider {
-
+	/**
+	 * Returns the elements in the input, which must be either an array or a
+	 * <code>Collection</code>.
+	 */
 	public Object[] getElements(Object inputElement) {
 
-        if (inputElement instanceof IStructuredSelection ) {
-			return (getOperations((IStructuredSelection) inputElement).toArray());
-		}
-        
-	    return null;
-		
-	}
-	
-	private List <String>getOperations(IStructuredSelection files){
+		if (inputElement instanceof IStructuredSelection) {
 
-		JavaSourceFactory jsf = new JavaSourceFactory();
-		JavaParser jp = new JavaParser(jsf);
-		Vector <String>operations = new Vector<String>();
-		
-		for(Iterator it = files.iterator(); it.hasNext();){
+			Collection<IMethod> methods = new Vector<IMethod>();
+			IStructuredSelection items = (IStructuredSelection) inputElement;
 			try {
-				BufferedReader in = new BufferedReader(new InputStreamReader(((IFile) it.next()).getContents()));
-				jp.parse(in);
-			} catch (RecognitionException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (TokenStreamException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (CoreException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		
-		for (Iterator iter = jsf.getJavaSources(); iter.hasNext();) {
-			JavaSource js = (JavaSource) iter.next();
-			System.out.println("Public instance methods of class: "
-					+ js.getQName());
-			JavaMethod[] methods = js.getMethods();
-			for (int i = 0; i < methods.length; i++) {
-				if (methods[i].getProtection().equals(JavaSource.PUBLIC)) {
-					System.out.println("  " + methods[i].getName());
-					operations.add(methods[i].getName());
+
+				for (Iterator it = items.iterator(); it.hasNext();) {
+					IJavaElement item = (IJavaElement) it.next();
+
+					if (item instanceof ICompilationUnit) {
+						ICompilationUnit compUnit = (ICompilationUnit) item;
+						IJavaElement elements[] = compUnit.getChildren();
+						for (int i = 0; i < elements.length; i++) {
+							if (elements[i].getElementType() == IJavaElement.TYPE) {
+								IType type = (IType) elements[i];
+								IMethod method[] = type.getMethods();
+								for (int j = 0; j < method.length; j++) {
+									// System.out.println(method[j].getFlags());
+									methods.add(method[j]);
+								}
+							}
+						}
+					}
 				}
+			} catch (JavaModelException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			System.out.println(js.getQName());
+
+			return methods.toArray();
 		}
-		}
-		return operations;
-		
+		return new Object[0];
 	}
 
-	public void dispose() {
-
-	}
-
+	/**
+	 * This implementation does nothing.
+	 */
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-
+		// do nothing.
 	}
 
+	/**
+	 * This implementation does nothing.
+	 */
+	public void dispose() {
+		// do nothing.
+	}
 }

@@ -27,7 +27,7 @@ import provervisual.analyze.AnalyzeJavaSource;
  * <p>
  */
 
-public class OperationsView extends ViewPart {
+public class SampleView extends ViewPart {
 	private TableViewer viewer;
 
 	private Action analyzeSource;
@@ -63,7 +63,7 @@ public class OperationsView extends ViewPart {
 		public void selectionChanged(IWorkbenchPart sourcepart,
 				ISelection selection) {
 			// we ignore our own selections
-			if (sourcepart != OperationsView.this) {
+			if (sourcepart != SampleView.this) {
 				showSelection(sourcepart, selection);
 			}
 		}
@@ -108,7 +108,7 @@ public class OperationsView extends ViewPart {
 	/**
 	 * The constructor.
 	 */
-	public OperationsView() {
+	public SampleView() {
 	}
 
 	/**
@@ -133,7 +133,7 @@ public class OperationsView extends ViewPart {
 		menuMgr.setRemoveAllWhenShown(true);
 		menuMgr.addMenuListener(new IMenuListener() {
 			public void menuAboutToShow(IMenuManager manager) {
-				OperationsView.this.fillContextMenu(manager);
+				SampleView.this.fillContextMenu(manager);
 			}
 		});
 		Menu menu = menuMgr.createContextMenu(viewer.getControl());
