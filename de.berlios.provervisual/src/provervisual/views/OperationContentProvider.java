@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Vector;
 
+import org.eclipse.jdt.core.IClassFile;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IMethod;
@@ -36,6 +37,21 @@ class OperationContentProvider implements IStructuredContentProvider {
 
 					if (item instanceof ICompilationUnit) {
 						ICompilationUnit compUnit = (ICompilationUnit) item;
+						IJavaElement elements[] = compUnit.getChildren();
+						for (int i = 0; i < elements.length; i++) {
+							if (elements[i].getElementType() == IJavaElement.TYPE) {
+								IType type = (IType) elements[i];
+								IMethod method[] = type.getMethods();
+								for (int j = 0; j < method.length; j++) {
+									// System.out.println(method[j].getFlags());
+									methods.add(method[j]);
+								}
+							}
+						}
+					}
+
+					if (item instanceof IClassFile) {
+						IClassFile compUnit = (IClassFile) item;
 						IJavaElement elements[] = compUnit.getChildren();
 						for (int i = 0; i < elements.length; i++) {
 							if (elements[i].getElementType() == IJavaElement.TYPE) {

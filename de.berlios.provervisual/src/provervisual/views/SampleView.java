@@ -10,7 +10,6 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.*;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.SWT;
-import provervisual.analyze.AnalyzeJavaSource;
 
 /**
  * This sample class demonstrates how to plug-in a new workbench view. The view
@@ -165,8 +164,8 @@ public class SampleView extends ViewPart {
 	private void makeActions() {
 		analyzeSource = new Action() {
 			public void run() {
-				// showMessage("Analyzing the java source code via jaxme");
-				showMessage(AnalyzeJavaSource.getOperationNames());
+				 showMessage("Analyzing the java source code via jaxme");
+
 			}
 		};
 		analyzeSource.setText("Analyze java source");
