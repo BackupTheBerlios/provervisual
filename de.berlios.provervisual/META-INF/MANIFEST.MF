@@ -9,14 +9,7 @@ Bundle-ClassPath: .,
  libs/jpaul.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: jpaul,
- jpaul.Constraints,
- jpaul.Constraints.SetConstraints,
- jpaul.DataStructs,
- jpaul.Graphs,
- jpaul.Misc,
- jpaul.RegExps,
- provervisual,
+Export-Package: provervisual,
  provervisual.analyze,
  provervisual.impl,
  provervisual.util
