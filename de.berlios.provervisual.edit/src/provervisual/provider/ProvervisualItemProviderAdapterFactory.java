@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProvervisualItemProviderAdapterFactory.java,v 1.1 2006/05/09 20:36:04 rustikus Exp $
+ * $Id: ProvervisualItemProviderAdapterFactory.java,v 1.2 2006/05/19 19:27:46 rustikus Exp $
  */
 package provervisual.provider;
 
@@ -230,28 +230,6 @@ public class ProvervisualItemProviderAdapterFactory extends ProvervisualAdapterF
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link provervisual.OperationGuard} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected OperationGuardItemProvider operationGuardItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link provervisual.OperationGuard}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Adapter createOperationGuardAdapter() {
-		if (operationGuardItemProvider == null) {
-			operationGuardItemProvider = new OperationGuardItemProvider(this);
-		}
-
-		return operationGuardItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -354,7 +332,6 @@ public class ProvervisualItemProviderAdapterFactory extends ProvervisualAdapterF
 		if (finalStateItemProvider != null) finalStateItemProvider.dispose();
 		if (actionStateItemProvider != null) actionStateItemProvider.dispose();
 		if (operationParameterItemProvider != null) operationParameterItemProvider.dispose();
-		if (operationGuardItemProvider != null) operationGuardItemProvider.dispose();
 	}
 
 }

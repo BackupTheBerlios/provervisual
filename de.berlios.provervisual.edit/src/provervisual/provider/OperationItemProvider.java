@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: OperationItemProvider.java,v 1.1 2006/05/09 20:36:04 rustikus Exp $
+ * $Id: OperationItemProvider.java,v 1.2 2006/05/19 19:27:46 rustikus Exp $
  */
 package provervisual.provider;
 
@@ -67,7 +67,6 @@ public class OperationItemProvider
 
 			addOperationAbbrevPropertyDescriptor(object);
 			addOperationNamePropertyDescriptor(object);
-			addOperationDescriptionPropertyDescriptor(object);
 			addStartStatePropertyDescriptor(object);
 			addEndStatePropertyDescriptor(object);
 		}
@@ -108,26 +107,6 @@ public class OperationItemProvider
 				 getString("_UI_Operation_operationName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_operationName_feature", "_UI_Operation_type"),
 				 ProvervisualPackage.Literals.OPERATION__OPERATION_NAME,
-				 true,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Operation Description feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOperationDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Operation_operationDescription_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Operation_operationDescription_feature", "_UI_Operation_type"),
-				 ProvervisualPackage.Literals.OPERATION__OPERATION_DESCRIPTION,
 				 true,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
@@ -185,8 +164,8 @@ public class OperationItemProvider
 	public Collection getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ProvervisualPackage.Literals.OPERATION__OPERATION_PARAMETER);
 			childrenFeatures.add(ProvervisualPackage.Literals.OPERATION__OPERATION_GUARD);
+			childrenFeatures.add(ProvervisualPackage.Literals.OPERATION__OPERATION_PARAMETER);
 		}
 		return childrenFeatures;
 	}
@@ -239,11 +218,10 @@ public class OperationItemProvider
 		switch (notification.getFeatureID(Operation.class)) {
 			case ProvervisualPackage.OPERATION__OPERATION_ABBREV:
 			case ProvervisualPackage.OPERATION__OPERATION_NAME:
-			case ProvervisualPackage.OPERATION__OPERATION_DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ProvervisualPackage.OPERATION__OPERATION_PARAMETER:
 			case ProvervisualPackage.OPERATION__OPERATION_GUARD:
+			case ProvervisualPackage.OPERATION__OPERATION_PARAMETER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -262,13 +240,13 @@ public class OperationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ProvervisualPackage.Literals.OPERATION__OPERATION_PARAMETER,
-				 ProvervisualFactory.eINSTANCE.createOperationParameter()));
+				(ProvervisualPackage.Literals.OPERATION__OPERATION_GUARD,
+				 ""));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ProvervisualPackage.Literals.OPERATION__OPERATION_GUARD,
-				 ProvervisualFactory.eINSTANCE.createOperationGuard()));
+				(ProvervisualPackage.Literals.OPERATION__OPERATION_PARAMETER,
+				 ProvervisualFactory.eINSTANCE.createOperationParameter()));
 	}
 
 	/**

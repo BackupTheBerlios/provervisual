@@ -14,8 +14,10 @@ import provervisual.diagram.view.factories.FinalStateViewFactory;
 import provervisual.diagram.view.factories.InitialStateViewFactory;
 import provervisual.diagram.view.factories.Operation2ViewFactory;
 import provervisual.diagram.view.factories.OperationViewFactory;
+import provervisual.diagram.view.factories.Operation_guardConstraintViewFactory;
 import provervisual.diagram.view.factories.Operation_operationAbbrev2ViewFactory;
 import provervisual.diagram.view.factories.Operation_operationAbbrevViewFactory;
+import provervisual.diagram.view.factories.Operation_operationGuardViewFactory;
 import provervisual.diagram.view.factories.Operation_operationDescriptionViewFactory;
 import provervisual.diagram.view.factories.Operation_operationNameViewFactory;
 import provervisual.diagram.view.factories.ProtocolViewFactory;
@@ -67,7 +69,7 @@ public class ProVerVisualViewProvider extends AbstractViewProvider {
 		case 4002:
 			return Operation_operationNameViewFactory.class;
 		case 4003:
-			return Operation_operationDescriptionViewFactory.class;
+			return Operation_operationGuardViewFactory.class;
 		case 4004:
 			return Operation_operationAbbrev2ViewFactory.class;
 		}

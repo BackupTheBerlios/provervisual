@@ -18,8 +18,10 @@ import provervisual.diagram.edit.parts.ActionStateEditPart;
 import provervisual.diagram.edit.parts.FinalStateEditPart;
 import provervisual.diagram.edit.parts.InitialStateEditPart;
 import provervisual.diagram.edit.parts.OperationEditPart;
+import provervisual.diagram.edit.parts.Operation_guardConstraintEditPart;
 import provervisual.diagram.edit.parts.Operation_operationAbbrev2EditPart;
 import provervisual.diagram.edit.parts.Operation_operationAbbrevEditPart;
+import provervisual.diagram.edit.parts.Operation_operationGuardEditPart;
 import provervisual.diagram.edit.parts.Operation_operationDescriptionEditPart;
 import provervisual.diagram.edit.parts.Operation_operationNameEditPart;
 import provervisual.diagram.edit.parts.ProtocolEditPart;
@@ -147,8 +149,7 @@ public class ProVerVisualVisualIDRegistry {
 			if (Operation_operationNameEditPart.VISUAL_ID.equals(semanticHint)) {
 				return 4002;
 			}
-			if (Operation_operationDescriptionEditPart.VISUAL_ID
-					.equals(semanticHint)) {
+			if (Operation_operationGuardEditPart.VISUAL_ID.equals(semanticHint)) {
 				return 4003;
 			}
 			return getUnrecognizedOperation_1004ChildNodeID(domainElement,

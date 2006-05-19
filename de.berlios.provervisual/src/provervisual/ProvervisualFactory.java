@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProvervisualFactory.java,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ * $Id: ProvervisualFactory.java,v 1.2 2006/05/19 19:27:57 rustikus Exp $
  */
 package provervisual;
 
@@ -87,15 +87,6 @@ public interface ProvervisualFactory extends EFactory {
 	 * @generated
 	 */
 	OperationParameter createOperationParameter();
-
-	/**
-	 * Returns a new object of class '<em>Operation Guard</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Operation Guard</em>'.
-	 * @generated
-	 */
-	OperationGuard createOperationGuard();
 
 	/**
 	 * Returns the package supported by this factory.

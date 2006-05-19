@@ -20,13 +20,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Operation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationAbbrev" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationGuard" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="startState" lowerBound="1"
         eType="#//State"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operationParameter" upperBound="-1"
         eType="#//OperationParameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operationGuard" eType="#//OperationGuard"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endState" lowerBound="1"
         eType="#//State"/>
   </eClassifiers>
@@ -42,9 +40,5 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterAbbrev" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OperationGuard">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

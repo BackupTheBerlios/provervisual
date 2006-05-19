@@ -11,8 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import provervisual.ProvervisualPackage;
 
+import provervisual.diagram.edit.parts.Operation_guardConstraintEditPart;
 import provervisual.diagram.edit.parts.Operation_operationAbbrev2EditPart;
 import provervisual.diagram.edit.parts.Operation_operationAbbrevEditPart;
+import provervisual.diagram.edit.parts.Operation_operationGuardEditPart;
 import provervisual.diagram.edit.parts.Operation_operationDescriptionEditPart;
 import provervisual.diagram.edit.parts.Operation_operationNameEditPart;
 
@@ -71,7 +73,7 @@ public class ProVerVisualParserProvider extends AbstractProvider implements
 		ProVerVisualStructuralFeatureParser parser = new ProVerVisualStructuralFeatureParser(
 				ProvervisualPackage.eINSTANCE.getOperation()
 						.getEStructuralFeature("operationName"));
-		parser.setViewPattern("{0}");
+		parser.setViewPattern("FQN: {0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -79,26 +81,26 @@ public class ProVerVisualParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser operationOperationOperationDescription_4003Parser;
+	private IParser operationOperationOperationGuard_4003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getOperationOperationOperationDescription_4003Parser() {
-		if (operationOperationOperationDescription_4003Parser == null) {
-			operationOperationOperationDescription_4003Parser = createOperationOperationOperationDescription_4003Parser();
+	private IParser getOperationOperationOperationGuard_4003Parser() {
+		if (operationOperationOperationGuard_4003Parser == null) {
+			operationOperationOperationGuard_4003Parser = createOperationOperationOperationGuard_4003Parser();
 		}
-		return operationOperationOperationDescription_4003Parser;
+		return operationOperationOperationGuard_4003Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createOperationOperationOperationDescription_4003Parser() {
+	protected IParser createOperationOperationOperationGuard_4003Parser() {
 		ProVerVisualStructuralFeatureParser parser = new ProVerVisualStructuralFeatureParser(
 				ProvervisualPackage.eINSTANCE.getOperation()
-						.getEStructuralFeature("operationDescription"));
-		parser.setViewPattern("{0}");
+						.getEStructuralFeature("operationGuard"));
+		parser.setViewPattern("Guard: {0}");
 		parser.setEditPattern("{0}");
 		return parser;
 	}
@@ -141,9 +143,8 @@ public class ProVerVisualParserProvider extends AbstractProvider implements
 			if (Operation_operationNameEditPart.VISUAL_ID.equals(viewType)) {
 				return getOperationOperationOperationName_4002Parser();
 			}
-			if (Operation_operationDescriptionEditPart.VISUAL_ID
-					.equals(viewType)) {
-				return getOperationOperationOperationDescription_4003Parser();
+			if (Operation_operationGuardEditPart.VISUAL_ID.equals(viewType)) {
+				return getOperationOperationOperationGuard_4003Parser();
 			}
 		}
 		if (ProVerVisualElementTypes.Operation_3001 == type) {

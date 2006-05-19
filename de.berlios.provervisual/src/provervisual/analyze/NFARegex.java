@@ -75,8 +75,12 @@ public class NFARegex {
 		for(Iterator i = operations.iterator(); i.hasNext();){
 			
 			Operation op = (Operation) i.next() ;
-			
-			addTrans(node2arcs, op.getStartState(), "<"+op.getOperationAbbrev()+">", op.getEndState() );
+			String guard = "";
+			if(op.getOperationGuard() != null)
+				guard = op.getOperationGuard();
+				
+			addTrans(node2arcs, op.getStartState(), "<"+op.getOperationAbbrev()+
+						"["+guard+"]>", op.getEndState() );
 			
 		}
 		

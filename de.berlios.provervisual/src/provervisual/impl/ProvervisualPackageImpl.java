@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProvervisualPackageImpl.java,v 1.3 2006/05/07 22:19:54 rustikus Exp $
+ * $Id: ProvervisualPackageImpl.java,v 1.4 2006/05/19 19:27:57 rustikus Exp $
  */
 package provervisual.impl;
 
@@ -81,13 +81,6 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 	 * @generated
 	 */
 	private EClass operationParameterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass operationGuardEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,15 +243,6 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOperation_OperationDescription() {
-		return (EAttribute)operationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getOperation_StartState() {
 		return (EReference)operationEClass.getEStructuralFeatures().get(3);
 	}
@@ -277,8 +261,8 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOperation_OperationGuard() {
-		return (EReference)operationEClass.getEStructuralFeatures().get(5);
+	public EAttribute getOperation_OperationGuard() {
+		return (EAttribute)operationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -287,7 +271,7 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 	 * @generated
 	 */
 	public EReference getOperation_EndState() {
-		return (EReference)operationEClass.getEStructuralFeatures().get(6);
+		return (EReference)operationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -385,33 +369,6 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOperationGuard() {
-		return operationGuardEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOperationGuard_GuardConstraint() {
-		return (EAttribute)operationGuardEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOperationGuard_GuardDescription() {
-		return (EAttribute)operationGuardEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getProtocolType() {
 		return protocolTypeEEnum;
 	}
@@ -454,10 +411,9 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 		operationEClass = createEClass(OPERATION);
 		createEAttribute(operationEClass, OPERATION__OPERATION_ABBREV);
 		createEAttribute(operationEClass, OPERATION__OPERATION_NAME);
-		createEAttribute(operationEClass, OPERATION__OPERATION_DESCRIPTION);
+		createEAttribute(operationEClass, OPERATION__OPERATION_GUARD);
 		createEReference(operationEClass, OPERATION__START_STATE);
 		createEReference(operationEClass, OPERATION__OPERATION_PARAMETER);
-		createEReference(operationEClass, OPERATION__OPERATION_GUARD);
 		createEReference(operationEClass, OPERATION__END_STATE);
 
 		stateEClass = createEClass(STATE);
@@ -474,10 +430,6 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 		createEAttribute(operationParameterEClass, OPERATION_PARAMETER__PARAMETER_TYPE);
 		createEAttribute(operationParameterEClass, OPERATION_PARAMETER__PARAMETER_ABBREV);
 		createEAttribute(operationParameterEClass, OPERATION_PARAMETER__PARAMETER_NAME);
-
-		operationGuardEClass = createEClass(OPERATION_GUARD);
-		createEAttribute(operationGuardEClass, OPERATION_GUARD__GUARD_CONSTRAINT);
-		createEAttribute(operationGuardEClass, OPERATION_GUARD__GUARD_DESCRIPTION);
 
 		// Create enums
 		protocolTypeEEnum = createEEnum(PROTOCOL_TYPE);
@@ -524,10 +476,9 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOperation_OperationAbbrev(), ecorePackage.getEString(), "operationAbbrev", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperation_OperationName(), ecorePackage.getEString(), "operationName", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperation_OperationDescription(), ecorePackage.getEString(), "operationDescription", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperation_OperationGuard(), ecorePackage.getEString(), "operationGuard", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperation_StartState(), this.getState(), null, "startState", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperation_OperationParameter(), this.getOperationParameter(), null, "operationParameter", null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_OperationGuard(), this.getOperationGuard(), null, "operationGuard", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperation_EndState(), this.getState(), null, "endState", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -544,10 +495,6 @@ public class ProvervisualPackageImpl extends EPackageImpl implements Provervisua
 		initEAttribute(getOperationParameter_ParameterType(), ecorePackage.getEString(), "parameterType", null, 0, 1, OperationParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperationParameter_ParameterAbbrev(), ecorePackage.getEString(), "parameterAbbrev", null, 0, 1, OperationParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperationParameter_ParameterName(), ecorePackage.getEString(), "parameterName", "", 0, 1, OperationParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(operationGuardEClass, OperationGuard.class, "OperationGuard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOperationGuard_GuardConstraint(), ecorePackage.getEString(), "guardConstraint", null, 0, 1, OperationGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperationGuard_GuardDescription(), ecorePackage.getEString(), "guardDescription", null, 0, 1, OperationGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(protocolTypeEEnum, ProtocolType.class, "ProtocolType");

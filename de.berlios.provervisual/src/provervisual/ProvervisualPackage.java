@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProvervisualPackage.java,v 1.2 2006/05/07 22:19:54 rustikus Exp $
+ * $Id: ProvervisualPackage.java,v 1.3 2006/05/19 19:27:57 rustikus Exp $
  */
 package provervisual;
 
@@ -153,13 +153,13 @@ public interface ProvervisualPackage extends EPackage {
 	int OPERATION__OPERATION_NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Operation Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Operation Guard</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__OPERATION_DESCRIPTION = 2;
+	int OPERATION__OPERATION_GUARD = 2;
 
 	/**
 	 * The feature id for the '<em><b>Start State</b></em>' reference.
@@ -180,22 +180,13 @@ public interface ProvervisualPackage extends EPackage {
 	int OPERATION__OPERATION_PARAMETER = 4;
 
 	/**
-	 * The feature id for the '<em><b>Operation Guard</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION__OPERATION_GUARD = 5;
-
-	/**
 	 * The feature id for the '<em><b>End State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__END_STATE = 6;
+	int OPERATION__END_STATE = 5;
 
 	/**
 	 * The number of structural features of the '<em>Operation</em>' class.
@@ -204,7 +195,7 @@ public interface ProvervisualPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_FEATURE_COUNT = 7;
+	int OPERATION_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link provervisual.impl.StateImpl <em>State</em>}' class.
@@ -401,43 +392,6 @@ public interface ProvervisualPackage extends EPackage {
 	int OPERATION_PARAMETER_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link provervisual.impl.OperationGuardImpl <em>Operation Guard</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see provervisual.impl.OperationGuardImpl
-	 * @see provervisual.impl.ProvervisualPackageImpl#getOperationGuard()
-	 * @generated
-	 */
-	int OPERATION_GUARD = 7;
-
-	/**
-	 * The feature id for the '<em><b>Guard Constraint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_GUARD__GUARD_CONSTRAINT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Guard Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_GUARD__GUARD_DESCRIPTION = 1;
-
-	/**
-	 * The number of structural features of the '<em>Operation Guard</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_GUARD_FEATURE_COUNT = 2;
-
-	/**
 	 * The meta object id for the '{@link provervisual.ProtocolType <em>Protocol Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -445,7 +399,7 @@ public interface ProvervisualPackage extends EPackage {
 	 * @see provervisual.impl.ProvervisualPackageImpl#getProtocolType()
 	 * @generated
 	 */
-	int PROTOCOL_TYPE = 8;
+	int PROTOCOL_TYPE = 7;
 
 
 	/**
@@ -546,17 +500,6 @@ public interface ProvervisualPackage extends EPackage {
 	EAttribute getOperation_OperationName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link provervisual.Operation#getOperationDescription <em>Operation Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operation Description</em>'.
-	 * @see provervisual.Operation#getOperationDescription()
-	 * @see #getOperation()
-	 * @generated
-	 */
-	EAttribute getOperation_OperationDescription();
-
-	/**
 	 * Returns the meta object for the reference '{@link provervisual.Operation#getStartState <em>Start State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -579,15 +522,15 @@ public interface ProvervisualPackage extends EPackage {
 	EReference getOperation_OperationParameter();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link provervisual.Operation#getOperationGuard <em>Operation Guard</em>}'.
+	 * Returns the meta object for the attribute '{@link provervisual.Operation#getOperationGuard <em>Operation Guard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Operation Guard</em>'.
+	 * @return the meta object for the attribute '<em>Operation Guard</em>'.
 	 * @see provervisual.Operation#getOperationGuard()
 	 * @see #getOperation()
 	 * @generated
 	 */
-	EReference getOperation_OperationGuard();
+	EAttribute getOperation_OperationGuard();
 
 	/**
 	 * Returns the meta object for the reference '{@link provervisual.Operation#getEndState <em>End State</em>}'.
@@ -706,38 +649,6 @@ public interface ProvervisualPackage extends EPackage {
 	EAttribute getOperationParameter_ParameterName();
 
 	/**
-	 * Returns the meta object for class '{@link provervisual.OperationGuard <em>Operation Guard</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Operation Guard</em>'.
-	 * @see provervisual.OperationGuard
-	 * @generated
-	 */
-	EClass getOperationGuard();
-
-	/**
-	 * Returns the meta object for the attribute '{@link provervisual.OperationGuard#getGuardConstraint <em>Guard Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Guard Constraint</em>'.
-	 * @see provervisual.OperationGuard#getGuardConstraint()
-	 * @see #getOperationGuard()
-	 * @generated
-	 */
-	EAttribute getOperationGuard_GuardConstraint();
-
-	/**
-	 * Returns the meta object for the attribute '{@link provervisual.OperationGuard#getGuardDescription <em>Guard Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Guard Description</em>'.
-	 * @see provervisual.OperationGuard#getGuardDescription()
-	 * @see #getOperationGuard()
-	 * @generated
-	 */
-	EAttribute getOperationGuard_GuardDescription();
-
-	/**
 	 * Returns the meta object for enum '{@link provervisual.ProtocolType <em>Protocol Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -846,14 +757,6 @@ public interface ProvervisualPackage extends EPackage {
 		EAttribute OPERATION__OPERATION_NAME = eINSTANCE.getOperation_OperationName();
 
 		/**
-		 * The meta object literal for the '<em><b>Operation Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OPERATION__OPERATION_DESCRIPTION = eINSTANCE.getOperation_OperationDescription();
-
-		/**
 		 * The meta object literal for the '<em><b>Start State</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -870,12 +773,12 @@ public interface ProvervisualPackage extends EPackage {
 		EReference OPERATION__OPERATION_PARAMETER = eINSTANCE.getOperation_OperationParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Operation Guard</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Operation Guard</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPERATION__OPERATION_GUARD = eINSTANCE.getOperation_OperationGuard();
+		EAttribute OPERATION__OPERATION_GUARD = eINSTANCE.getOperation_OperationGuard();
 
 		/**
 		 * The meta object literal for the '<em><b>End State</b></em>' reference feature.
@@ -974,32 +877,6 @@ public interface ProvervisualPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OPERATION_PARAMETER__PARAMETER_NAME = eINSTANCE.getOperationParameter_ParameterName();
-
-		/**
-		 * The meta object literal for the '{@link provervisual.impl.OperationGuardImpl <em>Operation Guard</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see provervisual.impl.OperationGuardImpl
-		 * @see provervisual.impl.ProvervisualPackageImpl#getOperationGuard()
-		 * @generated
-		 */
-		EClass OPERATION_GUARD = eINSTANCE.getOperationGuard();
-
-		/**
-		 * The meta object literal for the '<em><b>Guard Constraint</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OPERATION_GUARD__GUARD_CONSTRAINT = eINSTANCE.getOperationGuard_GuardConstraint();
-
-		/**
-		 * The meta object literal for the '<em><b>Guard Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OPERATION_GUARD__GUARD_DESCRIPTION = eINSTANCE.getOperationGuard_GuardDescription();
 
 		/**
 		 * The meta object literal for the '{@link provervisual.ProtocolType <em>Protocol Type</em>}' enum.

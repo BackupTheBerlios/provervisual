@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProvervisualAdapterFactory.java,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ * $Id: ProvervisualAdapterFactory.java,v 1.2 2006/05/19 19:27:57 rustikus Exp $
  */
 package provervisual.util;
 
@@ -90,9 +90,6 @@ public class ProvervisualAdapterFactory extends AdapterFactoryImpl {
 			}
 			public Object caseOperationParameter(OperationParameter object) {
 				return createOperationParameterAdapter();
-			}
-			public Object caseOperationGuard(OperationGuard object) {
-				return createOperationGuardAdapter();
 			}
 			public Object defaultCase(EObject object) {
 				return createEObjectAdapter();
@@ -207,20 +204,6 @@ public class ProvervisualAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOperationParameterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link provervisual.OperationGuard <em>Operation Guard</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see provervisual.OperationGuard
-	 * @generated
-	 */
-	public Adapter createOperationGuardAdapter() {
 		return null;
 	}
 

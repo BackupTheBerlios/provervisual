@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProvervisualSwitch.java,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ * $Id: ProvervisualSwitch.java,v 1.2 2006/05/19 19:27:57 rustikus Exp $
  */
 package provervisual.util;
 
@@ -132,12 +132,6 @@ public class ProvervisualSwitch {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProvervisualPackage.OPERATION_GUARD: {
-				OperationGuard operationGuard = (OperationGuard)theEObject;
-				Object result = caseOperationGuard(operationGuard);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -244,21 +238,6 @@ public class ProvervisualSwitch {
 	 * @generated
 	 */
 	public Object caseOperationParameter(OperationParameter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpretting the object as an instance of '<em>Operation Guard</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpretting the object as an instance of '<em>Operation Guard</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public Object caseOperationGuard(OperationGuard object) {
 		return null;
 	}
 

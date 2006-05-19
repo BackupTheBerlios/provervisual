@@ -116,10 +116,10 @@ public class OperationEditPart extends ShapeNodeEditPart {
 							.getFigureOperationOperationNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof Operation_operationDescriptionEditPart) {
-			((Operation_operationDescriptionEditPart) childEditPart)
+		if (childEditPart instanceof Operation_operationGuardEditPart) {
+			((Operation_operationGuardEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureOperationOperationDescriptionFigure());
+							.getFigureOperationOperationGuardFigure());
 			return true;
 		}
 		return false;
@@ -260,9 +260,9 @@ public class OperationEditPart extends ShapeNodeEditPart {
 			setFigureOperationOperationAbbrevFigure(childOperationOperationAbbrevFigure);
 			add(childOperationOperationAbbrevFigure);
 
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel childOperationOperationDescriptionFigure = createFigureOperationOperationDescriptionFigure();
-			setFigureOperationOperationDescriptionFigure(childOperationOperationDescriptionFigure);
-			add(childOperationOperationDescriptionFigure);
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel childOperationOperationGuardFigure = createFigureOperationOperationGuardFigure();
+			setFigureOperationOperationGuardFigure(childOperationOperationGuardFigure);
+			add(childOperationOperationGuardFigure);
 
 			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel childOperationOperationNameFigure = createFigureOperationOperationNameFigure();
 			setFigureOperationOperationNameFigure(childOperationOperationNameFigure);
@@ -303,31 +303,31 @@ public class OperationEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fOperationOperationDescriptionFigure;
+		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel fOperationOperationGuardFigure;
 
 		/**
 		 * @generated
 		 */
-		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureOperationOperationDescriptionFigure() {
-			return fOperationOperationDescriptionFigure;
+		public org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel getFigureOperationOperationGuardFigure() {
+			return fOperationOperationGuardFigure;
 		}
 
 		/**
 		 * @generated
 		 */
-		protected void setFigureOperationOperationDescriptionFigure(
+		protected void setFigureOperationOperationGuardFigure(
 				org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel figure) {
-			fOperationOperationDescriptionFigure = figure;
+			fOperationOperationGuardFigure = figure;
 		}
 
 		/**
 		 * @generated
 		 */
-		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel createFigureOperationOperationDescriptionFigure() {
-			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel OperationOperationDescriptionFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
-			OperationOperationDescriptionFigure.setText("<...>");
+		private org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel createFigureOperationOperationGuardFigure() {
+			org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel OperationOperationGuardFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel();
+			OperationOperationGuardFigure.setText("<...>");
 
-			return OperationOperationDescriptionFigure;
+			return OperationOperationGuardFigure;
 		}
 
 		/**

@@ -32,13 +32,13 @@
         <diagramLabel href="ProVerVisual.gmfgraph#OperationOperationAbbrevLabel"/>
         <features href="ProVerVisual.ecore#//Operation/operationAbbrev"/>
       </labelMappings>
-      <labelMappings viewPattern="{0}" editPattern="{0}">
+      <labelMappings viewPattern="FQN: {0}" editPattern="{0}">
         <diagramLabel href="ProVerVisual.gmfgraph#OperationOperationNameLabel"/>
         <features href="ProVerVisual.ecore#//Operation/operationName"/>
       </labelMappings>
-      <labelMappings viewPattern="{0}" editPattern="{0}">
-        <diagramLabel href="ProVerVisual.gmfgraph#OperationOperationDescriptionLabel"/>
-        <features href="ProVerVisual.ecore#//Operation/operationDescription"/>
+      <labelMappings viewPattern="Guard: {0}" editPattern="{0}">
+        <diagramLabel href="ProVerVisual.gmfgraph#OperationOperationGuardLabel"/>
+        <features href="ProVerVisual.ecore#//Operation/operationGuard"/>
       </labelMappings>
       <diagramNode href="ProVerVisual.gmfgraph#OperationNode"/>
     </ownedChild>

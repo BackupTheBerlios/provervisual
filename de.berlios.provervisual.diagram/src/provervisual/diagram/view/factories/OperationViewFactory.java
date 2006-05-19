@@ -11,7 +11,9 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactor
 
 import org.eclipse.gmf.runtime.notation.View;
 
+import provervisual.diagram.edit.parts.Operation_guardConstraintEditPart;
 import provervisual.diagram.edit.parts.Operation_operationAbbrevEditPart;
+import provervisual.diagram.edit.parts.Operation_operationGuardEditPart;
 import provervisual.diagram.edit.parts.Operation_operationDescriptionEditPart;
 import provervisual.diagram.edit.parts.Operation_operationNameEditPart;
 import provervisual.diagram.edit.parts.ProtocolEditPart;
@@ -50,7 +52,7 @@ public class OperationViewFactory extends AbstractShapeViewFactory {
 				Operation_operationNameEditPart.VISUAL_ID, ViewUtil.APPEND,
 				true, getPreferencesHint());
 		getViewService().createNode(semanticAdapter, view,
-				Operation_operationDescriptionEditPart.VISUAL_ID,
-				ViewUtil.APPEND, true, getPreferencesHint());
+				Operation_operationGuardEditPart.VISUAL_ID, ViewUtil.APPEND,
+				true, getPreferencesHint());
 	}
 }

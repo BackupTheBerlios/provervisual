@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProvervisualFactoryImpl.java,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ * $Id: ProvervisualFactoryImpl.java,v 1.2 2006/05/19 19:27:57 rustikus Exp $
  */
 package provervisual.impl;
 
@@ -67,7 +67,6 @@ public class ProvervisualFactoryImpl extends EFactoryImpl implements Provervisua
 			case ProvervisualPackage.FINAL_STATE: return createFinalState();
 			case ProvervisualPackage.ACTION_STATE: return createActionState();
 			case ProvervisualPackage.OPERATION_PARAMETER: return createOperationParameter();
-			case ProvervisualPackage.OPERATION_GUARD: return createOperationGuard();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -169,16 +168,6 @@ public class ProvervisualFactoryImpl extends EFactoryImpl implements Provervisua
 	public OperationParameter createOperationParameter() {
 		OperationParameterImpl operationParameter = new OperationParameterImpl();
 		return operationParameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OperationGuard createOperationGuard() {
-		OperationGuardImpl operationGuard = new OperationGuardImpl();
-		return operationGuard;
 	}
 
 	/**

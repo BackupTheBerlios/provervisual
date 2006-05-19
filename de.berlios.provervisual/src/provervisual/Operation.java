@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: Operation.java,v 1.1 2006/04/23 14:50:50 rustikus Exp $
+ * $Id: Operation.java,v 1.2 2006/05/19 19:27:57 rustikus Exp $
  */
 package provervisual;
 
@@ -20,10 +20,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link provervisual.Operation#getOperationAbbrev <em>Operation Abbrev</em>}</li>
  *   <li>{@link provervisual.Operation#getOperationName <em>Operation Name</em>}</li>
- *   <li>{@link provervisual.Operation#getOperationDescription <em>Operation Description</em>}</li>
+ *   <li>{@link provervisual.Operation#getOperationGuard <em>Operation Guard</em>}</li>
  *   <li>{@link provervisual.Operation#getStartState <em>Start State</em>}</li>
  *   <li>{@link provervisual.Operation#getOperationParameter <em>Operation Parameter</em>}</li>
- *   <li>{@link provervisual.Operation#getOperationGuard <em>Operation Guard</em>}</li>
  *   <li>{@link provervisual.Operation#getEndState <em>End State</em>}</li>
  * </ul>
  * </p>
@@ -86,32 +85,6 @@ public interface Operation extends EObject {
 	void setOperationName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Operation Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Operation Description</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operation Description</em>' attribute.
-	 * @see #setOperationDescription(String)
-	 * @see provervisual.ProvervisualPackage#getOperation_OperationDescription()
-	 * @model
-	 * @generated
-	 */
-	String getOperationDescription();
-
-	/**
-	 * Sets the value of the '{@link provervisual.Operation#getOperationDescription <em>Operation Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operation Description</em>' attribute.
-	 * @see #getOperationDescription()
-	 * @generated
-	 */
-	void setOperationDescription(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Start State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -154,30 +127,30 @@ public interface Operation extends EObject {
 	EList getOperationParameter();
 
 	/**
-	 * Returns the value of the '<em><b>Operation Guard</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Operation Guard</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Operation Guard</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operation Guard</em>' containment reference.
-	 * @see #setOperationGuard(OperationGuard)
+	 * @return the value of the '<em>Operation Guard</em>' attribute.
+	 * @see #setOperationGuard(String)
 	 * @see provervisual.ProvervisualPackage#getOperation_OperationGuard()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	OperationGuard getOperationGuard();
+	String getOperationGuard();
 
 	/**
-	 * Sets the value of the '{@link provervisual.Operation#getOperationGuard <em>Operation Guard</em>}' containment reference.
+	 * Sets the value of the '{@link provervisual.Operation#getOperationGuard <em>Operation Guard</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operation Guard</em>' containment reference.
+	 * @param value the new value of the '<em>Operation Guard</em>' attribute.
 	 * @see #getOperationGuard()
 	 * @generated
 	 */
-	void setOperationGuard(OperationGuard value);
+	void setOperationGuard(String value);
 
 	/**
 	 * Returns the value of the '<em><b>End State</b></em>' reference.

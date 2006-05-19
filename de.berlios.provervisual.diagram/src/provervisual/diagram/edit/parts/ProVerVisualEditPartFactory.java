@@ -52,7 +52,7 @@ public class ProVerVisualEditPartFactory implements EditPartFactory {
 			case 4002:
 				return new Operation_operationNameEditPart(view);
 			case 4003:
-				return new Operation_operationDescriptionEditPart(view);
+				return new Operation_operationGuardEditPart(view);
 			case 79:
 				return new ProtocolEditPart(view);
 			case 3001:
