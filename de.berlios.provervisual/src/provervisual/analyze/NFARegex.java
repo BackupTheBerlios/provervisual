@@ -77,10 +77,10 @@ public class NFARegex {
 			Operation op = (Operation) i.next() ;
 			String guard = "";
 			if(op.getOperationGuard() != null)
-				guard = op.getOperationGuard();
+				guard = "["+op.getOperationGuard()+"]";
 				
 			addTrans(node2arcs, op.getStartState(), "<"+op.getOperationAbbrev()+
-						"["+guard+"]>", op.getEndState() );
+						guard+">", op.getEndState() );
 			
 		}
 		

@@ -5,7 +5,7 @@
  <copyright>
  </copyright>
 
- $Id: plugin.xml,v 1.3 2006/05/16 19:25:17 rustikus Exp $
+ $Id: plugin.xml,v 1.4 2006/05/22 20:32:20 rustikus Exp $
 -->
 
 <plugin>
@@ -21,10 +21,6 @@
      <category
            id="de.berlios.provervisual"
            name="Protocol Verification"/>
-     <view
-           category="de.berlios.provervisual"
-           class="provervisual.views.SampleView"         icon="icons/sample.gif"
-           id="provervisual.views.viewSample"     name="Sample View"/>
      <view
            category="de.berlios.provervisual"
            class="provervisual.views.OperationView" icon="icons/sample.gif"
