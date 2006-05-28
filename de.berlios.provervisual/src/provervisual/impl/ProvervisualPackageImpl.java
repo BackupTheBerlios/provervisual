@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: ProvervisualPackageImpl.java,v 1.4 2006/05/19 19:27:57 rustikus Exp $
+ * $Id: ProvervisualPackageImpl.java,v 1.5 2006/05/28 12:06:56 rustikus Exp $
  */
 package provervisual.impl;
 
@@ -18,7 +18,6 @@ import provervisual.ActionState;
 import provervisual.FinalState;
 import provervisual.InitialState;
 import provervisual.Operation;
-import provervisual.OperationGuard;
 import provervisual.OperationParameter;
 import provervisual.Protocol;
 import provervisual.ProtocolType;

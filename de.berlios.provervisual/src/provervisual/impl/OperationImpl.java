@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: OperationImpl.java,v 1.2 2006/05/19 19:27:57 rustikus Exp $
+ * $Id: OperationImpl.java,v 1.3 2006/05/28 12:06:56 rustikus Exp $
  */
 package provervisual.impl;
 
@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import provervisual.Operation;
-import provervisual.OperationGuard;
 import provervisual.OperationParameter;
 import provervisual.ProvervisualPackage;
 import provervisual.State;
