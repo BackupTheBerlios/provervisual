@@ -5,7 +5,7 @@
  <copyright>
  </copyright>
 
- $Id: plugin.xml,v 1.4 2006/05/22 20:32:20 rustikus Exp $
+ $Id: plugin.xml,v 1.5 2006/05/29 18:11:42 rustikus Exp $
 -->
 
 <plugin>
@@ -46,7 +46,7 @@
            class="provervisual.importWizards.ImportWizard"
            icon="icons/sample.gif"
            id="provervisual.importWizards.javaFile"
-           name="Import Java Source File">
+           name="Import Java File">
         <description>
            Import a file from the local file system into the workspace.
         </description>
