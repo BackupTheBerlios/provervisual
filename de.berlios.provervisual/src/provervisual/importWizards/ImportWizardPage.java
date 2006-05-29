@@ -62,7 +62,7 @@ public class ImportWizardPage extends WizardNewFileCreationPage {
 				setFileName(path.lastSegment());
 			}
 		});
-		String[] extensions = new String[] { "*.java" }; //NON-NLS-1
+		String[] extensions = new String[] { "*.java", "*.jar" }; //NON-NLS-1
 		editor.setFileExtensions(extensions);
 		fileSelectionArea.moveAbove(null);
 
