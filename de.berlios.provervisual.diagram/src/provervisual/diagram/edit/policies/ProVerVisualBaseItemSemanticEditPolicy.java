@@ -8,7 +8,7 @@ import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
-import org.eclipse.gmf.runtime.diagram.ui.commands.EtoolsProxyCommand;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
@@ -50,7 +50,7 @@ public class ProVerVisualBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			if (completedRequest instanceof DestroyRequest) {
 				ICommand deleteCommand = new DeleteCommand((View) getHost()
 						.getModel());
-				semanticCommand = semanticCommand.chain(new EtoolsProxyCommand(
+				semanticCommand = semanticCommand.chain(new ICommandProxy(
 						deleteCommand));
 			}
 			return semanticCommand;
@@ -176,7 +176,7 @@ public class ProVerVisualBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		CompositeTransactionalCommand modelCmd = new CompositeTransactionalCommand(
 				editingDomain, cmd.getLabel());
 		modelCmd.compose(cmd);
-		return new EtoolsProxyCommand(modelCmd);
+		return new ICommandProxy(modelCmd);
 	}
 
 	/**
