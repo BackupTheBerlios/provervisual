@@ -250,8 +250,8 @@ public class OperationEditPart extends ShapeNodeEditPart {
 
 			this.setLineWidth(2);
 			this.setBackgroundColor(new org.eclipse.swt.graphics.Color(null,
-					240, 255, 0));
-			this.setPreferredSize(getMapMode().DPtoLP(140), getMapMode()
+					255, 255, 255));
+			this.setPreferredSize(getMapMode().DPtoLP(180), getMapMode()
 					.DPtoLP(70));
 			this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(
 					getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));

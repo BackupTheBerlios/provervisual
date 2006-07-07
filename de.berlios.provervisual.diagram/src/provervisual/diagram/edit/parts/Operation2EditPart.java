@@ -1,5 +1,7 @@
 package provervisual.diagram.edit.parts;
 
+import javax.swing.text.StyleConstants.ColorConstants;
+
 import org.eclipse.draw2d.Connection;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -57,6 +59,7 @@ public class Operation2EditPart extends ConnectionNodeEditPart {
 
 			this.setLineWidth(2);
 			setTargetDecoration(createTargetDecoration());
+
 		}
 
 		/**

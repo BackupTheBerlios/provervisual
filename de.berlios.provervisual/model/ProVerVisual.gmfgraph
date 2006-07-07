@@ -1,45 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="provervisual">
-  <figures name="default">
-    <figures xsi:type="gmfgraph:PolylineConnection" name="Operation" lineWidth="2" targetDecoration="Arrow">
-      <children xsi:type="gmfgraph:PolylineDecoration" name="Arrow" lineWidth="2">
-        <template x="-2" y="-2"/>
+<gmfgraph:Canvas xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2005/GraphicalDefinition" name="provervisual">
+  <figures
+      name="default">
+    <figures
+        xsi:type="gmfgraph:PolylineConnection"
+        referencingElements="OperationLink"
+        name="Operation"
+        lineWidth="2"
+        targetDecoration="Arrow">
+      <children
+          xsi:type="gmfgraph:PolylineDecoration"
+          name="Arrow"
+          lineWidth="2">
+        <template
+            x="-2"
+            y="-2"/>
         <template/>
-        <template x="-2" y="2"/>
+        <template
+            x="-2"
+            y="2"/>
       </children>
     </figures>
-    <figures xsi:type="gmfgraph:RoundedRectangle" name="OperationOverview" lineWidth="2">
-      <children xsi:type="gmfgraph:Label" name="OperationOperationAbbrevFigure" text="&lt;...>"/>
-      <children xsi:type="gmfgraph:Label" name="OperationOperationGuardFigure" text="&lt;...>"/>
-      <children xsi:type="gmfgraph:Label" name="OperationOperationNameFigure" text="&lt;...>"/>
-      <backgroundColor xsi:type="gmfgraph:RGBColor" red="240" green="255"/>
-      <preferredSize dx="140" dy="70"/>
+    <figures
+        xsi:type="gmfgraph:RoundedRectangle"
+        referencingElements="OperationNode"
+        name="OperationOverview"
+        lineWidth="2">
+      <children
+          xsi:type="gmfgraph:Label"
+          referencingElements="OperationOperationAbbrevLabel"
+          name="OperationOperationAbbrevFigure"
+          text="&lt;...>"/>
+      <children
+          xsi:type="gmfgraph:Label"
+          referencingElements="OperationOperationGuardLabel"
+          name="OperationOperationGuardFigure"
+          text="&lt;...>"/>
+      <children
+          xsi:type="gmfgraph:Label"
+          referencingElements="OperationOperationNameLabel"
+          name="OperationOperationNameFigure"
+          text="&lt;...>"/>
+      <backgroundColor
+          xsi:type="gmfgraph:RGBColor"
+          red="255"
+          green="255"
+          blue="255"/>
+      <preferredSize
+          dx="180"
+          dy="70"/>
     </figures>
-    <figures xsi:type="gmfgraph:Ellipse" name="InitialState">
-      <foregroundColor xsi:type="gmfgraph:RGBColor"/>
-      <backgroundColor xsi:type="gmfgraph:RGBColor"/>
+    <figures
+        xsi:type="gmfgraph:Ellipse"
+        referencingElements="InitialStateNode"
+        name="InitialState">
+      <foregroundColor
+          xsi:type="gmfgraph:RGBColor"/>
+      <backgroundColor
+          xsi:type="gmfgraph:RGBColor"/>
     </figures>
-    <figures xsi:type="gmfgraph:Label" name="InitialStateNumber" text="1"/>
-    <figures xsi:type="gmfgraph:Ellipse" name="ActionState">
-      <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <figures
+        xsi:type="gmfgraph:Label"
+        referencingElements="InitialNumberLabel"
+        name="InitialStateNumber"
+        text="1"/>
+    <figures
+        xsi:type="gmfgraph:Ellipse"
+        referencingElements="ActionStateNode"
+        name="ActionState">
+      <foregroundColor
+          xsi:type="gmfgraph:RGBColor"/>
     </figures>
-    <figures xsi:type="gmfgraph:Label" name="ActionStateNumber" text="#"/>
-    <figures xsi:type="gmfgraph:Ellipse" name="FinalState" lineWidth="3">
-      <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <figures
+        xsi:type="gmfgraph:Label"
+        referencingElements="ActionNumberLabel"
+        name="ActionStateNumber"
+        text="#"/>
+    <figures
+        xsi:type="gmfgraph:Ellipse"
+        referencingElements="FinalStateNode"
+        name="FinalState"
+        lineWidth="3">
+      <foregroundColor
+          xsi:type="gmfgraph:RGBColor"/>
     </figures>
-    <figures xsi:type="gmfgraph:Label" name="FinalStateNumber" text="#"/>
-    <figures xsi:type="gmfgraph:Polyline" name="OperationDescription" lineKind="LINE_DASH"/>
+    <figures
+        xsi:type="gmfgraph:Label"
+        referencingElements="FinalNumberLabel"
+        name="FinalStateNumber"
+        text="#"/>
+    <figures
+        xsi:type="gmfgraph:Polyline"
+        referencingElements="OperationDescriptionLink"
+        name="OperationDescription"
+        lineKind="LINE_DASH"/>
   </figures>
-  <nodes name="OperationNode" figure="OperationOverview"/>
-  <nodes name="InitialStateNode" figure="InitialState"/>
-  <nodes name="FinalStateNode" figure="FinalState"/>
-  <nodes name="ActionStateNode" figure="ActionState"/>
-  <connections name="OperationLink" figure="Operation"/>
-  <connections name="OperationDescriptionLink" figure="OperationDescription"/>
-  <labels name="OperationOperationAbbrevLabel" figure="OperationOperationAbbrevFigure"/>
-  <labels name="OperationOperationNameLabel" figure="OperationOperationNameFigure"/>
-  <labels name="OperationOperationGuardLabel" figure="OperationOperationGuardFigure"/>
-  <labels name="InitialNumberLabel" figure="InitialStateNumber"/>
-  <labels name="ActionNumberLabel" figure="ActionStateNumber"/>
-  <labels name="FinalNumberLabel" figure="FinalStateNumber"/>
+  <nodes
+      name="OperationNode"
+      figure="OperationOverview"/>
+  <nodes
+      name="InitialStateNode"
+      figure="InitialState"/>
+  <nodes
+      name="FinalStateNode"
+      figure="FinalState"/>
+  <nodes
+      name="ActionStateNode"
+      figure="ActionState"/>
+  <connections
+      name="OperationLink"
+      figure="Operation"/>
+  <connections
+      name="OperationDescriptionLink"
+      figure="OperationDescription"/>
+  <labels
+      name="OperationOperationAbbrevLabel"
+      figure="OperationOperationAbbrevFigure"/>
+  <labels
+      name="OperationOperationNameLabel"
+      figure="OperationOperationNameFigure"/>
+  <labels
+      name="OperationOperationGuardLabel"
+      figure="OperationOperationGuardFigure"/>
+  <labels
+      name="InitialNumberLabel"
+      figure="InitialStateNumber"/>
+  <labels
+      name="ActionNumberLabel"
+      figure="ActionStateNumber"/>
+  <labels
+      name="FinalNumberLabel"
+      figure="FinalStateNumber"/>
 </gmfgraph:Canvas>

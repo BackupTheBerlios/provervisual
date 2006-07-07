@@ -101,11 +101,11 @@ public class InitialStateEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected NodeFigure createNodePlate() {
-		return new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode()
-				.DPtoLP(40));
+		return new DefaultSizeNodeFigure(getMapMode().DPtoLP(30), getMapMode()
+				.DPtoLP(30));
 	}
 
 	/**
